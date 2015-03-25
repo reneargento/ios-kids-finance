@@ -24,4 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)addMoneyButton:(id)sender {
+}
+
+- (IBAction)subtractMoneyButton:(id)sender {
+}
+
+- (IBAction)configurationsButton:(id)sender {
+}
 @end

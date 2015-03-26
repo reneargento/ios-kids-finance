@@ -13,10 +13,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *currentMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *savingsLabel;
 
-- (IBAction)addMoneyButton:(id)sender;
-- (IBAction)subtractMoneyButton:(id)sender;
-- (IBAction)configurationsButton:(id)sender;
-
+@property (weak, nonatomic) IBOutlet UIImageView *addMoneyButton;
+@property (weak, nonatomic) IBOutlet UIImageView *substractMoneyButton;
+@property (weak, nonatomic) IBOutlet UIImageView *configurationsButton;
 
 @end
 

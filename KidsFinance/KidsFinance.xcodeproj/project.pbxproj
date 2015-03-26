@@ -17,6 +17,7 @@
 		7369CE151AC44398000D9F2B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE141AC44398000D9F2B /* add.png */; };
 		7369CE181AC445D5000D9F2B /* subtract.png in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE171AC445D5000D9F2B /* subtract.png */; };
 		7369CE1A1AC44675000D9F2B /* configurations.png in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE191AC44675000D9F2B /* configurations.png */; };
+		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		7369CE141AC44398000D9F2B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = ../add.png; sourceTree = "<group>"; };
 		7369CE171AC445D5000D9F2B /* subtract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = subtract.png; path = ../subtract.png; sourceTree = "<group>"; };
 		7369CE191AC44675000D9F2B /* configurations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = configurations.png; path = ../configurations.png; sourceTree = "<group>"; };
+		C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				7369CE161AC44446000D9F2B /* Images */,
+				C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */,
 				7316899C1AC2EE7B008D9FC9 /* KidsFinance */,
 				731689B61AC2EE7C008D9FC9 /* KidsFinanceTests */,
 				7316899B1AC2EE7B008D9FC9 /* Products */,

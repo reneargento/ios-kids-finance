@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Umbrella. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MainViewController.h"
 #import <UIKit/UIKit.h>
 
 @interface ViewController ()

@@ -14,9 +14,9 @@
 		731689AB1AC2EE7C008D9FC9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 731689AA1AC2EE7C008D9FC9 /* Images.xcassets */; };
 		731689AE1AC2EE7C008D9FC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731689AC1AC2EE7C008D9FC9 /* LaunchScreen.xib */; };
 		731689BA1AC2EE7C008D9FC9 /* KidsFinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 731689B91AC2EE7C008D9FC9 /* KidsFinanceTests.m */; };
-		7369CE151AC44398000D9F2B /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE141AC44398000D9F2B /* add.png */; };
-		7369CE181AC445D5000D9F2B /* subtract.png in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE171AC445D5000D9F2B /* subtract.png */; };
-		7369CE1A1AC44675000D9F2B /* configurations.png in Resources */ = {isa = PBXBuildFile; fileRef = 7369CE191AC44675000D9F2B /* configurations.png */; };
+		731AFB261AC579E0000D6EBC /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = 731AFB251AC579E0000D6EBC /* add.png */; };
+		731AFB291AC579F0000D6EBC /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = 731AFB271AC579F0000D6EBC /* config.png */; };
+		731AFB2A1AC579F0000D6EBC /* subtract.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 731AFB281AC579F0000D6EBC /* subtract.jpg */; };
 		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
@@ -44,9 +44,9 @@
 		731689B31AC2EE7C008D9FC9 /* KidsFinanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KidsFinanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		731689B81AC2EE7C008D9FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		731689B91AC2EE7C008D9FC9 /* KidsFinanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidsFinanceTests.m; sourceTree = "<group>"; };
-		7369CE141AC44398000D9F2B /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = ../add.png; sourceTree = "<group>"; };
-		7369CE171AC445D5000D9F2B /* subtract.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = subtract.png; path = ../subtract.png; sourceTree = "<group>"; };
-		7369CE191AC44675000D9F2B /* configurations.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = configurations.png; path = ../configurations.png; sourceTree = "<group>"; };
+		731AFB251AC579E0000D6EBC /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = add.png; path = Images/add.png; sourceTree = SOURCE_ROOT; };
+		731AFB271AC579F0000D6EBC /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = config.png; path = Images/config.png; sourceTree = SOURCE_ROOT; };
+		731AFB281AC579F0000D6EBC /* subtract.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = subtract.jpg; path = Images/subtract.jpg; sourceTree = SOURCE_ROOT; };
 		C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -133,9 +133,9 @@
 		7369CE161AC44446000D9F2B /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				7369CE191AC44675000D9F2B /* configurations.png */,
-				7369CE171AC445D5000D9F2B /* subtract.png */,
-				7369CE141AC44398000D9F2B /* add.png */,
+				731AFB271AC579F0000D6EBC /* config.png */,
+				731AFB281AC579F0000D6EBC /* subtract.jpg */,
+				731AFB251AC579E0000D6EBC /* add.png */,
 			);
 			name = Images;
 			path = ../../../Desktop/Images;
@@ -223,10 +223,10 @@
 			files = (
 				731689A91AC2EE7C008D9FC9 /* Main.storyboard in Resources */,
 				731689AE1AC2EE7C008D9FC9 /* LaunchScreen.xib in Resources */,
-				7369CE181AC445D5000D9F2B /* subtract.png in Resources */,
-				7369CE151AC44398000D9F2B /* add.png in Resources */,
 				731689AB1AC2EE7C008D9FC9 /* Images.xcassets in Resources */,
-				7369CE1A1AC44675000D9F2B /* configurations.png in Resources */,
+				731AFB2A1AC579F0000D6EBC /* subtract.jpg in Resources */,
+				731AFB261AC579E0000D6EBC /* add.png in Resources */,
+				731AFB291AC579F0000D6EBC /* config.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

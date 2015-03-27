@@ -17,9 +17,9 @@
 @property (nonatomic)sqlite3 *DB; 
 
 
-@property (weak, nonatomic) IBOutlet UIImageView *addMoneyButton;
-@property (weak, nonatomic) IBOutlet UIImageView *substractMoneyButton;
-@property (weak, nonatomic) IBOutlet UIImageView *configurationsButton;
+- (IBAction)addMoneyButton:(id)sender;
+- (IBAction)subtractMoneyButton:(id)sender;
+- (IBAction)configurationsButton:(id)sender;
 
 @end
 

@@ -17,7 +17,6 @@
 		731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731AFB2E1AC58410000D6EBC /* ConfigViewController.m */; };
 		739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074D91AC96DF700C3B246 /* ReportViewController.m */; };
 		739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074DC1AC973BB00C3B246 /* AboutViewController.m */; };
-		739074E01AC9940900C3B246 /* teste.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074DF1AC9940900C3B246 /* teste.m */; };
 		C9A899621AC97A5300D5AAD3 /* Data Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9A899611AC97A5300D5AAD3 /* Data Model.xcdatamodel */; };
 		C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A899641AC97A8000D5AAD3 /* Transactions.m */; };
 		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
@@ -53,8 +52,6 @@
 		739074D91AC96DF700C3B246 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		739074DB1AC973BB00C3B246 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		739074DC1AC973BB00C3B246 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		739074DE1AC9940800C3B246 /* teste.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = teste.h; sourceTree = "<group>"; };
-		739074DF1AC9940900C3B246 /* teste.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = teste.m; sourceTree = "<group>"; };
 		C9A899611AC97A5300D5AAD3 /* Data Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Data Model.xcdatamodel"; sourceTree = "<group>"; };
 		C9A899631AC97A8000D5AAD3 /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transactions.h; sourceTree = "<group>"; };
 		C9A899641AC97A8000D5AAD3 /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transactions.m; sourceTree = "<group>"; };
@@ -121,8 +118,6 @@
 				C9A899661AC97C4000D5AAD3 /* Enumerations.h */,
 				739074DB1AC973BB00C3B246 /* AboutViewController.h */,
 				739074DC1AC973BB00C3B246 /* AboutViewController.m */,
-				739074DE1AC9940800C3B246 /* teste.h */,
-				739074DF1AC9940900C3B246 /* teste.m */,
 			);
 			path = KidsFinance;
 			sourceTree = "<group>";
@@ -256,7 +251,6 @@
 				739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */,
 				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
 				C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */,
-				739074E01AC9940900C3B246 /* teste.m in Sources */,
 				C9A899621AC97A5300D5AAD3 /* Data Model.xcdatamodel in Sources */,
 				731689A61AC2EE7C008D9FC9 /* MainViewController.m in Sources */,
 				731689A31AC2EE7B008D9FC9 /* AppDelegate.m in Sources */,

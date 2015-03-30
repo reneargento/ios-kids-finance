@@ -16,5 +16,4 @@
 @dynamic isEarning;
 @dynamic category;
 
-
 @end

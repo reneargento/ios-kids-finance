@@ -13,8 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *currentMoneyLabel;
 @property (weak, nonatomic) IBOutlet UILabel *savingsLabel;
-@property (strong, nonatomic) NSString *databasePath; // create a ponter to database in APP
-@property (nonatomic)sqlite3 *DB; 
 
 
 - (IBAction)addMoneyButton:(id)sender;

@@ -85,8 +85,8 @@
     //TODO
     switch (indexPath.row) {
         case 0:
-            ViewControllerInfo* infoController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewControllerInfo"];
-            [self.navigationController pushViewController:infoController animated:YES];
+//            ViewControllerInfo* infoController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewControllerInfo"];
+//            [self.navigationController pushViewController:infoController animated:YES];
             break;
         default:
             break;

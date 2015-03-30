@@ -15,6 +15,7 @@
 		731689AE1AC2EE7C008D9FC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731689AC1AC2EE7C008D9FC9 /* LaunchScreen.xib */; };
 		731689BA1AC2EE7C008D9FC9 /* KidsFinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 731689B91AC2EE7C008D9FC9 /* KidsFinanceTests.m */; };
 		731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731AFB2E1AC58410000D6EBC /* ConfigViewController.m */; };
+		739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074D91AC96DF700C3B246 /* ReportViewController.m */; };
 		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,8 @@
 		731689B91AC2EE7C008D9FC9 /* KidsFinanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidsFinanceTests.m; sourceTree = "<group>"; };
 		731AFB2D1AC58410000D6EBC /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		731AFB2E1AC58410000D6EBC /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		739074D81AC96DF700C3B246 /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
+		739074D91AC96DF700C3B246 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -98,6 +101,8 @@
 				731689AA1AC2EE7C008D9FC9 /* Images.xcassets */,
 				731689AC1AC2EE7C008D9FC9 /* LaunchScreen.xib */,
 				7316899D1AC2EE7B008D9FC9 /* Supporting Files */,
+				739074D81AC96DF700C3B246 /* ReportViewController.h */,
+				739074D91AC96DF700C3B246 /* ReportViewController.m */,
 			);
 			path = KidsFinance;
 			sourceTree = "<group>";
@@ -228,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
 				731689A61AC2EE7C008D9FC9 /* MainViewController.m in Sources */,
 				731689A31AC2EE7B008D9FC9 /* AppDelegate.m in Sources */,
 				731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */,

@@ -133,7 +133,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="85" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Axh-mb-qhg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="4" y="72" width="390" height="589"/>
+                                    <rect key="frame" x="4" y="70" width="390" height="589"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="mV5-4m-uDn" id="gv7-DK-QBd"/>
@@ -153,6 +153,10 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="68H-MX-z4M" kind="show" identifier="reportSegue" id="WKf-27-W6N"/>
+                        <segue destination="Ixf-t4-8dl" kind="show" identifier="aboutSegue" id="lHK-1N-dFX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pdZ-1N-lmP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -176,7 +180,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="36" y="28" width="54" height="21"/>
+                                    <rect key="frame" x="36" y="92" width="54" height="21"/>
                                 </variation>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JsX-yJ-iHv">
@@ -184,7 +188,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="104" y="20" width="244" height="30"/>
+                                    <rect key="frame" x="104" y="84" width="244" height="30"/>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n5d-fT-ftQ">
@@ -192,7 +196,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="104" y="83" width="244" height="30"/>
+                                    <rect key="frame" x="104" y="147" width="244" height="30"/>
                                 </variation>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="545-ap-TjE">
@@ -201,7 +205,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="36" y="87" width="61" height="21"/>
+                                    <rect key="frame" x="36" y="151" width="61" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Frequência:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zew-Ci-YUW">
@@ -210,15 +214,24 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="148" width="94" height="21"/>
+                                    <rect key="frame" x="16" y="211" width="94" height="21"/>
                                 </variation>
                             </label>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFM-d1-5Sm">
                                 <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="-11" y="116" width="400" height="162"/>
+                                    <rect key="frame" x="-11" y="195" width="400" height="162"/>
                                 </variation>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uuz-0k-Von">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" image="Send File">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="165" y="365" width="70" height="79"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -229,6 +242,7 @@
                                 <exclude reference="545-ap-TjE"/>
                                 <exclude reference="Zew-Ci-YUW"/>
                                 <exclude reference="pFM-d1-5Sm"/>
+                                <exclude reference="uuz-0k-Von"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -239,6 +253,7 @@
                                 <include reference="545-ap-TjE"/>
                                 <include reference="Zew-Ci-YUW"/>
                                 <include reference="pFM-d1-5Sm"/>
+                                <include reference="uuz-0k-Von"/>
                             </mask>
                         </variation>
                     </view>
@@ -251,6 +266,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96m-kb-ecF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2547" y="770.25"/>
+        </scene>
+        <!--About View Controller-->
+        <scene sceneID="Br9-4g-xhG">
+            <objects>
+                <viewController id="Ixf-t4-8dl" customClass="AboutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JPu-Fg-G18"/>
+                        <viewControllerLayoutGuide type="bottom" id="LB8-WT-aiH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="e1u-lV-MlM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uaf-KF-1IK">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="27" y="78" width="56" height="31"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Uaf-KF-1IK"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Uaf-KF-1IK"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="aboutLabel" destination="Uaf-KF-1IK" id="49T-WZ-9t3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xym-we-byK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2547" y="1437.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HAx-zz-J9h">
@@ -272,6 +329,7 @@
     <resources>
         <image name="Minus" width="50" height="50"/>
         <image name="Plus" width="50" height="50"/>
+        <image name="Send File" width="50" height="50"/>
         <image name="Settings" width="50" height="50"/>
     </resources>
 </document>

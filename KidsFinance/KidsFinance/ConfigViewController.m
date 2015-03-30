@@ -85,8 +85,13 @@
     //TODO
     switch (indexPath.row) {
         case 0:
-//            ViewControllerInfo* infoController = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewControllerInfo"];
-//            [self.navigationController pushViewController:infoController animated:YES];
+            //TODO once popup is ready
+            break;
+        case 1:
+            [self performSegueWithIdentifier:@"reportSegue" sender:self];
+            break;
+        case 2:
+            [self performSegueWithIdentifier:@"aboutSegue" sender:self];
             break;
         default:
             break;

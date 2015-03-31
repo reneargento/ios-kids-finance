@@ -6,11 +6,14 @@
 //  Copyright (c) 2015 Umbrella. All rights reserved.
 //
 
+#import "AppDelegate.h"
 #import "TransationsViewController.h"
+#import "Transactions.h"
 
 @interface TransationsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
-
+@property AppDelegate * appDelegate;
+@property (strong, nonatomic) Transactions * transactionsCurrent;
 @end
 
 @implementation TransationsViewController
@@ -20,6 +23,7 @@
     // Do any additional setup after loading the view.
     NSLog(@"%lu",self.category);
     NSLog(@"%d",self.isAddMoney);
+    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,5 +42,12 @@
 */
 
 
+- (IBAction)confirmTransationClicked:(id)sender {
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
+    self.transactionsCurrent = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    [self.transactionsCurrent setValue: [NSNumber numberWithDouble:[self.valueField.text doubleValue]]];
+    
+     NSLog(@"%@",self.transactionsCurrent.value);
+}
 
 @end

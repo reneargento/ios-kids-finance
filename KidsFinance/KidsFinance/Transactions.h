@@ -18,4 +18,5 @@
 @property (nonatomic) BOOL isEarning;
 @property (nonatomic) TransactionCategory category;
 
+
 @end

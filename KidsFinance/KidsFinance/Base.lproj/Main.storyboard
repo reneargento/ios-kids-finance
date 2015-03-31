@@ -394,17 +394,6 @@
                                     <rect key="frame" x="51" y="133" width="299" height="30"/>
                                 </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRB-OQ-coa">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="51" y="210" width="299" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="valieFieldDidBeginEditing:" destination="dbQ-jm-77r" eventType="editingDidBegin" id="feh-Yu-cc4"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hI1-EI-B38">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -461,36 +450,47 @@
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="194" y="556" width="167" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="confirmTransationClicked:" destination="dbQ-jm-77r" eventType="touchUpInside" id="u40-ba-THK"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRB-OQ-coa">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="51" y="210" width="299" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="4ZQ-2e-y1X"/>
-                                <exclude reference="yRB-OQ-coa"/>
                                 <exclude reference="hI1-EI-B38"/>
                                 <exclude reference="ASq-nq-DUF"/>
                                 <exclude reference="8Og-Rp-S6s"/>
                                 <exclude reference="H0T-Vx-n5j"/>
                                 <exclude reference="Rq0-Vf-FbC"/>
                                 <exclude reference="IhX-md-W9q"/>
+                                <exclude reference="yRB-OQ-coa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
                                 <include reference="4ZQ-2e-y1X"/>
-                                <include reference="yRB-OQ-coa"/>
                                 <include reference="hI1-EI-B38"/>
                                 <include reference="ASq-nq-DUF"/>
                                 <include reference="8Og-Rp-S6s"/>
                                 <include reference="H0T-Vx-n5j"/>
                                 <include reference="Rq0-Vf-FbC"/>
                                 <include reference="IhX-md-W9q"/>
+                                <include reference="yRB-OQ-coa"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="valueField" destination="yRB-OQ-coa" id="qtz-MM-n04"/>
+                        <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7X3-xn-eXx" userLabel="First Responder" sceneMemberID="firstResponder"/>

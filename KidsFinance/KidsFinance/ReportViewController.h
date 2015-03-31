@@ -13,6 +13,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 @property (weak, nonatomic) IBOutlet UIPickerView *frequencyPicker;
+- (IBAction)reportButton:(id)sender;
 
+-(void) testSaveData;
 
 @end

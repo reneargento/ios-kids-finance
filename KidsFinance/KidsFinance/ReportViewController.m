@@ -60,4 +60,8 @@
     return [frequencyPickerValues objectAtIndex:row];
 }
 
+- (IBAction)reportButton:(id)sender {
+  
+}
+
 @end

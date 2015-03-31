@@ -15,9 +15,10 @@
 		731689AE1AC2EE7C008D9FC9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 731689AC1AC2EE7C008D9FC9 /* LaunchScreen.xib */; };
 		731689BA1AC2EE7C008D9FC9 /* KidsFinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 731689B91AC2EE7C008D9FC9 /* KidsFinanceTests.m */; };
 		731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731AFB2E1AC58410000D6EBC /* ConfigViewController.m */; };
+		7358A06D1ACABD5B00A3F19F /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7358A06C1ACABD5B00A3F19F /* CoreDataViewController.m */; };
+		7358A0711ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */; };
 		739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074D91AC96DF700C3B246 /* ReportViewController.m */; };
 		739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074DC1AC973BB00C3B246 /* AboutViewController.m */; };
-		C9A899621AC97A5300D5AAD3 /* Data Model.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = C9A899611AC97A5300D5AAD3 /* Data Model.xcdatamodel */; };
 		C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A899641AC97A8000D5AAD3 /* Transactions.m */; };
 		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
@@ -48,11 +49,14 @@
 		731689B91AC2EE7C008D9FC9 /* KidsFinanceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KidsFinanceTests.m; sourceTree = "<group>"; };
 		731AFB2D1AC58410000D6EBC /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		731AFB2E1AC58410000D6EBC /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		7358A06B1ACABD5B00A3F19F /* CoreDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataViewController.h; sourceTree = "<group>"; };
+		7358A06C1ACABD5B00A3F19F /* CoreDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataViewController.m; sourceTree = "<group>"; };
+		7358A06F1ACACCEB00A3F19F /* KidsFinance 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 2.xcdatamodel"; sourceTree = "<group>"; };
+		7358A0701ACACCEB00A3F19F /* KidsFinance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KidsFinance.xcdatamodel; sourceTree = "<group>"; };
 		739074D81AC96DF700C3B246 /* ReportViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReportViewController.h; sourceTree = "<group>"; };
 		739074D91AC96DF700C3B246 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		739074DB1AC973BB00C3B246 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		739074DC1AC973BB00C3B246 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		C9A899611AC97A5300D5AAD3 /* Data Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Data Model.xcdatamodel"; sourceTree = "<group>"; };
 		C9A899631AC97A8000D5AAD3 /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transactions.h; sourceTree = "<group>"; };
 		C9A899641AC97A8000D5AAD3 /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transactions.m; sourceTree = "<group>"; };
 		C9A899661AC97C4000D5AAD3 /* Enumerations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enumerations.h; sourceTree = "<group>"; };
@@ -107,7 +111,7 @@
 				731AFB2D1AC58410000D6EBC /* ConfigViewController.h */,
 				731AFB2E1AC58410000D6EBC /* ConfigViewController.m */,
 				731689A71AC2EE7C008D9FC9 /* Main.storyboard */,
-				C9A899611AC97A5300D5AAD3 /* Data Model.xcdatamodel */,
+				7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */,
 				C9A899631AC97A8000D5AAD3 /* Transactions.h */,
 				C9A899641AC97A8000D5AAD3 /* Transactions.m */,
 				731689AA1AC2EE7C008D9FC9 /* Images.xcassets */,
@@ -118,6 +122,8 @@
 				C9A899661AC97C4000D5AAD3 /* Enumerations.h */,
 				739074DB1AC973BB00C3B246 /* AboutViewController.h */,
 				739074DC1AC973BB00C3B246 /* AboutViewController.m */,
+				7358A06B1ACABD5B00A3F19F /* CoreDataViewController.h */,
+				7358A06C1ACABD5B00A3F19F /* CoreDataViewController.m */,
 			);
 			path = KidsFinance;
 			sourceTree = "<group>";
@@ -251,11 +257,12 @@
 				739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */,
 				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
 				C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */,
-				C9A899621AC97A5300D5AAD3 /* Data Model.xcdatamodel in Sources */,
+				7358A0711ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld in Sources */,
 				731689A61AC2EE7C008D9FC9 /* MainViewController.m in Sources */,
 				731689A31AC2EE7B008D9FC9 /* AppDelegate.m in Sources */,
 				731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */,
 				731689A01AC2EE7B008D9FC9 /* main.m in Sources */,
+				7358A06D1ACABD5B00A3F19F /* CoreDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +467,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7358A06F1ACACCEB00A3F19F /* KidsFinance 2.xcdatamodel */,
+				7358A0701ACACCEB00A3F19F /* KidsFinance.xcdatamodel */,
+			);
+			currentVersion = 7358A06F1ACACCEB00A3F19F /* KidsFinance 2.xcdatamodel */;
+			path = KidsFinance1.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 731689921AC2EE7B008D9FC9 /* Project object */;
 }

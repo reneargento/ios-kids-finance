@@ -44,9 +44,8 @@
     
     //Create fetch request
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
-    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-YYYY"];
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date BETWEEN %@ AND %@", [dateFormatter stringFromDate:initialDate], [dateFormatter stringFromDate:endDate]];
+    
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date > %@ && date < %@", initialDate, endDate];
     [fetchRequest setEntity:entity];
     [fetchRequest setPredicate:predicate];
     
@@ -55,7 +54,7 @@
 
     //Core data returns each row as managed objects so we can access rows values through key-value pair
     for(NSManagedObject *row in values) {
-        NSLog(@"Value: %@\n Category: %@\n", [row valueForKey:@"value"], [row valueForKey:@"category"]);
+        NSLog(@"Value: %@  -  Category: %@\n", [row valueForKey:@"value"], [row valueForKey:@"category"]);
     }
     
     return values;

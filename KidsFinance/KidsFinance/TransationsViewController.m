@@ -45,6 +45,7 @@
 
 
 - (IBAction)confirmTransationClicked:(id)sender {
+    
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
     self.transactionsCurrent = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
     
@@ -55,9 +56,8 @@
     [self.transactionsCurrent setIsEarning:self.isAddMoney];
 
     DAO * daoOperation = [[DAO alloc] init];
-    
+
     [daoOperation saveTransaction:self.transactionsCurrent];
-    [daoOperation getData];
     
 }
 

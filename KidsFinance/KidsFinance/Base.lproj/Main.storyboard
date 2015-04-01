@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T0V-pK-TaA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T0V-pK-TaA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -490,6 +490,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="dateTransationPicker" destination="H0T-Vx-n5j" id="rMO-Hm-Is0"/>
+                        <outlet property="descriptionField" destination="4ZQ-2e-y1X" id="mnu-rB-5Rb"/>
                         <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
                     </connections>
                 </viewController>

@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "TransationsViewController.H"
 #import <UIKit/UIKit.h>
+#import "Enumerations.h"
 
 @interface ViewController ()
 
@@ -49,6 +50,7 @@
          TransationsViewController *transferViewController = segue.destinationViewController;
 
          transferViewController.isAddMoney = YES;
+         transferViewController.category = TransactionCategoryNone;
      }
  }
 

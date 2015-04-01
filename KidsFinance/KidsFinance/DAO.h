@@ -8,4 +8,7 @@
 
 @interface DAO : NSObject
 
+- (void)saveTransaction:(Transactions*) transaction;
+- (NSMutableArray*)getData;
+
 @end

@@ -15,5 +15,6 @@
 @dynamic date;
 @dynamic isEarning;
 @dynamic category;
+@dynamic descriptionTransaction;
 
 @end

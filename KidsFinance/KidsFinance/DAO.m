@@ -48,7 +48,7 @@
     
     //Get all rows
     NSMutableArray * values = [[appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    
+
     //Core data returns each row as managed objects so we can access rows values through key-value pair
     for(NSManagedObject *row in values) {
         NSLog(@"Value: %@\n Category: %@\n", [row valueForKey:@"value"], [row valueForKey:@"category"]);

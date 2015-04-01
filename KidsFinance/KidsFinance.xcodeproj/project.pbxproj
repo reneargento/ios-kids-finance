@@ -112,30 +112,15 @@
 		7316899C1AC2EE7B008D9FC9 /* KidsFinance */ = {
 			isa = PBXGroup;
 			children = (
+				7342FCCB1ACC11650000A9BB /* View */,
+				7342FCCA1ACC11360000A9BB /* Controller */,
+				7342FCC91ACC10D80000A9BB /* Enumeration */,
+				7342FCC81ACC10A10000A9BB /* Model */,
 				731689A11AC2EE7B008D9FC9 /* AppDelegate.h */,
 				731689A21AC2EE7B008D9FC9 /* AppDelegate.m */,
-				731689A41AC2EE7B008D9FC9 /* MainViewController.h */,
-				731689A51AC2EE7C008D9FC9 /* MainViewController.m */,
-				731AFB2D1AC58410000D6EBC /* ConfigViewController.h */,
-				731AFB2E1AC58410000D6EBC /* ConfigViewController.m */,
-				731689A71AC2EE7C008D9FC9 /* Main.storyboard */,
-				7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */,
-				B8CF54151ACAC868000040B0 /* CategoryViewController.h */,
-				B8CF54161ACAC868000040B0 /* CategoryViewController.m */,
-				B8CF54121ACAB73F000040B0 /* TransationsViewController.h */,
-				B8CF54131ACAB73F000040B0 /* TransationsViewController.m */,
-				C9A899631AC97A8000D5AAD3 /* Transactions.h */,
-				C9A899641AC97A8000D5AAD3 /* Transactions.m */,
 				731689AA1AC2EE7C008D9FC9 /* Images.xcassets */,
 				731689AC1AC2EE7C008D9FC9 /* LaunchScreen.xib */,
 				7316899D1AC2EE7B008D9FC9 /* Supporting Files */,
-				739074D81AC96DF700C3B246 /* ReportViewController.h */,
-				739074D91AC96DF700C3B246 /* ReportViewController.m */,
-				C9A899661AC97C4000D5AAD3 /* Enumerations.h */,
-				739074DB1AC973BB00C3B246 /* AboutViewController.h */,
-				739074DC1AC973BB00C3B246 /* AboutViewController.m */,
-				7358A0721ACAD73100A3F19F /* DAO.m */,
-				7358A0741ACADFB900A3F19F /* DAO.h */,
 			);
 			path = KidsFinance;
 			sourceTree = "<group>";
@@ -164,6 +149,53 @@
 				731689B81AC2EE7C008D9FC9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7342FCC81ACC10A10000A9BB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9A899631AC97A8000D5AAD3 /* Transactions.h */,
+				C9A899641AC97A8000D5AAD3 /* Transactions.m */,
+				7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */,
+				7358A0721ACAD73100A3F19F /* DAO.m */,
+				7358A0741ACADFB900A3F19F /* DAO.h */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		7342FCC91ACC10D80000A9BB /* Enumeration */ = {
+			isa = PBXGroup;
+			children = (
+				C9A899661AC97C4000D5AAD3 /* Enumerations.h */,
+			);
+			name = Enumeration;
+			sourceTree = "<group>";
+		};
+		7342FCCA1ACC11360000A9BB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				731689A41AC2EE7B008D9FC9 /* MainViewController.h */,
+				731689A51AC2EE7C008D9FC9 /* MainViewController.m */,
+				731AFB2D1AC58410000D6EBC /* ConfigViewController.h */,
+				731AFB2E1AC58410000D6EBC /* ConfigViewController.m */,
+				B8CF54151ACAC868000040B0 /* CategoryViewController.h */,
+				B8CF54161ACAC868000040B0 /* CategoryViewController.m */,
+				B8CF54121ACAB73F000040B0 /* TransationsViewController.h */,
+				B8CF54131ACAB73F000040B0 /* TransationsViewController.m */,
+				739074D81AC96DF700C3B246 /* ReportViewController.h */,
+				739074D91AC96DF700C3B246 /* ReportViewController.m */,
+				739074DB1AC973BB00C3B246 /* AboutViewController.h */,
+				739074DC1AC973BB00C3B246 /* AboutViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		7342FCCB1ACC11650000A9BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				731689A71AC2EE7C008D9FC9 /* Main.storyboard */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

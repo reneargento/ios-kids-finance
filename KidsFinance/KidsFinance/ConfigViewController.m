@@ -22,6 +22,8 @@
     // Do any additional setup after loading the view.
     configSections = [NSArray arrayWithObjects:@"Poupança", @"Relatório", @"Sobre o Aplicativo" , nil];
     self.navigationItem.title = @"Configurações";
+    self.automaticallyAdjustsScrollViewInsets = NO; // codigo faz parar
+    
 }
 
 - (void)didReceiveMemoryWarning {

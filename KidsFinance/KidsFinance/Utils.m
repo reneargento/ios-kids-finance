@@ -19,10 +19,12 @@
 
 -(void)saveValueInKeychain: (NSString*)key withValue:(NSString *)value {
     KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:keychainIdentifier accessGroup:nil];
+    [keychain setObject:value forKey:key];
 }
 
 -(NSString *)getValueFromKeychain:(NSString *)key {
-    return nil;
+    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:keychainIdentifier accessGroup:nil];
+    return [keychain objectForKey:key];
 }
 
 @end

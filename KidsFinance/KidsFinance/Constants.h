@@ -6,11 +6,6 @@
 //  Copyright (c) 2015 Umbrella. All rights reserved.
 //
 
-#ifndef KidsFinance_Constants_h
-#define KidsFinance_Constants_h
-
-#define keychainIdentifier @"KIDS_FINANCE";
-#define currentMoneyKey @"CURRENT_MONEY";
-#define savingsKey @"SAVINGS";
-
-#endif
+NSString *const keychainIdentifier = @"KIDS_FINANCE";
+NSString *const currentMoneyKey = @"CURRENT_MONEY";
+NSString *const savingsKey = @"SAVINGS";

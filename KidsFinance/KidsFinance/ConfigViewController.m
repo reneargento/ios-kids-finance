@@ -8,8 +8,9 @@
 
 #import "ConfigViewController.h"
 
-@interface ConfigViewController ()
 
+@interface ConfigViewController ()
+@property (nonatomic,strong) UIAlertView * alertPoupanca;
 @end
 
 @implementation ConfigViewController
@@ -21,9 +22,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     configSections = [NSArray arrayWithObjects:@"Poupança", @"Relatório", @"Sobre o Aplicativo" , nil];
+    
+    
+    
     self.navigationItem.title = @"Configurações";
     self.automaticallyAdjustsScrollViewInsets = NO; // codigo faz parar
     
+    self.alertPoupanca = [[UIAlertView alloc] initWithTitle:@"Puopança" message:@"Quanto você dejesa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
+    [self.alertPoupanca setAlertViewStyle:UIAlertViewStylePlainTextInput];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -52,6 +58,8 @@
  Customizes each cell of the table
  */
 - (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -61,6 +69,7 @@
     }
     
     cell.textLabel.text = [configSections objectAtIndex:indexPath.row];
+    
     switch (indexPath.row) {
         case 0:
             cell.imageView.image = [UIImage imageNamed:@"Money Box.png"];
@@ -85,9 +94,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //TODO
+    
+  
+    
+    
+    
+    
     switch (indexPath.row) {
         case 0:
-            //TODO once popup is ready
+            [self.alertPoupanca  show];
             break;
         case 1:
             [self performSegueWithIdentifier:@"reportSegue" sender:self];

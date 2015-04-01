@@ -9,6 +9,6 @@
 @interface DAO : NSObject
 
 - (void)saveTransaction:(Transactions*) transaction;
-- (NSMutableArray*)getData;
+- (NSMutableArray*)getData:(NSDate*)initialDate withFinalDate:(NSDate*)endDate;
 
 @end

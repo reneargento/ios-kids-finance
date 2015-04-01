@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T0V-pK-TaA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="T0V-pK-TaA">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
@@ -16,57 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-t7-a3t">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" backgroundImage="Plus">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_1" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-Pf-wYm">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="149" y="250" width="89" height="76"/>
+                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
                                 </variation>
-                                <connections>
-                                    <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTZ-nC-UXE"/>
-                                    <segue destination="dbQ-jm-77r" kind="show" identifier="addMoney" id="4u1-I4-h7v"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNW-u6-weF">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" backgroundImage="Settings">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="255" y="555" width="82" height="60"/>
-                                </variation>
-                                <connections>
-                                    <action selector="configurationsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvf-PU-8n7"/>
-                                    <segue destination="mV5-4m-uDn" kind="show" identifier="openConfig" id="CdI-Lf-BzO"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dinheiro:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aSi-lw-Lju">
-                                <rect key="frame" x="37" y="20" width="108" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.058823533356189728" green="0.15294118225574493" blue="0.94509810209274292" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="74" y="105" width="108" height="21"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Poupança:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a8A-MQ-c45">
-                                <rect key="frame" x="38" y="56" width="152" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <color key="textColor" red="0.058823533359999999" green="0.15294118230000001" blue="0.9450981021" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="75" y="141" width="152" height="35"/>
-                                </variation>
-                            </label>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-V3-Lgf">
                                 <rect key="frame" x="202" y="23" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="239" y="108" width="42" height="21"/>
+                                    <rect key="frame" x="239" y="248" width="42" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSp-aA-6gY">
@@ -75,36 +37,64 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="239" y="151" width="42" height="21"/>
+                                    <rect key="frame" x="239" y="296" width="42" height="21"/>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-0j-2Cv">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-0j-2Cv">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" backgroundImage="Minus">
+                                <state key="normal" image="button_minus_1" backgroundImage="  ">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="149" y="384" width="89" height="76"/>
+                                    <rect key="frame" x="272" y="506" width="70" height="70"/>
                                 </variation>
                                 <connections>
                                     <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eOW-F8-TAi"/>
                                     <segue destination="y8w-h0-1H0" kind="show" id="JwZ-1S-zWM"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNW-u6-weF">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="Settings">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="142" y="691" width="82" height="60"/>
+                                </variation>
+                                <connections>
+                                    <action selector="configurationsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvf-PU-8n7"/>
+                                    <segue destination="mV5-4m-uDn" kind="show" identifier="openConfig" id="CdI-Lf-BzO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-t7-a3t">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" backgroundImage="button_plus_1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="73" y="506" width="70" height="70"/>
+                                </variation>
+                                <connections>
+                                    <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTZ-nC-UXE"/>
+                                    <segue destination="dbQ-jm-77r" kind="show" identifier="addMoney" id="4u1-I4-h7v"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.14117647707462311" green="0.66274511814117432" blue="0.26274511218070984" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="ruX-t7-a3t"/>
-                                <exclude reference="bNW-u6-weF"/>
+                                <exclude reference="S2Z-Pf-wYm"/>
                                 <exclude reference="HmM-0j-2Cv"/>
+                                <exclude reference="bNW-u6-weF"/>
+                                <exclude reference="ruX-t7-a3t"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="ruX-t7-a3t"/>
-                                <include reference="bNW-u6-weF"/>
+                                <include reference="S2Z-Pf-wYm"/>
                                 <include reference="HmM-0j-2Cv"/>
+                                <include reference="bNW-u6-weF"/>
+                                <include reference="ruX-t7-a3t"/>
                             </mask>
                         </variation>
                     </view>
@@ -501,12 +491,14 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Minus" width="50" height="50"/>
-        <image name="Plus" width="50" height="50"/>
+        <image name="  " width="50" height="50"/>
         <image name="Send File" width="50" height="50"/>
         <image name="Settings" width="50" height="50"/>
+        <image name="bg_1" width="750" height="1246"/>
+        <image name="button_minus_1" width="300" height="300"/>
+        <image name="button_plus_1" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ikw-5o-lbP"/>
+        <segue reference="4u1-I4-h7v"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -490,6 +490,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="dateTransationPicker" destination="H0T-Vx-n5j" id="rMO-Hm-Is0"/>
+                        <outlet property="descriptionField" destination="4ZQ-2e-y1X" id="mnu-rB-5Rb"/>
                         <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
                     </connections>
                 </viewController>

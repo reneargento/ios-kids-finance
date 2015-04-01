@@ -36,7 +36,7 @@
     NSLog(@"Values stored succesfully in the database: %d", isSaved);
 }
 
-- (NSMutableArray*)getData {
+- (NSMutableArray*)getData:(NSDate*)initialDate withFinalDate:(NSDate*)endDate {
     AppDelegate * appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     //Creating entity object for table Transactions
@@ -44,11 +44,15 @@
     
     //Create fetch request
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-YYYY"];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date BETWEEN %@ AND %@", [dateFormatter stringFromDate:initialDate], [dateFormatter stringFromDate:endDate]];
     [fetchRequest setEntity:entity];
+    [fetchRequest setPredicate:predicate];
     
     //Get all rows
     NSMutableArray * values = [[appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    
+
     //Core data returns each row as managed objects so we can access rows values through key-value pair
     for(NSManagedObject *row in values) {
         NSLog(@"Value: %@\n Category: %@\n", [row valueForKey:@"value"], [row valueForKey:@"category"]);

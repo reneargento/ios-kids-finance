@@ -9,9 +9,13 @@
 #import "AppDelegate.h"
 #import "TransationsViewController.h"
 #import "Transactions.h"
+#import "DAO.h"
 
 @interface TransationsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
+@property (weak, nonatomic) IBOutlet UITextField *descriptionField;
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *dateTransationPicker;
 @property AppDelegate * appDelegate;
 @property (strong, nonatomic) Transactions * transactionsCurrent;
 @end
@@ -21,8 +25,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%lu",self.category);
-    NSLog(@"%d",self.isAddMoney);
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
 }
 
@@ -45,9 +47,18 @@
 - (IBAction)confirmTransationClicked:(id)sender {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
     self.transactionsCurrent = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
-    [self.transactionsCurrent setValue: [NSNumber numberWithDouble:[self.valueField.text doubleValue]]];
     
-     NSLog(@"%@",self.transactionsCurrent.value);
+    [self.transactionsCurrent setDescriptionTransaction: self.descriptionField.text ];
+    [self.transactionsCurrent setValue: [NSNumber numberWithDouble:[self.valueField.text doubleValue]]];
+    [self.transactionsCurrent setDate:self.dateTransationPicker.date];
+    [self.transactionsCurrent setCategory: self.category];
+    [self.transactionsCurrent setIsEarning:self.isAddMoney];
+
+    DAO * daoOperation = [[DAO alloc] init];
+    
+    [daoOperation saveTransaction:self.transactionsCurrent];
+    [daoOperation getData];
+    
 }
 
 @end

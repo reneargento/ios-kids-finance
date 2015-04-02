@@ -145,13 +145,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgnew_1" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-Pf-wYm">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="tintColor" red="0.89070600300000002" green="0.71644821030000005" blue="0.076863294339999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
-                                </variation>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-V3-Lgf">
                                 <rect key="frame" x="202" y="23" width="42" height="21"/>
                                 <constraints>
@@ -204,7 +197,7 @@
                                     <constraint firstAttribute="width" constant="70" id="S7e-wy-ILQ"/>
                                     <constraint firstAttribute="height" constant="70" id="Y4c-AS-4W1"/>
                                 </constraints>
-                                <state key="normal" image="button_minus_1" backgroundImage="  ">
+                                <state key="normal" backgroundImage="Card In Use Filled-50-1">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -213,8 +206,8 @@
                                         <exclude reference="Y4c-AS-4W1"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="272" y="506" width="70" height="70"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="110" y="700" width="60" height="60"/>
                                     <mask key="constraints">
                                         <include reference="S7e-wy-ILQ"/>
                                         <include reference="Y4c-AS-4W1"/>
@@ -225,13 +218,14 @@
                                     <segue destination="y8w-h0-1H0" kind="show" id="JwZ-1S-zWM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-t7-a3t">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-t7-a3t" userLabel="ganhei">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="a0u-is-jnJ"/>
                                     <constraint firstAttribute="width" constant="70" id="dUk-BS-RLP"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="button_plus_1">
+                                <state key="normal" backgroundImage="Money Bag Filled-50">
+                                    <color key="titleColor" red="0.14932528410000001" green="0.0" blue="0.14927957210000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -240,7 +234,8 @@
                                         <exclude reference="dUk-BS-RLP"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="25" y="700" width="60" height="60"/>
                                     <mask key="constraints">
                                         <include reference="a0u-is-jnJ"/>
                                         <include reference="dUk-BS-RLP"/>
@@ -251,13 +246,13 @@
                                     <segue destination="dbQ-jm-77r" kind="show" identifier="addMoney" id="4u1-I4-h7v"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNW-u6-weF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNW-u6-weF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="bsu-II-rlU"/>
                                     <constraint firstAttribute="width" constant="82" id="exb-tb-zDT"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="Settings">
+                                <state key="normal" backgroundImage="Settings3 Filled-50">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -266,8 +261,8 @@
                                         <exclude reference="exb-tb-zDT"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="159" y="545" width="82" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="250" y="700" width="50" height="50"/>
                                     <mask key="constraints">
                                         <include reference="bsu-II-rlU"/>
                                         <include reference="exb-tb-zDT"/>
@@ -278,13 +273,13 @@
                                     <segue destination="mV5-4m-uDn" kind="show" identifier="openConfig" id="CdI-Lf-BzO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yla-HN-E1Q">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yla-HN-E1Q">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="DEx-cp-Dtc"/>
                                     <constraint firstAttribute="height" constant="30" id="tZG-j7-aeb"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" image="Report Card Filled-50">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
@@ -293,8 +288,8 @@
                                         <exclude reference="tZG-j7-aeb"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="73" y="584" width="46" height="30"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="300" y="700" width="105" height="50"/>
                                     <mask key="constraints">
                                         <include reference="DEx-cp-Dtc"/>
                                         <include reference="tZG-j7-aeb"/>
@@ -305,34 +300,47 @@
                                     <segue destination="zYX-RO-1kh" kind="show" id="NFE-SK-Dbc"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgnew_1" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-Pf-wYm">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="tintColor" red="0.89070600300000002" green="0.71644821030000005" blue="0.076863294339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
+                                </variation>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.92549026012420654" green="0.79607850313186646" blue="0.25882354378700256" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bNW-u6-weF" secondAttribute="bottom" constant="195" id="93W-8k-JUZ"/>
+                            <constraint firstItem="HmM-0j-2Cv" firstAttribute="leading" secondItem="ruX-t7-a3t" secondAttribute="trailing" constant="186" id="Eql-KX-ffm"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yla-HN-E1Q" secondAttribute="bottom" constant="186" id="QN9-mO-c7U"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S2Z-Pf-wYm" secondAttribute="bottom" id="Rpd-pV-5Lh"/>
                             <constraint firstItem="S2Z-Pf-wYm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="XUk-gx-gBT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="yF6-V3-Lgf" secondAttribute="bottom" constant="538" id="XpQ-oP-SLD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ruX-t7-a3t" secondAttribute="bottom" constant="224" id="YqB-38-91h"/>
+                            <constraint firstItem="Yla-HN-E1Q" firstAttribute="leading" secondItem="bNW-u6-weF" secondAttribute="trailing" constant="91" id="dPJ-DT-QuH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="S2Z-Pf-wYm" secondAttribute="trailing" id="hH7-gz-6Mh"/>
                             <constraint firstItem="S2Z-Pf-wYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="odB-zc-Ujs"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="OSp-aA-6gY" secondAttribute="bottom" constant="489" id="p7N-4g-2d2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yla-HN-E1Q" secondAttribute="trailing" constant="206" id="rPy-lx-hQy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HmM-0j-2Cv" secondAttribute="bottom" constant="224" id="sPQ-Mn-w4h"/>
                             <constraint firstItem="ruX-t7-a3t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="57" id="vq4-5d-Tak"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="S2Z-Pf-wYm"/>
                                 <exclude reference="HmM-0j-2Cv"/>
                                 <exclude reference="ruX-t7-a3t"/>
                                 <exclude reference="bNW-u6-weF"/>
                                 <exclude reference="Yla-HN-E1Q"/>
+                                <exclude reference="S2Z-Pf-wYm"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="XUk-gx-gBT"/>
                                 <exclude reference="hH7-gz-6Mh"/>
                                 <exclude reference="odB-zc-Ujs"/>
                                 <exclude reference="vq4-5d-Tak"/>
+                                <exclude reference="Eql-KX-ffm"/>
+                                <exclude reference="dPJ-DT-QuH"/>
+                                <exclude reference="rPy-lx-hQy"/>
                                 <exclude reference="93W-8k-JUZ"/>
                                 <exclude reference="QN9-mO-c7U"/>
                                 <exclude reference="Rpd-pV-5Lh"/>
@@ -344,17 +352,20 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="S2Z-Pf-wYm"/>
                                 <include reference="HmM-0j-2Cv"/>
                                 <include reference="ruX-t7-a3t"/>
                                 <include reference="bNW-u6-weF"/>
                                 <include reference="Yla-HN-E1Q"/>
+                                <include reference="S2Z-Pf-wYm"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="XUk-gx-gBT"/>
                                 <include reference="hH7-gz-6Mh"/>
                                 <include reference="odB-zc-Ujs"/>
                                 <include reference="vq4-5d-Tak"/>
+                                <include reference="Eql-KX-ffm"/>
+                                <include reference="dPJ-DT-QuH"/>
+                                <include reference="rPy-lx-hQy"/>
                                 <include reference="93W-8k-JUZ"/>
                                 <include reference="QN9-mO-c7U"/>
                                 <include reference="Rpd-pV-5Lh"/>
@@ -806,12 +817,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="  " width="50" height="50"/>
+        <image name="Card In Use Filled-50-1" width="50" height="50"/>
+        <image name="Money Bag Filled-50" width="50" height="50"/>
+        <image name="Report Card Filled-50" width="50" height="50"/>
         <image name="Send File" width="50" height="50"/>
-        <image name="Settings" width="50" height="50"/>
+        <image name="Settings3 Filled-50" width="50" height="50"/>
         <image name="bgnew_1" width="750" height="1246"/>
-        <image name="button_minus_1" width="300" height="300"/>
-        <image name="button_plus_1" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y4t-ML-H0u"/>

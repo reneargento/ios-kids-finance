@@ -11,6 +11,7 @@
 #import "Transactions.h"
 #import "DAO.h"
 #import "Utils.h"
+#import "Constants.h"
 
 @interface TransationsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -57,8 +58,15 @@
 - (void)updateCurrentMoneyOnKeyChain {
     double currentMoney;
     
-    //Utils *utils = [Utils ]
-    //NSString *currentMoneyOnKeyChain =
+    NSString *currentMoneyOnKeyChain = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
+    if(currentMoneyOnKeyChain != nil) {
+        currentMoney = [currentMoneyOnKeyChain doubleValue];
+    } else {
+        currentMoney = 0;
+    }
+    
+    currentMoney += [self.valueField.text doubleValue];
+    [Utils saveValueInKeychain:[NSNumber ]currentMoney withValue:CURRENT_MONEY_KEY];
 }
 
 @end

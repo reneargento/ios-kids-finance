@@ -45,9 +45,15 @@
     //Create fetch request
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
     
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date > %@ && date < %@", initialDate, endDate];
-    [fetchRequest setEntity:entity];
-    [fetchRequest setPredicate:predicate];
+    if (initialDate != nil && endDate != nil) {
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date > %@ && date < %@", initialDate, endDate];
+        [fetchRequest setEntity:entity];
+        [fetchRequest setPredicate:predicate];
+    } else if (initialDate != nil && endDate == nil) {
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date > %@", initialDate];
+        [fetchRequest setEntity:entity];
+        [fetchRequest setPredicate:predicate];
+    }
     
     //Get all rows
     NSMutableArray * values = [[appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];

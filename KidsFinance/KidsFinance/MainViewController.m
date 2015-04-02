@@ -55,7 +55,6 @@
 
 //Load current money and savings values from keychain
 - (void)loadValuesFromKeychain {
-    Utils *utils = [[Utils alloc] init];
     
     NSString *currentMoney = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
     if(currentMoney != nil) {

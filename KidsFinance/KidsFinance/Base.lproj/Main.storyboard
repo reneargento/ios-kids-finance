@@ -52,16 +52,7 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="14" y="59" width="42" height="21"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyF-nN-Xi3">
-                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                            <rect key="frame" x="203" y="59" width="42" height="21"/>
+                                            <rect key="frame" x="14" y="59" width="129" height="21"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ta7-pS-nnC">
@@ -73,6 +64,15 @@
                                             <rect key="frame" x="13" y="8" width="45" height="21"/>
                                         </variation>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyF-nN-Xi3">
+                                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="203" y="59" width="137" height="21"/>
+                                        </variation>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="default">
@@ -81,8 +81,8 @@
                                         <exclude reference="lnt-YW-9Ua"/>
                                         <exclude reference="HZf-ow-PIx"/>
                                         <exclude reference="tie-oG-bOo"/>
-                                        <exclude reference="LyF-nN-Xi3"/>
                                         <exclude reference="Ta7-pS-nnC"/>
+                                        <exclude reference="LyF-nN-Xi3"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
@@ -92,8 +92,8 @@
                                         <include reference="lnt-YW-9Ua"/>
                                         <include reference="HZf-ow-PIx"/>
                                         <include reference="tie-oG-bOo"/>
-                                        <include reference="LyF-nN-Xi3"/>
                                         <include reference="Ta7-pS-nnC"/>
+                                        <include reference="LyF-nN-Xi3"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -125,7 +125,6 @@
                     </view>
                     <connections>
                         <outlet property="finalDateLabel" destination="LyF-nN-Xi3" id="JB9-K4-dRt"/>
-                        <outlet property="initDateLabel" destination="tie-oG-bOo" id="Vzx-cO-o2g"/>
                         <outlet property="initialDateLabel" destination="tie-oG-bOo" id="Y7M-XT-zUA"/>
                     </connections>
                 </viewController>
@@ -671,6 +670,7 @@
                         <outlet property="dateTransationPicker" destination="H0T-Vx-n5j" id="rMO-Hm-Is0"/>
                         <outlet property="descriptionField" destination="4ZQ-2e-y1X" id="mnu-rB-5Rb"/>
                         <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="homeSegue" id="Y4t-ML-H0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7X3-xn-eXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -687,6 +687,7 @@
         <image name="button_plus_1" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Y4t-ML-H0u"/>
         <segue reference="ikw-5o-lbP"/>
     </inferredMetricsTieBreakers>
 </document>

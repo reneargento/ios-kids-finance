@@ -50,6 +50,10 @@
     [self clearFields];
 }
 
+- (IBAction)cancelTransaction:(id)sender {
+}
+
+
 - (BOOL)saveTransactionOnCoreData {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
     self.transactionsCurrent = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];

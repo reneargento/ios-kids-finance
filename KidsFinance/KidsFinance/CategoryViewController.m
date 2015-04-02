@@ -102,6 +102,42 @@
 }
 
 
+///*
+// Customizes each cell of the table
+// */
+//- (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    
+//    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+//    
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+//    }
+//    
+//    cell.textLabel.text = [configSections objectAtIndex:indexPath.row];
+//    
+//    switch (indexPath.row) {
+//        case 0:
+//            cell.imageView.image = [UIImage imageNamed:@"Money Box.png"];
+//            break;
+//        case 1:
+//            cell.imageView.image = [UIImage imageNamed:@"Report Card.png"];
+//            break;
+//        case 2:
+//            cell.imageView.image = [UIImage imageNamed:@"About.png"];
+//            break;
+//        default:
+//            break;
+//    }
+//    
+//    
+//    return cell;
+//}
+//
+//******
+//
 
 
 -(long) getCategoryByTable

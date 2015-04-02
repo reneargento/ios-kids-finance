@@ -146,7 +146,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< Updated upstream
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-V3-Lgf">
+=======
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgnew_1" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-Pf-wYm">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="tintColor" red="0.89070600300000002" green="0.71644821030000005" blue="0.076863294339999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="736"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-V3-Lgf">
+>>>>>>> Stashed changes
                                 <rect key="frame" x="202" y="23" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="103" id="Spf-nb-zu1"/>
@@ -301,11 +312,22 @@
                                     <segue destination="zYX-RO-1kh" kind="show" id="NFE-SK-Dbc"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgnew_1" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-Pf-wYm">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saldo" translatesAutoresizingMaskIntoConstraints="NO" id="qJ9-46-Ts7">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+<<<<<<< Updated upstream
                                 <color key="tintColor" red="0.89070600300000002" green="0.71644821030000005" blue="0.076863294339999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="16" y="20" width="568" height="580"/>
+=======
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="88" y="217" width="140" height="70"/>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poupanca" translatesAutoresizingMaskIntoConstraints="NO" id="dNp-iY-Q8O">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="46" y="265" width="185" height="70"/>
+>>>>>>> Stashed changes
                                 </variation>
                             </imageView>
                         </subviews>
@@ -328,11 +350,13 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="S2Z-Pf-wYm"/>
                                 <exclude reference="HmM-0j-2Cv"/>
                                 <exclude reference="ruX-t7-a3t"/>
                                 <exclude reference="bNW-u6-weF"/>
                                 <exclude reference="Yla-HN-E1Q"/>
-                                <exclude reference="S2Z-Pf-wYm"/>
+                                <exclude reference="qJ9-46-Ts7"/>
+                                <exclude reference="dNp-iY-Q8O"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="93W-8k-JUZ"/>
@@ -353,11 +377,13 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
+                                <include reference="S2Z-Pf-wYm"/>
                                 <include reference="HmM-0j-2Cv"/>
                                 <include reference="ruX-t7-a3t"/>
                                 <include reference="bNW-u6-weF"/>
                                 <include reference="Yla-HN-E1Q"/>
-                                <include reference="S2Z-Pf-wYm"/>
+                                <include reference="qJ9-46-Ts7"/>
+                                <include reference="dNp-iY-Q8O"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="93W-8k-JUZ"/>
@@ -824,6 +850,8 @@
         <image name="Send File" width="50" height="50"/>
         <image name="Settings3 Filled-50" width="50" height="50"/>
         <image name="bgnew_1" width="750" height="1246"/>
+        <image name="poupanca" width="500" height="143"/>
+        <image name="saldo" width="250" height="162"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y4t-ML-H0u"/>

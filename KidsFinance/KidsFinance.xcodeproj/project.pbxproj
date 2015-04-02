@@ -16,7 +16,7 @@
 		731689BA1AC2EE7C008D9FC9 /* KidsFinanceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 731689B91AC2EE7C008D9FC9 /* KidsFinanceTests.m */; };
 		731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731AFB2E1AC58410000D6EBC /* ConfigViewController.m */; };
 		7342FCCD1ACC1B370000A9BB /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7342FCCC1ACC1B370000A9BB /* Utils.m */; };
-		7342FCD21ACC286D0000A9BB /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7342FCD11ACC286D0000A9BB /* KeychainItemWrapper.m */; };
+		7342FCD21ACC286D0000A9BB /* JNKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 7342FCD11ACC286D0000A9BB /* JNKeychain.m */; };
 		7358A0731ACAD73100A3F19F /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7358A0721ACAD73100A3F19F /* DAO.m */; };
 		739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074D91AC96DF700C3B246 /* ReportViewController.m */; };
 		739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074DC1AC973BB00C3B246 /* AboutViewController.m */; };
@@ -57,8 +57,8 @@
 		7342FCCC1ACC1B370000A9BB /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		7342FCCE1ACC22F80000A9BB /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		7342FCCF1ACC25FA0000A9BB /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		7342FCD01ACC286D0000A9BB /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
-		7342FCD11ACC286D0000A9BB /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		7342FCD01ACC286D0000A9BB /* JNKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JNKeychain.h; sourceTree = "<group>"; };
+		7342FCD11ACC286D0000A9BB /* JNKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JNKeychain.m; sourceTree = "<group>"; };
 		7358A06F1ACACCEB00A3F19F /* KidsFinance 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 2.xcdatamodel"; sourceTree = "<group>"; };
 		7358A0701ACACCEB00A3F19F /* KidsFinance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KidsFinance.xcdatamodel; sourceTree = "<group>"; };
 		7358A0721ACAD73100A3F19F /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
@@ -215,8 +215,8 @@
 				7342FCCE1ACC22F80000A9BB /* Utils.h */,
 				7342FCCF1ACC25FA0000A9BB /* Constants.h */,
 				B8D6AB051ACC38EE00C66D3C /* Constants.m */,
-				7342FCD01ACC286D0000A9BB /* KeychainItemWrapper.h */,
-				7342FCD11ACC286D0000A9BB /* KeychainItemWrapper.m */,
+				7342FCD01ACC286D0000A9BB /* JNKeychain.h */,
+				7342FCD11ACC286D0000A9BB /* JNKeychain.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -322,7 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */,
-				7342FCD21ACC286D0000A9BB /* KeychainItemWrapper.m in Sources */,
+				7342FCD21ACC286D0000A9BB /* JNKeychain.m in Sources */,
 				B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */,
 				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
 				7342FCCD1ACC1B370000A9BB /* Utils.m in Sources */,

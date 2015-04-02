@@ -10,6 +10,8 @@
 #import "TransationsViewController.H"
 #import <UIKit/UIKit.h>
 #import "Enumerations.h"
+#import "Utils.h"
+#import "Constants.h"
 
 @interface ViewController ()
 
@@ -21,7 +23,13 @@
     [super viewDidLoad]; 
     // Do any additional setup after loading the view, typically from a nib.
     
-    
+    Utils *utils = [[Utils alloc] init];
+    NSString *currentMoney = [utils getValueFromKeychain:CURRENT_MONEY_KEY];
+    if(currentMoney != nil) {
+        //self.currentMoneyLabel.text = @"R$ " currentMoney;
+    } else {
+        self.currentMoneyLabel.text = @"R$ 0,00";
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,9 +45,6 @@
 
 - (IBAction)configurationsButton:(id)sender {
 }
-
-
-
 
 
  #pragma mark - Navigation

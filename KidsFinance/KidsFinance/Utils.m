@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Utils.h"
-#import "KeychainItemWrapper.h"
+#import "JNKeychain.h"
 #import "Constants.h"
 
 @interface Utils ()
@@ -18,14 +18,11 @@
 @implementation Utils
 
 -(void)saveValueInKeychain: (NSString*)key withValue:(NSString *)value {
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEY_CHAIN_IDENTIFIER accessGroup:nil];
-
-    [keychain setObject:value forKey:key];
+    [JNKeychain saveValue:value forKey:key];
 }
 
 -(NSString *)getValueFromKeychain:(NSString *)key {
-    KeychainItemWrapper *keychain = [[KeychainItemWrapper alloc] initWithIdentifier:KEY_CHAIN_IDENTIFIER accessGroup:nil];
-    return [keychain objectForKey:key];
+    return [JNKeychain loadValueForKey:key];
 }
 
 @end

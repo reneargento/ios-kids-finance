@@ -28,6 +28,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

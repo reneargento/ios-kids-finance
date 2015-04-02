@@ -21,12 +21,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationItem.title = @"Relatório";
+    [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+    //[self.navigationItem setTextColor:[UIColor colorWithRed:241.0/255.0 green:208.0/255.0 blue:24.0/255.0 alpha:1.0]];
     
     // Sets the values for the picker
     [self startFrequencyPickerValues];
     
     self.frequencyPicker.dataSource = self;
     self.frequencyPicker.delegate = self;
+    
+    [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+    
+
 }
 
 - (void)didReceiveMemoryWarning {

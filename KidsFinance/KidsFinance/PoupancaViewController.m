@@ -20,6 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+    
+
     
     self.poupancaSections = [NSArray arrayWithObjects:@"Poupar",@"Meta" , nil];
     
@@ -28,6 +31,7 @@
     
     self.alertPoupanca = [[UIAlertView alloc] initWithTitle:@"Poupança" message:@"Quanto você desejaa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
     [self.alertPoupanca setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -49,6 +53,9 @@
     }
     
     cell.textLabel.text = [self.poupancaSections objectAtIndex:indexPath.row];
+    [cell setBackgroundColor:[UIColor clearColor]];
+    
+
     
     return cell;
 }

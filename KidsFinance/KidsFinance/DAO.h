@@ -8,7 +8,7 @@
 
 @interface DAO : NSObject
 
-- (void)saveTransaction:(Transactions*) transaction;
+- (BOOL)saveTransaction:(Transactions*) transaction;
 - (NSMutableArray*)getData:(NSDate*)initialDate withFinalDate:(NSDate*)endDate;
 
 @end

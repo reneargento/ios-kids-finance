@@ -18,8 +18,7 @@
 
 @implementation DAO
 
-//- (void)saveData:(float)value withDate:(NSDate*)date withCategory:(long)category withEarning:(BOOL)earning{
-- (void)saveTransaction:(Transactions*) transaction{
+- (BOOL)saveTransaction:(Transactions*) transaction{
     AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     //Entity for table Transactions
@@ -33,7 +32,9 @@
     NSError *error;
     //Returns true if the data was stored succesfully in the database
     BOOL isSaved = [appDelegate.managedObjectContext save:&error];
+    
     NSLog(@"Values stored succesfully in the database: %d", isSaved);
+    return isSaved;
 }
 
 - (NSMutableArray*)getData:(NSDate*)initialDate withFinalDate:(NSDate*)endDate {
@@ -65,5 +66,7 @@
     
     return values;
 }
+
+
 
 @end

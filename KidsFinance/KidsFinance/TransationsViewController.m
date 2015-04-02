@@ -36,12 +36,21 @@
 }
 
 - (IBAction)confirmTransationClicked:(id)sender {
-    [self saveTransactionOnCoreData];
+    BOOL wasTransactionSuccessful;
     
-    [self updateCurrentMoneyOnKeyChain];
+    if ([self saveTransactionOnCoreData]) {
+        wasTransactionSuccessful = YES;
+        
+        [self updateCurrentMoneyOnKeyChain: self.isAddMoney];
+    } else {
+        wasTransactionSuccessful = NO;
+    }
+    
+    [self showResultPopup:wasTransactionSuccessful];
+    [self clearFields];
 }
 
-- (void)saveTransactionOnCoreData {
+- (BOOL)saveTransactionOnCoreData {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
     self.transactionsCurrent = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
     
@@ -52,10 +61,10 @@
     [self.transactionsCurrent setIsEarning:self.isAddMoney];
     
     DAO * daoOperation = [[DAO alloc] init];
-    [daoOperation saveTransaction:self.transactionsCurrent];
+    return [daoOperation saveTransaction:self.transactionsCurrent];
 }
 
-- (void)updateCurrentMoneyOnKeyChain {
+- (void)updateCurrentMoneyOnKeyChain:(BOOL)isAddMoney {
     double currentMoney;
     
     NSString *currentMoneyOnKeyChain = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
@@ -65,8 +74,38 @@
         currentMoney = 0;
     }
     
-    currentMoney += [self.valueField.text doubleValue];
-    [Utils saveValueInKeychain:[NSNumber ]currentMoney withValue:CURRENT_MONEY_KEY];
+    if(isAddMoney) {
+        currentMoney += [self.valueField.text doubleValue];
+    } else {
+        currentMoney -= [self.valueField.text doubleValue];
+    }
+    
+    [Utils saveValueInKeychain:CURRENT_MONEY_KEY withValue:[NSString stringWithFormat:@"%.20f", currentMoney]];
+}
+
+- (void)showResultPopup:(BOOL) isSuccess{
+    NSString *title;
+    NSString *message;
+    
+    if(isSuccess) {
+        title = @"Sucesso";
+        message = @"Valores atualizados!";
+    } else {
+        title = @"Erro";
+        message = @"Ocorreu um problema ao tentar atualizar os valores";
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
+                                                    message:message
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void) clearFields{
+    self.valueField.text = @"";
+    self.descriptionField.text = @"";
 }
 
 @end

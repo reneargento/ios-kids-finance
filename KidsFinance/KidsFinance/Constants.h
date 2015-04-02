@@ -6,6 +6,7 @@
 //  Copyright (c) 2015 Umbrella. All rights reserved.
 //
 
-NSString *const keychainIdentifier = @"KIDS_FINANCE";
-NSString *const currentMoneyKey = @"CURRENT_MONEY";
-NSString *const savingsKey = @"SAVINGS";
+    extern NSString *const KEY_CHAIN_IDENTIFIER;
+    extern NSString *const CURRENT_MONEY_KEY;
+    extern NSString *const SAVINGS_KEY;
+    extern NSString *const TARGET_KEY;

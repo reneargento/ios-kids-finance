@@ -7,6 +7,9 @@
 //
 
 #import "ConfigViewController.h"
+#import "Utils.h"
+#import "Constants.h"
+
 
 
 @interface ConfigViewController ()
@@ -30,6 +33,9 @@
     
     self.alertPoupanca = [[UIAlertView alloc] initWithTitle:@"Puopança" message:@"Quanto você dejesa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
     [self.alertPoupanca setAlertViewStyle:UIAlertViewStylePlainTextInput];
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,6 +141,21 @@
         return 1;
     }
     return 0;
+}
+
+
+
+
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        Utils * utilsKey = [[Utils alloc] init];
+        [utilsKey saveValueInKeychain:TARGET_KEY withValue:[NSString stringWithString:[[self.alertPoupanca textFieldAtIndex:0] text]]];
+       
+        NSLog(@"%@",[utilsKey getValueFromKeychain:TARGET_KEY]);
+        
+    }
 }
 
 @end

@@ -23,6 +23,7 @@
 		B8CF54141ACAB73F000040B0 /* TransationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54131ACAB73F000040B0 /* TransationsViewController.m */; };
 		B8CF54171ACAC868000040B0 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54161ACAC868000040B0 /* CategoryViewController.m */; };
 		B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */; };
+		B8D6AB061ACC38EE00C66D3C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D6AB051ACC38EE00C66D3C /* Constants.m */; };
 		C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A899641AC97A8000D5AAD3 /* Transactions.m */; };
 		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		B8CF54161ACAC868000040B0 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		B8D6AB011ACC0E5300C66D3C /* KidsFinance 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 3.xcdatamodel"; sourceTree = "<group>"; };
 		B8D6AB021ACC0F0A00C66D3C /* KidsFinance 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 4.xcdatamodel"; sourceTree = "<group>"; };
+		B8D6AB051ACC38EE00C66D3C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		C9A899631AC97A8000D5AAD3 /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transactions.h; sourceTree = "<group>"; };
 		C9A899641AC97A8000D5AAD3 /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transactions.m; sourceTree = "<group>"; };
 		C9A899661AC97C4000D5AAD3 /* Enumerations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enumerations.h; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 				7342FCCC1ACC1B370000A9BB /* Utils.m */,
 				7342FCCE1ACC22F80000A9BB /* Utils.h */,
 				7342FCCF1ACC25FA0000A9BB /* Constants.h */,
+				B8D6AB051ACC38EE00C66D3C /* Constants.m */,
 				7342FCD01ACC286D0000A9BB /* KeychainItemWrapper.h */,
 				7342FCD11ACC286D0000A9BB /* KeychainItemWrapper.m */,
 			);
@@ -323,6 +326,7 @@
 				B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */,
 				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
 				7342FCCD1ACC1B370000A9BB /* Utils.m in Sources */,
+				B8D6AB061ACC38EE00C66D3C /* Constants.m in Sources */,
 				7358A0731ACAD73100A3F19F /* DAO.m in Sources */,
 				C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */,
 				B8CF54171ACAC868000040B0 /* CategoryViewController.m in Sources */,

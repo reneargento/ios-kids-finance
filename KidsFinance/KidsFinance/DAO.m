@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
 #import "Enumerations.h"
-#import "Transactions.h"
 #import "DAO.h"
 
 @interface DAO ()

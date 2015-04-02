@@ -7,13 +7,12 @@
 //
 
 #import "ConfigViewController.h"
-#import "Utils.h"
-#import "Constants.h"
+
 
 
 
 @interface ConfigViewController ()
-@property (nonatomic,strong) UIAlertView * alertPoupanca;
+
 @end
 
 @implementation ConfigViewController
@@ -30,9 +29,6 @@
     
     self.navigationItem.title = @"Configurações";
     self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
-    
-    self.alertPoupanca = [[UIAlertView alloc] initWithTitle:@"Puopança" message:@"Quanto você dejesa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
-    [self.alertPoupanca setAlertViewStyle:UIAlertViewStylePlainTextInput];
     
     
     
@@ -108,7 +104,7 @@
     
     switch (indexPath.row) {
         case 0:
-            [self.alertPoupanca  show];
+            [self performSegueWithIdentifier:@"poupancaSegue" sender:self];
             break;
         case 1:
             [self performSegueWithIdentifier:@"reportSegue" sender:self];
@@ -141,21 +137,6 @@
         return 1;
     }
     return 0;
-}
-
-
-
-
-
--(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        Utils * utilsKey = [[Utils alloc] init];
-        [Utils saveValueInKeychain:TARGET_KEY withValue:[NSString stringWithString:[[self.alertPoupanca textFieldAtIndex:0] text]]];
-       
-        NSLog(@"%@",[Utils getValueFromKeychain:TARGET_KEY]);
-        
-    }
 }
 
 @end

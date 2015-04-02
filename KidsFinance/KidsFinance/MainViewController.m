@@ -26,6 +26,10 @@
     [self loadValuesFromKeychain];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self loadValuesFromKeychain];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -38,8 +42,12 @@
 }
 
 - (IBAction)configurationsButton:(id)sender {
+
 }
 
+- (IBAction)AccountViewController:(id)sender {
+    
+}
 
  #pragma mark - Navigation
  
@@ -59,6 +67,7 @@
     NSString *currentMoney = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
     if(currentMoney != nil) {
         self.currentMoneyLabel.text = @"R$ ";
+        
         self.currentMoneyLabel.text = [self.currentMoneyLabel.text stringByAppendingString:currentMoney];
     } else {
         self.currentMoneyLabel.text = @"R$ 0,00";
@@ -67,7 +76,8 @@
     NSString *savings = [Utils getValueFromKeychain:SAVINGS_KEY];
     if(savings != nil) {
         self.savingsLabel.text = @"R$ ";
-        self.savingsLabel.text = [self.currentMoneyLabel.text stringByAppendingString:savings];
+        NSLog(@"%@",savings);
+        self.savingsLabel.text = [self.savingsLabel.text stringByAppendingString:savings];
     } else {
         self.savingsLabel.text = @"R$ 0,00";
     }

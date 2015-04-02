@@ -24,6 +24,7 @@
 		B8CF54171ACAC868000040B0 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54161ACAC868000040B0 /* CategoryViewController.m */; };
 		B8D600311ACD619D004C68C2 /* PoupancaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600301ACD619D004C68C2 /* PoupancaViewController.m */; };
 		B8D600341ACD775E004C68C2 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600331ACD775E004C68C2 /* AccountViewController.m */; };
+		B8D600361ACD8CAD004C68C2 /* Enumerations.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600351ACD8CAD004C68C2 /* Enumerations.m */; };
 		B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */; };
 		B8D6AB061ACC38EE00C66D3C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D6AB051ACC38EE00C66D3C /* Constants.m */; };
 		C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A899641AC97A8000D5AAD3 /* Transactions.m */; };
@@ -77,6 +78,7 @@
 		B8D600301ACD619D004C68C2 /* PoupancaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoupancaViewController.m; sourceTree = "<group>"; };
 		B8D600321ACD775E004C68C2 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		B8D600331ACD775E004C68C2 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
+		B8D600351ACD8CAD004C68C2 /* Enumerations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enumerations.m; sourceTree = "<group>"; };
 		B8D6AB011ACC0E5300C66D3C /* KidsFinance 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 3.xcdatamodel"; sourceTree = "<group>"; };
 		B8D6AB021ACC0F0A00C66D3C /* KidsFinance 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 4.xcdatamodel"; sourceTree = "<group>"; };
 		B8D6AB051ACC38EE00C66D3C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A899661AC97C4000D5AAD3 /* Enumerations.h */,
+				B8D600351ACD8CAD004C68C2 /* Enumerations.m */,
 			);
 			name = Enumeration;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D600361ACD8CAD004C68C2 /* Enumerations.m in Sources */,
 				739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */,
 				7342FCD21ACC286D0000A9BB /* JNKeychain.m in Sources */,
 				B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */,

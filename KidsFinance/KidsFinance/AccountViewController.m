@@ -8,6 +8,7 @@
 
 #import "AccountViewController.h"
 #import "DAO.h"
+#import "Enumerations.h"
 
 
 @interface AccountViewController ()
@@ -15,6 +16,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *finalDateLabel;
 @property (nonatomic,strong) NSMutableArray * accountList;
 @property (nonatomic,strong) NSDateFormatter *dateFormatter;
+@property (nonatomic,strong) NSMutableArray *values;
+@property (nonatomic,strong) DAO * daoOperation;
+@property (nonatomic,strong) UIAlertView* dateAlert;
+@property (nonatomic,strong) UIDatePicker * datePicker;
+@property bool isInitial;
 @end
 
 
@@ -22,20 +28,31 @@
 
 -(void)viewDidLoad
 {
-    
-    NSDate* now = [NSDate date];
+    self.accountList = [[NSMutableArray alloc] init];
+    self.values = [[NSMutableArray alloc] init];
+    NSDate* date2 = [NSDate date];
     self.dateFormatter = [[NSDateFormatter alloc]init];
     [self.dateFormatter setDateFormat:@"dd/MM/YY"];
-  
-    self.finalDateLabel.text =[self.dateFormatter stringFromDate:now];
-    //DAO * daoOperation = [[DAO alloc] init];
-    //[daoOperation getData:<#(NSDate *)#> withFinalDate:<#(NSDate *)#>];
+    self.initialDateLabel.text =@"";
+    self.finalDateLabel.text =@"";
+    //self.finalDateLabel.text =[self.dateFormatter stringFromDate:date2];
+    self.daoOperation = [[DAO alloc] init];
+    self.values = [self.daoOperation getData:nil withFinalDate:date2];
+
+
+    self.dateAlert = [[UIAlertView alloc] initWithTitle:@"Puopança" message:@"Quanto você dejesa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
+    self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(10, self.dateAlert.bounds.size.height, 320, 216)];
+    [self.dateAlert addSubview:self.datePicker];
+    self.dateAlert.bounds = CGRectMake(0, 0, 320 + 20, self.dateAlert.bounds.size.height + 216 + 20);
+    [self.dateAlert setValue:self.datePicker forKey:@"accessoryView"];
+    
+
     
 }
 
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.accountList count];
+    return [self.values count];
     
 }
 
@@ -53,8 +70,42 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    cell.textLabel.text = [self.accountList objectAtIndex:indexPath.row];
+    UILabel * label1 = [[UILabel alloc]initWithFrame:CGRectMake(200, 0, 150, 43)];
     
+    UILabel * label2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 43)];
+    UILabel * label3 = [[UILabel alloc]initWithFrame:CGRectMake(100, 0, 100, 43)];
+    
+    label1.backgroundColor = [UIColor clearColor];
+    label1.layer.borderColor=[[UIColor lightGrayColor]CGColor];
+
+    label1.numberOfLines = 0;
+    label1.textAlignment = NSTextAlignmentRight;
+    NSManagedObject *row = [self.values objectAtIndex:indexPath.row];
+    label1.text = [NSString stringWithFormat:@" %@",[row valueForKey:@"value"]];
+    
+    label2.text = [NSString stringWithFormat:@" %@",[self.dateFormatter stringFromDate:[row valueForKey:@"date"]]];
+    
+    if([[row valueForKey:@"isEarning"] integerValue] ){
+        [label1 setTextColor:[UIColor greenColor]];
+        NSLog(@"aqui - %@",[row valueForKey:@"isEarning"]);
+    }else{
+        [label1 setTextColor:[UIColor redColor]];
+        NSLog(@"aqui teste - %@",[row valueForKey:@"isEarning"]);
+        
+    }
+    Enumerations * enumerations = [[Enumerations alloc] init];
+
+    NSString * category = [enumerations getDescriptionEnumeration:[[row valueForKey:@"category"] integerValue]];
+
+    if ([category isEqualToString:@"none"]) {
+        label3.text = @"";
+    }else{
+        label3.text = category;
+    }
+    
+    [cell.contentView addSubview:label2];
+    [cell.contentView addSubview:label3];
+    [cell.contentView addSubview:label1];
     
     
     return cell;
@@ -91,6 +142,33 @@
     }
     return 0;
 }
+
+
+
+
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        NSDate * dataSelected = [self.datePicker date];
+        
+        
+    }
+}
+
+
+
+- (IBAction)initialSetData:(id)sender {
+    self.isInitial = YES;
+    [self.dateAlert show];
+}
+
+- (IBAction)finalSetData:(id)sender {
+    
+    self.isInitial = YES;
+    [self.dateAlert show];
+}
+
 
 
 @end

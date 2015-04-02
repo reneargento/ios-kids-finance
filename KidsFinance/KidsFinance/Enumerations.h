@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 
 @interface Enumerations : NSObject // herda do NS Object por padrao
+-(NSString *) getDescriptionEnumeration:(long) value;
 
 enum {
     TransactionCategoryEducation,

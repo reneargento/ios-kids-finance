@@ -53,6 +53,10 @@
         NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date > %@", initialDate];
         [fetchRequest setEntity:entity];
         [fetchRequest setPredicate:predicate];
+    } else if (initialDate == nil && endDate != nil) {
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date < %@", endDate];
+        [fetchRequest setEntity:entity];
+        [fetchRequest setPredicate:predicate];
     }
     NSSortDescriptor *sortDescriptorByDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptorByDate, nil];
@@ -63,7 +67,7 @@
 
     //Core data returns each row as managed objects so we can access rows values through key-value pair
     for(NSManagedObject *row in values) {
-        NSLog(@"Value: %@  -  Category: %@\n", [row valueForKey:@"value"], [row valueForKey:@"category"]);
+        NSLog(@"Value: %@  -  Category: %@ -  earning: %@\n", [row valueForKey:@"value"], [row valueForKey:@"category"], [row valueForKey:@"isEarning"]);
     }
     
     return values;

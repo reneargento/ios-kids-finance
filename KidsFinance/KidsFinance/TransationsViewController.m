@@ -62,6 +62,7 @@
     [self.transactionsCurrent setValue: [NSNumber numberWithDouble:[self.valueField.text doubleValue]]];
     [self.transactionsCurrent setDate:self.dateTransationPicker.date];
     [self.transactionsCurrent setCategory: self.category];
+    NSLog(@"%d",self.isAddMoney);
     [self.transactionsCurrent setIsEarning:self.isAddMoney];
     
     DAO * daoOperation = [[DAO alloc] init];

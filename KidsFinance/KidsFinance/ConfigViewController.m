@@ -24,6 +24,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     configSections = [NSArray arrayWithObjects:@"Poupança", @"Relatório", @"Sobre o Aplicativo" , nil];
+    [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+    
     
     self.navigationItem.title = @"Configurações";
     self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
@@ -39,6 +41,7 @@
  */
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [configSections count];
+    
 }
 
 /*
@@ -51,11 +54,13 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
+    
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
     cell.textLabel.text = [configSections objectAtIndex:indexPath.row];
+    [cell setBackgroundColor:[UIColor clearColor]];
     
     switch (indexPath.row) {
         case 0:

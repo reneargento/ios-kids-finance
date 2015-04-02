@@ -67,7 +67,6 @@
     NSString *currentMoney = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
     if(currentMoney != nil) {
         self.currentMoneyLabel.text = @"R$ ";
-        
         self.currentMoneyLabel.text = [self.currentMoneyLabel.text stringByAppendingString:currentMoney];
     } else {
         self.currentMoneyLabel.text = @"R$ 0,00";

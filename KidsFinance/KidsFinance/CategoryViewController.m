@@ -21,7 +21,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.categorySections = @[@"Educação",@"Comida",@"Diversão",@"Brinquedos",@"Outros"];
-  
+    
+    self.navigationItem.title = @"Categorias";
+    self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
 }
 
 - (void)didReceiveMemoryWarning {

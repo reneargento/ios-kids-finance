@@ -51,8 +51,8 @@
 }
 
 - (IBAction)cancelTransaction:(id)sender {
+    [self performSegueWithIdentifier:@"homeSegue" sender:self];
 }
-
 
 - (BOOL)saveTransactionOnCoreData {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
@@ -84,7 +84,11 @@
         currentMoney -= [self.valueField.text doubleValue];
     }
     
-    [Utils saveValueInKeychain:CURRENT_MONEY_KEY withValue:[NSString stringWithFormat:@"%.20f", currentMoney]];
+    NSString* currentMoneyFormatted = [Utils formatNumber:currentMoney];
+    
+    NSLog(@"Valor: %@",currentMoneyFormatted);
+    
+    [Utils saveValueInKeychain:CURRENT_MONEY_KEY withValue:currentMoneyFormatted];
 }
 
 - (void)showResultPopup:(BOOL) isSuccess{
@@ -101,13 +105,17 @@
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title
                                                     message:message
-                                                   delegate:nil
+                                                   delegate:self
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
 }
 
-- (void) clearFields{
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self performSegueWithIdentifier:@"homeSegue" sender:self];
+}
+
+- (void)clearFields{
     self.valueField.text = @"";
     self.descriptionField.text = @"";
 }

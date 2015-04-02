@@ -25,29 +25,14 @@
     // Do any additional setup after loading the view.
     configSections = [NSArray arrayWithObjects:@"Poupança", @"Relatório", @"Sobre o Aplicativo" , nil];
     
-    
-    
     self.navigationItem.title = @"Configurações";
     self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 /*
  Returns the number of rows that will be displayed in the table

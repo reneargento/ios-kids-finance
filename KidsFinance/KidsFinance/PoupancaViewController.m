@@ -18,21 +18,17 @@
 
 @implementation PoupancaViewController
 
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.poupancaSections = [NSArray arrayWithObjects:@"Poupar",@"Meta" , nil];
     
-    //[self.alertPoupanca  show];
+    self.navigationItem.title = @"Poupança";
+    self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
+    
     self.alertPoupanca = [[UIAlertView alloc] initWithTitle:@"Puopança" message:@"Quanto você dejesa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
     [self.alertPoupanca setAlertViewStyle:UIAlertViewStylePlainTextInput];
 }
-
-
-
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSLog(@"Teste");
@@ -44,7 +40,6 @@
  */
 - (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -54,21 +49,6 @@
     }
     
     cell.textLabel.text = [self.poupancaSections objectAtIndex:indexPath.row];
-    
-//    switch (indexPath.row) {
-//        case 0:
-//            cell.imageView.image = [UIImage imageNamed:@"Money Box.png"];
-//            break;
-//        case 1:
-//            cell.imageView.image = [UIImage imageNamed:@"Report Card.png"];
-//            break;
-//        case 2:
-//            cell.imageView.image = [UIImage imageNamed:@"About.png"];
-//            break;
-//        default:
-//            break;
-//    }
-    
     
     return cell;
 }
@@ -125,15 +105,14 @@
     return 0;
 }
 
-
-
-
-
-
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
         double saldoAtual =  00.00;
+        double savings = 00.00;
+        NSString *saldoFormatted;
+        NSString *savingsFormatted;
+        
         switch ([self.poupancaTableView indexPathForSelectedRow].row ) {
             case 0:
                 if ([Utils getValueFromKeychain:SAVINGS_KEY]  != nil) {
@@ -141,11 +120,17 @@
                 }
                 
                 saldoAtual += [[[self.alertPoupanca textFieldAtIndex:0] text] doubleValue];
-                [Utils saveValueInKeychain:SAVINGS_KEY withValue: [NSString stringWithFormat:@"%f",saldoAtual]];
+                saldoFormatted = [Utils formatNumber:saldoAtual];
+                
+                NSLog(@"Saldo: %@",saldoFormatted);
+                [Utils saveValueInKeychain:SAVINGS_KEY withValue:saldoFormatted];
                 break;
             case 1:
+                savings = [[[self.alertPoupanca textFieldAtIndex:0] text] doubleValue];
+                savingsFormatted = [Utils formatNumber:savings];
                 
-                [Utils saveValueInKeychain:TARGET_KEY withValue:[NSString stringWithString:[[self.alertPoupanca textFieldAtIndex:0] text]]];
+                NSLog(@"Poupança: %@",savingsFormatted);
+                [Utils saveValueInKeychain:TARGET_KEY withValue:savingsFormatted];
                 break;
             default:
                 break;

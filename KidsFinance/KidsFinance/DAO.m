@@ -54,6 +54,9 @@
         [fetchRequest setEntity:entity];
         [fetchRequest setPredicate:predicate];
     }
+    NSSortDescriptor *sortDescriptorByDate = [[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO];
+    NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptorByDate, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
     
     //Get all rows
     NSMutableArray * values = [[appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];

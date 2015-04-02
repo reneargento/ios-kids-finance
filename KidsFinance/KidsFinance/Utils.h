@@ -10,5 +10,6 @@
 
 +(void)saveValueInKeychain: (NSString*)key withValue:(NSString*)value;
 +(NSString*)getValueFromKeychain: (NSString*)key;
++(NSString*)formatNumber:(double)number;
 
 @end

@@ -25,5 +25,15 @@
     return [JNKeychain loadValueForKey:key];
 }
 
++(NSString*)formatNumber:(double)number {
+    NSNumberFormatter *doubleValueWithMaxTwoDecimalPlaces = [[NSNumberFormatter alloc] init];
+    [doubleValueWithMaxTwoDecimalPlaces setNumberStyle:NSNumberFormatterDecimalStyle];
+    [doubleValueWithMaxTwoDecimalPlaces setMaximumFractionDigits:2];
+    
+    NSNumber *numberObject = [NSNumber numberWithDouble:number];
+    NSString *formattedValue = [doubleValueWithMaxTwoDecimalPlaces stringFromNumber:numberObject];
+    return formattedValue;
+}
+
 @end
 

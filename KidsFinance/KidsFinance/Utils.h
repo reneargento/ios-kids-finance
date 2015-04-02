@@ -8,7 +8,7 @@
 
 @interface Utils: NSObject
 
--(void)saveValueInKeychain: (NSString*)key withValue:(NSString*)value;
--(NSString*)getValueFromKeychain: (NSString*)key;
++(void)saveValueInKeychain: (NSString*)key withValue:(NSString*)value;
++(NSString*)getValueFromKeychain: (NSString*)key;
 
 @end

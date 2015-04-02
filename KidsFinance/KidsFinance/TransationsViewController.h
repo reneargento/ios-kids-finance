@@ -10,7 +10,6 @@
 
 @interface TransationsViewController : UIViewController
 
-
 @property BOOL isAddMoney;
 @property long category;
 @end

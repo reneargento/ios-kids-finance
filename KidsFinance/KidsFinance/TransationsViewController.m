@@ -10,6 +10,7 @@
 #import "TransationsViewController.h"
 #import "Transactions.h"
 #import "DAO.h"
+#import "Utils.h"
 
 @interface TransationsViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -33,19 +34,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-
 - (IBAction)confirmTransationClicked:(id)sender {
+    [self saveTransactionOnCoreData];
     
+    [self updateCurrentMoneyOnKeyChain];
+}
+
+- (void)saveTransactionOnCoreData {
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
     self.transactionsCurrent = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
     
@@ -54,11 +49,16 @@
     [self.transactionsCurrent setDate:self.dateTransationPicker.date];
     [self.transactionsCurrent setCategory: self.category];
     [self.transactionsCurrent setIsEarning:self.isAddMoney];
-
-    DAO * daoOperation = [[DAO alloc] init];
-
-    [daoOperation saveTransaction:self.transactionsCurrent];
     
+    DAO * daoOperation = [[DAO alloc] init];
+    [daoOperation saveTransaction:self.transactionsCurrent];
+}
+
+- (void)updateCurrentMoneyOnKeyChain {
+    double currentMoney;
+    
+    //Utils *utils = [Utils ]
+    //NSString *currentMoneyOnKeyChain =
 }
 
 @end

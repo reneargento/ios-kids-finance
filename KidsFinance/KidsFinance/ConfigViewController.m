@@ -151,9 +151,9 @@
 {
     if (buttonIndex == 1) {
         Utils * utilsKey = [[Utils alloc] init];
-        [utilsKey saveValueInKeychain:TARGET_KEY withValue:[NSString stringWithString:[[self.alertPoupanca textFieldAtIndex:0] text]]];
+        [Utils saveValueInKeychain:TARGET_KEY withValue:[NSString stringWithString:[[self.alertPoupanca textFieldAtIndex:0] text]]];
        
-        NSLog(@"%@",[utilsKey getValueFromKeychain:TARGET_KEY]);
+        NSLog(@"%@",[Utils getValueFromKeychain:TARGET_KEY]);
         
     }
 }

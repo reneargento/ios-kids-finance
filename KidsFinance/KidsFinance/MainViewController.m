@@ -23,13 +23,7 @@
     [super viewDidLoad]; 
     // Do any additional setup after loading the view, typically from a nib.
     
-    Utils *utils = [[Utils alloc] init];
-    NSString *currentMoney = [utils getValueFromKeychain:CURRENT_MONEY_KEY];
-    if(currentMoney != nil) {
-        //self.currentMoneyLabel.text = @"R$ " currentMoney;
-    } else {
-        self.currentMoneyLabel.text = @"R$ 0,00";
-    }
+    [self loadValuesFromKeychain];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +52,27 @@
          transferViewController.category = TransactionCategoryNone;
      }
  }
+
+//Load current money and savings values from keychain
+- (void)loadValuesFromKeychain {
+    Utils *utils = [[Utils alloc] init];
+    
+    NSString *currentMoney = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
+    if(currentMoney != nil) {
+        self.currentMoneyLabel.text = @"R$ ";
+        self.currentMoneyLabel.text = [self.currentMoneyLabel.text stringByAppendingString:currentMoney];
+    } else {
+        self.currentMoneyLabel.text = @"R$ 0,00";
+    }
+    
+    NSString *savings = [Utils getValueFromKeychain:SAVINGS_KEY];
+    if(savings != nil) {
+        self.savingsLabel.text = @"R$ ";
+        self.savingsLabel.text = [self.currentMoneyLabel.text stringByAppendingString:savings];
+    } else {
+        self.savingsLabel.text = @"R$ 0,00";
+    }
+}
 
 
 @end

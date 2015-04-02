@@ -17,11 +17,11 @@
 
 @implementation Utils
 
--(void)saveValueInKeychain: (NSString*)key withValue:(NSString *)value {
++(void)saveValueInKeychain: (NSString*)key withValue:(id)value {
     [JNKeychain saveValue:value forKey:key];
 }
 
--(NSString *)getValueFromKeychain:(NSString *)key {
++(id)getValueFromKeychain:(NSString *)key {
     return [JNKeychain loadValueForKey:key];
 }
 

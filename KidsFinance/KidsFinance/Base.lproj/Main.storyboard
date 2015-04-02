@@ -146,9 +146,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-<<<<<<< Updated upstream
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-V3-Lgf">
-=======
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgnew_1" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-Pf-wYm">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="tintColor" red="0.89070600300000002" green="0.71644821030000005" blue="0.076863294339999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -157,7 +154,6 @@
                                 </variation>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-V3-Lgf">
->>>>>>> Stashed changes
                                 <rect key="frame" x="202" y="23" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="103" id="Spf-nb-zu1"/>
@@ -314,11 +310,6 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saldo" translatesAutoresizingMaskIntoConstraints="NO" id="qJ9-46-Ts7">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-<<<<<<< Updated upstream
-                                <color key="tintColor" red="0.89070600300000002" green="0.71644821030000005" blue="0.076863294339999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="20" width="568" height="580"/>
-=======
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="88" y="217" width="140" height="70"/>
                                 </variation>
@@ -327,7 +318,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="46" y="265" width="185" height="70"/>
->>>>>>> Stashed changes
                                 </variation>
                             </imageView>
                         </subviews>

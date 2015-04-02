@@ -151,7 +151,7 @@
 {
     if (buttonIndex == 1) {
         NSDate * dataSelected = [self.datePicker date];
-        
+    //    NSLog("%@",[self.dateFormatter stringFromDate:dataSelected]);
         
     }
 }
@@ -161,6 +161,7 @@
 - (IBAction)initialSetData:(id)sender {
     self.isInitial = YES;
     [self.dateAlert show];
+
 }
 
 - (IBAction)finalSetData:(id)sender {

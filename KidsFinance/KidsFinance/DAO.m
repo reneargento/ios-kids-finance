@@ -46,15 +46,16 @@
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
     
     if (initialDate != nil && endDate != nil) {
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date > %@ && date < %@", initialDate, endDate];
+        NSLog(@"%@",initialDate);
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date >= %@ && date <= %@", initialDate, endDate];
         [fetchRequest setEntity:entity];
         [fetchRequest setPredicate:predicate];
     } else if (initialDate != nil && endDate == nil) {
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date > %@", initialDate];
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date >= %@", initialDate];
         [fetchRequest setEntity:entity];
         [fetchRequest setPredicate:predicate];
     } else if (initialDate == nil && endDate != nil) {
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date < %@", endDate];
+        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date <= %@", endDate];
         [fetchRequest setEntity:entity];
         [fetchRequest setPredicate:predicate];
     }

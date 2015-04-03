@@ -21,9 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
-    
 
-    
     self.poupancaSections = [NSArray arrayWithObjects:@"Poupar",@"Meta" , nil];
     
     self.navigationItem.title = @"Poupança";
@@ -54,8 +52,6 @@
     
     cell.textLabel.text = [self.poupancaSections objectAtIndex:indexPath.row];
     [cell setBackgroundColor:[UIColor clearColor]];
-    
-
     
     return cell;
 }
@@ -145,7 +141,6 @@
         
         NSLog(@"%@",[Utils getValueFromKeychain:TARGET_KEY]);
         NSLog(@"%@",[Utils getValueFromKeychain:SAVINGS_KEY]);
-        
     }
 }
 

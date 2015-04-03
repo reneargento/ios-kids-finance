@@ -8,9 +8,6 @@
 
 #import "ConfigViewController.h"
 
-
-
-
 @interface ConfigViewController ()
 
 @end
@@ -75,8 +72,6 @@
         default:
             break;
     }
-    
-    
     return cell;
 }
 
@@ -86,11 +81,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //TODO
-    
-  
-    
-    
-    
     
     switch (indexPath.row) {
         case 0:

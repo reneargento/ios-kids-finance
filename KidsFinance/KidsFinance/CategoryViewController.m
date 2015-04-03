@@ -51,8 +51,6 @@
 }
 
 
-
-
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     [tableView setBackgroundColor:[UIColor clearColor]];
@@ -114,13 +112,8 @@
     return 0;
 }
 
-
-
-
 -(long) getCategoryByTable
 {
-    
-    
     switch (self.selectedRow) {
         case 0:
             return TransactionCategoryEducation;

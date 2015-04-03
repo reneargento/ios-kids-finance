@@ -16,7 +16,7 @@
     NSLog(@"%lu",value);
     switch (value) {
         case 0:
-            return @"Educaçao";
+            return @"Educação";
             break;
         case 1:
             return @"Comida";

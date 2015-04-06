@@ -27,6 +27,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+    [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+
     // Do any additional setup after loading the view.
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
@@ -134,16 +137,19 @@
 
 
 -(void) keyboardWillShow:(NSNotification *) note {
+    NSLog(@"aqui");
     [self.view addGestureRecognizer:self.tapRecognizer];
 }
 
 -(void) keyboardWillHide:(NSNotification *) note
 {
+    NSLog(@"aqui");
     [self.view removeGestureRecognizer:self.tapRecognizer];
 }
 
 -(void)didTapAnywhere: (UITapGestureRecognizer*) recognizer {
-   // [textField resignFirstResponder];
+    NSLog(@"aqui");
+   //
 }
 
 @end

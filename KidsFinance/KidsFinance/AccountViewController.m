@@ -12,14 +12,14 @@
 
 
 @interface AccountViewController ()
-//@property (weak, nonatomic) IBOutlet UILabel *initialDateLabel;
-//@property (weak, nonatomic) IBOutlet UILabel *finalDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *initialDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *finalDateLabel;
 @property (nonatomic,strong) NSMutableArray * accountList;
 @property (nonatomic,strong) NSDateFormatter *dateFormatter;
 @property (nonatomic,strong) NSMutableArray *values;
 @property (nonatomic,strong) DAO * daoOperation;
-//@property (nonatomic,strong) UIAlertView* dateAlert;
-//@property (nonatomic,strong) UIDatePicker * datePicker;
+@property (nonatomic,strong) UIAlertView* dateAlert;
+@property (nonatomic,strong) UIDatePicker * datePicker;
 @property (weak, nonatomic) IBOutlet UITableView *lancTable;
 @property bool isInitial;
 @end
@@ -34,18 +34,18 @@
     NSDate* date2 = [NSDate date];
     self.dateFormatter = [[NSDateFormatter alloc]init];
     [self.dateFormatter setDateFormat:@"dd/MM/yyyy"];
-    //self.initialDateLabel.text =@"";
-    //self.finalDateLabel.text =@"";
-    //self.finalDateLabel.text =[self.dateFormatter stringFromDate:date2];
+    self.initialDateLabel.text =@"";
+    self.finalDateLabel.text =@"";
+    self.finalDateLabel.text =[self.dateFormatter stringFromDate:date2];
     self.daoOperation = [[DAO alloc] init];
     self.values = [self.daoOperation getData:nil withFinalDate:date2];
 
 
-    //self.dateAlert = [[UIAlertView alloc] initWithTitle:@"Puopança" message:@"Quanto você dejesa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
-    //self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(10, self.dateAlert.bounds.size.height, 320, 216)];
-    //[self.dateAlert addSubview:self.datePicker];
-    //self.dateAlert.bounds = CGRectMake(0, 0, 320 + 20, self.dateAlert.bounds.size.height + 216 + 20);
-    //[self.dateAlert setValue:self.datePicker forKey:@"accessoryView"];
+    self.dateAlert = [[UIAlertView alloc] initWithTitle:@"" message:@"Data:" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
+    self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(10, self.dateAlert.bounds.size.height, 320, 216)];
+    [self.dateAlert addSubview:self.datePicker];
+    self.dateAlert.bounds = CGRectMake(0, 0, 320 + 20, self.dateAlert.bounds.size.height + 216 + 20);
+    [self.dateAlert setValue:self.datePicker forKey:@"accessoryView"];
     
 
     
@@ -147,55 +147,55 @@
 
 
 
-//
-//-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-//{
-//    
-//    
-//    if (buttonIndex == 1) {
-//        self.values = [[NSMutableArray alloc] initWithArray:@[]];
-//        [self.lancTable reloadData];
-//         NSDate * dataSelected = [self.datePicker date];
-//         NSLog(@"%@",[self.dateFormatter stringFromDate:dataSelected]);
-//        if (self.isInitial) {
-//            self.initialDateLabel.text = [self.dateFormatter stringFromDate:dataSelected];
-//        }else{
-//            self.finalDateLabel.text = [self.dateFormatter stringFromDate:dataSelected];
-//        }
-//        
-//        
-//        
-//        if ([self.initialDateLabel.text isEqualToString:@""]) {
-//            
-//            self.values = [self.daoOperation getData:nil withFinalDate:[self.dateFormatter dateFromString:self.finalDateLabel.text]];
-//        }else if([self.finalDateLabel.text isEqualToString:@""]){
-//            self.values = [self.daoOperation getData:[self.dateFormatter dateFromString:self.initialDateLabel.text] withFinalDate:nil];
-//        }else{
-//            NSLog(@"%@",[self.dateFormatter dateFromString:self.initialDateLabel.text]);
-//            self.values = [self.daoOperation getData:[self.dateFormatter dateFromString:self.initialDateLabel.text] withFinalDate:[self.dateFormatter dateFromString:self.finalDateLabel.text]];
-//        }
-//        
-//        [self.lancTable reloadData];
-//    }
-//    
-//    NSLog(@"%lu",[self.values count]);
-//    
-//}
-//
-//
-//
-//- (IBAction)initialSetData:(id)sender {
-//    
-//    self.isInitial = YES;
-//    [self.dateAlert show];
-//
-//}
-//
-//- (IBAction)finalSetData:(id)sender {
-//    
-//    self.isInitial = NO;
-//    [self.dateAlert show];
-//}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    
+    
+    if (buttonIndex == 1) {
+        self.values = [[NSMutableArray alloc] initWithArray:@[]];
+        [self.lancTable reloadData];
+         NSDate * dataSelected = [self.datePicker date];
+         NSLog(@"%@",[self.dateFormatter stringFromDate:dataSelected]);
+        if (self.isInitial) {
+            self.initialDateLabel.text = [self.dateFormatter stringFromDate:dataSelected];
+        }else{
+            self.finalDateLabel.text = [self.dateFormatter stringFromDate:dataSelected];
+        }
+        
+        
+        
+        if ([self.initialDateLabel.text isEqualToString:@""]) {
+            
+            self.values = [self.daoOperation getData:nil withFinalDate:[self.dateFormatter dateFromString:self.finalDateLabel.text]];
+        }else if([self.finalDateLabel.text isEqualToString:@""]){
+            self.values = [self.daoOperation getData:[self.dateFormatter dateFromString:self.initialDateLabel.text] withFinalDate:nil];
+        }else{
+            NSLog(@"%@",[self.dateFormatter dateFromString:self.initialDateLabel.text]);
+            self.values = [self.daoOperation getData:[self.dateFormatter dateFromString:self.initialDateLabel.text] withFinalDate:[self.dateFormatter dateFromString:self.finalDateLabel.text]];
+        }
+        
+        [self.lancTable reloadData];
+    }
+    
+    NSLog(@"%lu",[self.values count]);
+    
+}
+
+
+
+- (IBAction)initialSetData:(id)sender {
+    
+    self.isInitial = YES;
+    [self.dateAlert show];
+
+}
+
+- (IBAction)finalSetData:(id)sender {
+    
+    self.isInitial = NO;
+    [self.dateAlert show];
+}
 
 
 

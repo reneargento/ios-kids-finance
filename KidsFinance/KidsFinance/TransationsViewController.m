@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateTransationPicker;
 @property AppDelegate * appDelegate;
 @property (strong, nonatomic) Transactions * transactionsCurrent;
+@property (nonatomic) UITapGestureRecognizer *tapRecognizer;
 @end
 
 @implementation TransationsViewController
@@ -27,9 +28,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
     
+    [nc addObserver:self selector:@selector(keyboardWillShow:) name:
+     UIKeyboardWillShowNotification object:nil];
+    
+    [nc addObserver:self selector:@selector(keyboardWillHide:) name:
+     UIKeyboardWillHideNotification object:nil];
+    
+    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                            action:@selector(didTapAnywhere:)];
 
 }
 
@@ -122,6 +130,20 @@
 - (void)clearFields{
     self.valueField.text = @"";
     self.descriptionField.text = @"";
+}
+
+
+-(void) keyboardWillShow:(NSNotification *) note {
+    [self.view addGestureRecognizer:self.tapRecognizer];
+}
+
+-(void) keyboardWillHide:(NSNotification *) note
+{
+    [self.view removeGestureRecognizer:self.tapRecognizer];
+}
+
+-(void)didTapAnywhere: (UITapGestureRecognizer*) recognizer {
+   // [textField resignFirstResponder];
 }
 
 @end

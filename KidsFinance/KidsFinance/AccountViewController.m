@@ -9,11 +9,14 @@
 #import "AccountViewController.h"
 #import "DAO.h"
 #import "Enumerations.h"
+#import "Utils.h"
 
 
 @interface AccountViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *initialDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *finalDateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentMoneyLabel;
+@property (weak, nonatomic) IBOutlet UILabel *savingsLabel;
 @property (nonatomic,strong) NSMutableArray * accountList;
 @property (nonatomic,strong) NSDateFormatter *dateFormatter;
 @property (nonatomic,strong) NSMutableArray *values;
@@ -47,8 +50,10 @@
     self.dateAlert.bounds = CGRectMake(0, 0, 320 + 20, self.dateAlert.bounds.size.height + 216 + 20);
     [self.dateAlert setValue:self.datePicker forKey:@"accessoryView"];
     
-
+    [Utils loadValuesFromKeychain:_currentMoneyLabel withSavingsLabel:_savingsLabel];
     
+    self.navigationItem.title = @"Conta";
+    self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
 }
 
 
@@ -145,13 +150,8 @@
 }
 
 
-
-
-
 -(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    
-    
     if (buttonIndex == 1) {
         self.values = [[NSMutableArray alloc] initWithArray:@[]];
         [self.lancTable reloadData];
@@ -164,9 +164,7 @@
         }
         
         
-        
         if ([self.initialDateLabel.text isEqualToString:@""]) {
-            
             self.values = [self.daoOperation getData:nil withFinalDate:[self.dateFormatter dateFromString:self.finalDateLabel.text]];
         }else if([self.finalDateLabel.text isEqualToString:@""]){
             self.values = [self.daoOperation getData:[self.dateFormatter dateFromString:self.initialDateLabel.text] withFinalDate:nil];

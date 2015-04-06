@@ -11,6 +11,4 @@
 @interface AccountViewController : UIViewController <UITableViewDelegate, UITableViewDataSource,UIAlertViewDelegate>
 
 
-
-
 @end

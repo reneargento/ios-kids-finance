@@ -35,5 +35,26 @@
     return formattedValue;
 }
 
+//Load current money and savings values from keychain
++ (void)loadValuesFromKeychain:(UILabel *)currentMoneyLabel withSavingsLabel:(UILabel *)savingsLabel {
+    
+    NSString *currentMoney = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
+    if(currentMoney != nil) {
+        currentMoneyLabel.text = @"R$ ";
+        currentMoneyLabel.text = [currentMoneyLabel.text stringByAppendingString:currentMoney];
+    } else {
+        currentMoneyLabel.text = @"R$ 0,00";
+    }
+    
+    NSString *savings = [Utils getValueFromKeychain:SAVINGS_KEY];
+    if(savings != nil) {
+        savingsLabel.text = @"R$ ";
+        NSLog(@"%@",savings);
+        savingsLabel.text = [savingsLabel.text stringByAppendingString:savings];
+    } else {
+        savingsLabel.text = @"R$ 0,00";
+    }
+}
+
 @end
 

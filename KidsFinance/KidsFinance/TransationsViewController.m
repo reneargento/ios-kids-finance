@@ -41,7 +41,6 @@
     
     self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                             action:@selector(didTapAnywhere:)];
-
 }
 
 - (void)didReceiveMemoryWarning {

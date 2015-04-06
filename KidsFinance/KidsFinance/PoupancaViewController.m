@@ -27,7 +27,7 @@
     self.navigationItem.title = @"Poupança";
     self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
     
-    self.alertPoupanca = [[UIAlertView alloc] initWithTitle:@"Poupança" message:@"Quanto você desejaa poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
+    self.alertPoupanca = [[UIAlertView alloc] initWithTitle:@"Poupança" message:@"Quanto você deseja poupar?" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
     [self.alertPoupanca setAlertViewStyle:UIAlertViewStylePlainTextInput];
     
 }

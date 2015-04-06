@@ -15,6 +15,4 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *frequencyPicker;
 - (IBAction)reportButton:(id)sender;
 
--(void) testSaveData;
-
 @end

@@ -12,6 +12,7 @@
 #import "Enumerations.h"
 #import "Utils.h"
 #import "Constants.h"
+#import "AppDelegate.h"
 
 @interface ViewController ()
 
@@ -23,11 +24,11 @@
     [super viewDidLoad]; 
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self loadValuesFromKeychain];
+    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self loadValuesFromKeychain];
+    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,27 +61,5 @@
          transferViewController.category = TransactionCategoryNone;
      }
  }
-
-//Load current money and savings values from keychain
-- (void)loadValuesFromKeychain {
-    
-    NSString *currentMoney = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
-    if(currentMoney != nil) {
-        self.currentMoneyLabel.text = @"R$ ";
-        self.currentMoneyLabel.text = [self.currentMoneyLabel.text stringByAppendingString:currentMoney];
-    } else {
-        self.currentMoneyLabel.text = @"R$ 0,00";
-    }
-    
-    NSString *savings = [Utils getValueFromKeychain:SAVINGS_KEY];
-    if(savings != nil) {
-        self.savingsLabel.text = @"R$ ";
-        NSLog(@"%@",savings);
-        self.savingsLabel.text = [self.savingsLabel.text stringByAppendingString:savings];
-    } else {
-        self.savingsLabel.text = @"R$ 0,00";
-    }
-}
-
 
 @end

@@ -30,17 +30,12 @@
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
 
-    // Do any additional setup after loading the view.
-    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    
-    [nc addObserver:self selector:@selector(keyboardWillShow:) name:
-     UIKeyboardWillShowNotification object:nil];
-    
-    [nc addObserver:self selector:@selector(keyboardWillHide:) name:
-     UIKeyboardWillHideNotification object:nil];
-    
-    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self
-                                                            action:@selector(didTapAnywhere:)];
+    //add a tap gesture recognizer to capture all tap events
+    //this will include tap events when a user clicks off of a textfield
+    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onBackgroundTap:)];
+    self.tapRecognizer.numberOfTapsRequired = 1;
+    self.tapRecognizer.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:self.tapRecognizer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,20 +130,13 @@
 }
 
 
--(void) keyboardWillShow:(NSNotification *) note {
-    NSLog(@"aqui");
-    [self.view addGestureRecognizer:self.tapRecognizer];
+- (void)onBackgroundTap:(id)sender{
+    //when the tap gesture recognizer gets an event, it calls endEditing on the view controller's view
+    //this should dismiss the keyboard
+    [[self view] endEditing:YES];
 }
 
--(void) keyboardWillHide:(NSNotification *) note
-{
-    NSLog(@"aqui");
-    [self.view removeGestureRecognizer:self.tapRecognizer];
-}
 
--(void)didTapAnywhere: (UITapGestureRecognizer*) recognizer {
-    NSLog(@"aqui");
-   //
-}
+
 
 @end

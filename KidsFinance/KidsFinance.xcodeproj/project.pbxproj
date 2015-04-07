@@ -20,6 +20,7 @@
 		7358A0731ACAD73100A3F19F /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7358A0721ACAD73100A3F19F /* DAO.m */; };
 		739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074D91AC96DF700C3B246 /* ReportViewController.m */; };
 		739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074DC1AC973BB00C3B246 /* AboutViewController.m */; };
+		B8071E8C1AD2BFF500192490 /* CellAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = B8071E8B1AD2BFF500192490 /* CellAccount.m */; };
 		B8CF54141ACAB73F000040B0 /* TransationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54131ACAB73F000040B0 /* TransationsViewController.m */; };
 		B8CF54171ACAC868000040B0 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54161ACAC868000040B0 /* CategoryViewController.m */; };
 		B8D600311ACD619D004C68C2 /* PoupancaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600301ACD619D004C68C2 /* PoupancaViewController.m */; };
@@ -42,7 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7316899A1AC2EE7B008D9FC9 /* KidsFinance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KidsFinance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7316899A1AC2EE7B008D9FC9 /* dinDin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dinDin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7316899E1AC2EE7B008D9FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7316899F1AC2EE7B008D9FC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		731689A11AC2EE7B008D9FC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -70,6 +71,8 @@
 		739074D91AC96DF700C3B246 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		739074DB1AC973BB00C3B246 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		739074DC1AC973BB00C3B246 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		B8071E8A1AD2BFF500192490 /* CellAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellAccount.h; sourceTree = "<group>"; };
+		B8071E8B1AD2BFF500192490 /* CellAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellAccount.m; sourceTree = "<group>"; };
 		B8CF54121ACAB73F000040B0 /* TransationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransationsViewController.h; sourceTree = "<group>"; };
 		B8CF54131ACAB73F000040B0 /* TransationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransationsViewController.m; sourceTree = "<group>"; };
 		B8CF54151ACAC868000040B0 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
@@ -120,7 +123,7 @@
 		7316899B1AC2EE7B008D9FC9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7316899A1AC2EE7B008D9FC9 /* KidsFinance.app */,
+				7316899A1AC2EE7B008D9FC9 /* dinDin.app */,
 				731689B31AC2EE7C008D9FC9 /* KidsFinanceTests.xctest */,
 			);
 			name = Products;
@@ -209,6 +212,8 @@
 				B8D600301ACD619D004C68C2 /* PoupancaViewController.m */,
 				B8D600321ACD775E004C68C2 /* AccountViewController.h */,
 				B8D600331ACD775E004C68C2 /* AccountViewController.m */,
+				B8071E8A1AD2BFF500192490 /* CellAccount.h */,
+				B8071E8B1AD2BFF500192490 /* CellAccount.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -251,7 +256,7 @@
 			);
 			name = KidsFinance;
 			productName = KidsFinance;
-			productReference = 7316899A1AC2EE7B008D9FC9 /* KidsFinance.app */;
+			productReference = 7316899A1AC2EE7B008D9FC9 /* dinDin.app */;
 			productType = "com.apple.product-type.application";
 		};
 		731689B21AC2EE7C008D9FC9 /* KidsFinanceTests */ = {
@@ -342,6 +347,7 @@
 				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
 				7342FCCD1ACC1B370000A9BB /* Utils.m in Sources */,
 				B8D6AB061ACC38EE00C66D3C /* Constants.m in Sources */,
+				B8071E8C1AD2BFF500192490 /* CellAccount.m in Sources */,
 				7358A0731ACAD73100A3F19F /* DAO.m in Sources */,
 				C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */,
 				B8CF54171ACAC868000040B0 /* CategoryViewController.m in Sources */,
@@ -479,7 +485,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KidsFinance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = dinDin;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -492,7 +498,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KidsFinance/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = dinDin;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;

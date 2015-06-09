@@ -10,6 +10,8 @@
 #import "DAO.h"
 #import "Enumerations.h"
 #import "Utils.h"
+#import "TransactionCell.h"
+#import "Constants.h"
 
 
 @interface AccountViewController ()
@@ -50,7 +52,7 @@
     self.dateAlert.bounds = CGRectMake(0, 0, 320 + 20, self.dateAlert.bounds.size.height + 216 + 20);
     [self.dateAlert setValue:self.datePicker forKey:@"accessoryView"];
     
-    [Utils loadValuesFromKeychain:_currentMoneyLabel withSavingsLabel:_savingsLabel];
+    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
     
     self.navigationItem.title = @"Conta";
     self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
@@ -65,48 +67,37 @@
  */
 - (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
+    static NSString *simpleTableIdentifier = @"TransactionTableCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    TransactionCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[TransactionCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    UILabel * label1 = [[UILabel alloc]initWithFrame:CGRectMake(200, 0, 150, 43)];
-    
-    UILabel * label2 = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, 100, 43)];
-    UILabel * label3 = [[UILabel alloc]initWithFrame:CGRectMake(100, 0, 100, 43)];
-    
-    label1.backgroundColor = [UIColor clearColor];
-    label1.layer.borderColor=[[UIColor lightGrayColor]CGColor];
-
-    label1.numberOfLines = 0;
-    label1.textAlignment = NSTextAlignmentRight;
+    //Date
     NSManagedObject *row = [self.values objectAtIndex:indexPath.row];
-    label1.text = [NSString stringWithFormat:@" %@",[row valueForKey:@"value"]];
+    cell.dateLabel.text = [NSString stringWithFormat:@" %@",[self.dateFormatter stringFromDate:[row valueForKey:@"date"]]];
     
-    label2.text = [NSString stringWithFormat:@" %@",[self.dateFormatter stringFromDate:[row valueForKey:@"date"]]];
+    //Category
+    Enumerations * enumerations = [[Enumerations alloc] init];
+    NSString * category = [enumerations getDescriptionEnumeration:[[row valueForKey:@"category"] integerValue]];
+    if ([category isEqualToString:@"none"]) {
+        cell.categoryLabel.text = @"";
+    }else{
+        cell.categoryLabel.text = category;
+    }
+    
+    //Value
+    cell.valueLabel.textAlignment = NSTextAlignmentRight;
+    cell.valueLabel.text = [NSString stringWithFormat:@" %@",[row valueForKey:@"value"]];
     
     if([[row valueForKey:@"isEarning"] integerValue] ){
-        [label1 setTextColor:[UIColor greenColor]];
+        [cell.valueLabel setTextColor:[UIColor greenColor]];
     }else{
-        [label1 setTextColor:[UIColor redColor]];
+        [cell.valueLabel setTextColor:[UIColor redColor]];
     }
-    Enumerations * enumerations = [[Enumerations alloc] init];
 
-    NSString * category = [enumerations getDescriptionEnumeration:[[row valueForKey:@"category"] integerValue]];
-
-    if ([category isEqualToString:@"none"]) {
-        label3.text = @"";
-    }else{
-        label3.text = category;
-    }
-    
-    [cell.contentView addSubview:label2];
-    [cell.contentView addSubview:label3];
-    [cell.contentView addSubview:label1];
-    
     return cell;
 }
 
@@ -213,6 +204,15 @@
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         DAO *dao = [[DAO alloc] init];
         if ([dao deleteTransaction:transaction]) {
+            //Transaction deleted successfully
+            
+            //TODO
+            NSNumber *value = ((Transactions*)self.values[index]).value;//((Transactions*)transaction).value;
+            BOOL isEarning = ((Transactions*)transaction).isEarning;
+            
+            [Utils updateCurrentMoneyOnKeyChain:[value doubleValue] withIsAddMoney:isEarning];
+            [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
+            
             [self.values removeObjectAtIndex:index];
             [self.lancTable reloadData];
         }

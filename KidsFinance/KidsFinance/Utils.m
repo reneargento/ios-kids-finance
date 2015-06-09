@@ -36,7 +36,7 @@
 }
 
 //Load current money and savings values from keychain
-+ (void)loadValuesFromKeychain:(UILabel *)currentMoneyLabel withSavingsLabel:(UILabel *)savingsLabel {
++(void)loadValuesFromKeychain:(UILabel *)currentMoneyLabel withSavingsLabel:(UILabel *)savingsLabel {
     
     NSString *currentMoney = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
     if(currentMoney != nil) {
@@ -54,6 +54,29 @@
     } else {
         savingsLabel.text = @"R$ 0,00";
     }
+}
+
++(void)updateCurrentMoneyOnKeyChain:(double)value withIsAddMoney:(BOOL)isAddMoney {
+    double currentMoney;
+    
+    NSString *currentMoneyOnKeyChain = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
+    if(currentMoneyOnKeyChain != nil) {
+        currentMoney = [currentMoneyOnKeyChain doubleValue];
+    } else {
+        currentMoney = 0;
+    }
+    
+    if(isAddMoney) {
+        currentMoney += value;
+    } else {
+        currentMoney -= value;
+    }
+    
+    NSString* currentMoneyFormatted = [Utils formatNumber:currentMoney];
+    
+    NSLog(@"Valor: %@",currentMoneyFormatted);
+    
+    [Utils saveValueInKeychain:CURRENT_MONEY_KEY withValue:currentMoneyFormatted];
 }
 
 @end

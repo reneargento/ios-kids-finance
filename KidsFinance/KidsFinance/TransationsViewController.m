@@ -48,8 +48,7 @@
     
     if ([self saveTransactionOnCoreData]) {
         wasTransactionSuccessful = YES;
-        
-        [self updateCurrentMoneyOnKeyChain: self.isAddMoney];
+        [Utils updateCurrentMoneyOnKeyChain:[self.valueField.text doubleValue] withIsAddMoney:self.isAddMoney];
     } else {
         wasTransactionSuccessful = NO;
     }
@@ -75,29 +74,6 @@
     
     DAO * daoOperation = [[DAO alloc] init];
     return [daoOperation saveTransaction:self.transactionsCurrent];
-}
-
-- (void)updateCurrentMoneyOnKeyChain:(BOOL)isAddMoney {
-    double currentMoney;
-    
-    NSString *currentMoneyOnKeyChain = [Utils getValueFromKeychain:CURRENT_MONEY_KEY];
-    if(currentMoneyOnKeyChain != nil) {
-        currentMoney = [currentMoneyOnKeyChain doubleValue];
-    } else {
-        currentMoney = 0;
-    }
-    
-    if(isAddMoney) {
-        currentMoney += [self.valueField.text doubleValue];
-    } else {
-        currentMoney -= [self.valueField.text doubleValue];
-    }
-    
-    NSString* currentMoneyFormatted = [Utils formatNumber:currentMoney];
-    
-    NSLog(@"Valor: %@",currentMoneyFormatted);
-    
-    [Utils saveValueInKeychain:CURRENT_MONEY_KEY withValue:currentMoneyFormatted];
 }
 
 - (void)showResultPopup:(BOOL) isSuccess{

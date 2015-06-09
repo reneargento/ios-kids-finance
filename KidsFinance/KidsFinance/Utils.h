@@ -14,5 +14,6 @@
 +(NSString*)getValueFromKeychain: (NSString*)key;
 +(NSString*)formatNumber:(double)number;
 +(void)loadValuesFromKeychain:(UILabel *)currentMoneyLabel withSavingsLabel:(UILabel *)savingsLabel;
++(void)updateCurrentMoneyOnKeyChain:(double)value withIsAddMoney:(BOOL)isAddMoney;
 
 @end

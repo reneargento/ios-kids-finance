@@ -11,4 +11,8 @@
 
 @interface TransactionCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (weak, nonatomic) IBOutlet UILabel *valueLabel;
+
 @end

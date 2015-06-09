@@ -9,7 +9,9 @@
 
 @interface DAO : NSObject
 
-- (BOOL)saveTransaction:(Transactions*) transaction;
 - (NSMutableArray*)getData:(NSDate*)initialDate withFinalDate:(NSDate*)endDate;
+- (BOOL)saveTransaction:(Transactions*) transaction;
+- (BOOL)updateTransaction:(NSManagedObject *) transaction withDictionary:(NSDictionary *)dictionary;
+- (BOOL)deleteTransaction:(NSManagedObject *) transaction;
 
 @end

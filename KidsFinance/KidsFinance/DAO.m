@@ -13,15 +13,24 @@
 
 @interface DAO ()
 
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
 @end
 
 @implementation DAO
 
-- (BOOL)saveTransaction:(Transactions*) transaction{
-    AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+-(id)init{
+    if (self = [super init]) {
+        AppDelegate *appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = appDelegate.managedObjectContext;
+    }
     
+    return self;
+}
+
+- (BOOL)saveTransaction:(Transactions*) transaction{
     //Entity for table Transactions
-    NSEntityDescription *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Transactions" inManagedObjectContext:appDelegate.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription insertNewObjectForEntityForName:@"Transactions" inManagedObjectContext:self.managedObjectContext];
     //Set values to be stored in the database
     [entity setValue:transaction.value forKey:@"value"];
     [entity setValue:transaction.date forKey:@"date"];
@@ -30,17 +39,15 @@
     
     NSError *error;
     //Returns true if the data was stored succesfully in the database
-    BOOL isSaved = [appDelegate.managedObjectContext save:&error];
+    BOOL isSaved = [self.managedObjectContext save:&error];
     
     NSLog(@"Values stored succesfully in the database: %d", isSaved);
     return isSaved;
 }
 
 - (NSMutableArray*)getData:(NSDate*)initialDate withFinalDate:(NSDate*)endDate {
-    AppDelegate * appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
-    
     //Creating entity object for table Transactions
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:appDelegate.managedObjectContext];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.managedObjectContext];
     
     //Create fetch request
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
@@ -64,7 +71,7 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     //Get all rows
-    NSMutableArray * values = [[appDelegate.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    NSMutableArray * values = [[self.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
 
     //Core data returns each row as managed objects so we can access rows values through key-value pair
     for(NSManagedObject *row in values) {
@@ -72,6 +79,27 @@
     }
     
     return values;
+}
+
+-(BOOL)updateTransaction:(NSManagedObject *)transaction withDictionary:(NSDictionary *)dictionary {
+    
+    return YES;
+}
+
+-(BOOL)deleteTransaction:(NSManagedObject *) transaction {
+    BOOL result;
+    NSError *error = nil;
+    
+    [self.managedObjectContext deleteObject:transaction];
+    
+    if (![self.managedObjectContext save:&error]) {
+        result = NO;
+    } else {
+        result = YES;
+    }
+    
+    NSLog(@"Delete transaction: %d", result);
+    return result;
 }
 
 

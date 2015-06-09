@@ -56,17 +56,14 @@
     self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
 }
 
-
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.values count];
-    
 }
 
 /*
  Customizes each cell of the table
  */
 - (UITableViewCell *) tableView:(UITableView *) tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     
     static NSString *simpleTableIdentifier = @"SimpleTableCell";
     
@@ -93,11 +90,8 @@
     
     if([[row valueForKey:@"isEarning"] integerValue] ){
         [label1 setTextColor:[UIColor greenColor]];
-        NSLog(@"aqui - %@",[row valueForKey:@"isEarning"]);
     }else{
         [label1 setTextColor:[UIColor redColor]];
-        NSLog(@"aqui teste - %@",[row valueForKey:@"isEarning"]);
-        
     }
     Enumerations * enumerations = [[Enumerations alloc] init];
 
@@ -113,7 +107,6 @@
     [cell.contentView addSubview:label3];
     [cell.contentView addSubview:label1];
     
-    
     return cell;
 }
 
@@ -122,9 +115,25 @@
  */
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //TODO
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
-
+    UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"Atualizar" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        //TODO
+        //[self updateTransaction: [self.values objectAtIndex:indexPath.row]];
+    }];
+    
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Apagar" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
+        [self deleteTransaction: [self.values objectAtIndex:indexPath.row] withIndex:indexPath.row];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancelar" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action){
+        nil;
+    }];
+    
+    [alertController addAction:updateAction];
+    [alertController addAction:deleteAction];
+    [alertController addAction:cancelAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 /*
@@ -180,8 +189,6 @@
     
 }
 
-
-
 - (IBAction)initialSetData:(id)sender {
     
     self.isInitial = YES;
@@ -195,6 +202,29 @@
     [self.dateAlert show];
 }
 
+-(void)updateTransaction:(NSManagedObject *)transaction withDictionary:(NSDictionary *)dictionary {
+    DAO *dao = [[DAO alloc] init];
+    [dao updateTransaction:transaction withDictionary:dictionary];
+}
 
+-(void)deleteTransaction:(NSManagedObject *)transaction withIndex:(NSInteger)index {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Confirmar" message:@"Tem certeza que deseja deletar?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        DAO *dao = [[DAO alloc] init];
+        if ([dao deleteTransaction:transaction]) {
+            [self.values removeObjectAtIndex:index];
+            [self.lancTable reloadData];
+        }
+    }];
+    UIAlertAction *returnAction = [UIAlertAction actionWithTitle:@"Não" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        return;
+    }];
+    
+    [alertController addAction:confirmAction];
+    [alertController addAction:returnAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 
 @end

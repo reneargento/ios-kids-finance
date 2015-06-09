@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		730A87641B271E300019B923 /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730A87631B271E300019B923 /* TransactionCell.m */; };
 		731689A01AC2EE7B008D9FC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7316899F1AC2EE7B008D9FC9 /* main.m */; };
 		731689A31AC2EE7B008D9FC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 731689A21AC2EE7B008D9FC9 /* AppDelegate.m */; };
 		731689A61AC2EE7C008D9FC9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 731689A51AC2EE7C008D9FC9 /* MainViewController.m */; };
@@ -42,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		730A87621B271E300019B923 /* TransactionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionCell.h; sourceTree = "<group>"; };
+		730A87631B271E300019B923 /* TransactionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionCell.m; sourceTree = "<group>"; };
 		7316899A1AC2EE7B008D9FC9 /* dinDin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dinDin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7316899E1AC2EE7B008D9FC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7316899F1AC2EE7B008D9FC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -217,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				731689A71AC2EE7C008D9FC9 /* Main.storyboard */,
+				730A87621B271E300019B923 /* TransactionCell.h */,
+				730A87631B271E300019B923 /* TransactionCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -349,6 +354,7 @@
 				B8D600311ACD619D004C68C2 /* PoupancaViewController.m in Sources */,
 				731689A31AC2EE7B008D9FC9 /* AppDelegate.m in Sources */,
 				731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */,
+				730A87641B271E300019B923 /* TransactionCell.m in Sources */,
 				731689A01AC2EE7B008D9FC9 /* main.m in Sources */,
 				B8D600341ACD775E004C68C2 /* AccountViewController.m in Sources */,
 				B8CF54141ACAB73F000040B0 /* TransationsViewController.m in Sources */,

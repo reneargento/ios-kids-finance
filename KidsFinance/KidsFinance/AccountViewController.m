@@ -202,13 +202,12 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Confirmar" message:@"Tem certeza que deseja deletar?" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"Sim" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSNumber *value = ((Transactions*)transaction).value;
+        BOOL isEarning = !((Transactions*)transaction).isEarning;
+        
         DAO *dao = [[DAO alloc] init];
         if ([dao deleteTransaction:transaction]) {
             //Transaction deleted successfully
-            
-            //TODO
-            NSNumber *value = ((Transactions*)self.values[index]).value;//((Transactions*)transaction).value;
-            BOOL isEarning = ((Transactions*)transaction).isEarning;
             
             [Utils updateCurrentMoneyOnKeyChain:[value doubleValue] withIsAddMoney:isEarning];
             [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];

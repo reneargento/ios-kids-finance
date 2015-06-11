@@ -7,6 +7,8 @@
 //
 
 #import "AccountViewController.h"
+#import "CategoryViewController.h"
+#import "TransactionViewController.h"
 #import "DAO.h"
 #import "Enumerations.h"
 #import "Utils.h"
@@ -109,8 +111,11 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"Atualizar" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-        //TODO
-        //[self updateTransaction: [self.values objectAtIndex:indexPath.row]];
+        if(((Transactions *)self.values[indexPath.row]).isEarning) {
+            [self performSegueWithIdentifier:GO_TO_TRANSACTION_SEGUE sender:self];
+        } else {
+            [self performSegueWithIdentifier:GO_TO_CATEGORIES_SEGUE sender:self];
+        }
     }];
     
     UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"Apagar" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
@@ -224,6 +229,16 @@
     [alertController addAction:returnAction];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([[segue identifier] isEqualToString:GO_TO_CATEGORIES_SEGUE]) {
+        CategoryViewController *categoryViewController = segue.destinationViewController;
+        categoryViewController.isUpdate = YES;
+    } else if([[segue identifier] isEqualToString:GO_TO_TRANSACTION_SEGUE]) {
+        TransactionViewController *transactionViewController = segue.destinationViewController;
+        transactionViewController.isUpdate = YES;
+    }
 }
 
 @end

@@ -216,11 +216,13 @@
                         <outlet property="initialDateLabel" destination="bDU-da-Dua" id="sRH-PD-KH0"/>
                         <outlet property="lancTable" destination="pYi-S4-amC" id="4Uw-r9-Koa"/>
                         <outlet property="savingsLabel" destination="jDK-Rx-gQe" id="HLN-Vc-Sh4"/>
+                        <segue destination="y8w-h0-1H0" kind="show" identifier="goToCategoriesSegue" id="Vc3-08-BUJ"/>
+                        <segue destination="dbQ-jm-77r" kind="show" identifier="goToTransactionSegue" id="bFx-8d-8ZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZ9-Dw-EUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="34.5" y="1824.75"/>
+            <point key="canvasLocation" x="-156" y="1934.25"/>
         </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -915,12 +917,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rt4-dW-jg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="913.5" y="1824.75"/>
+            <point key="canvasLocation" x="904.5" y="1725"/>
         </scene>
-        <!--Transations View Controller-->
+        <!--Transaction View Controller-->
         <scene sceneID="Lcy-7R-Rl3">
             <objects>
-                <viewController id="dbQ-jm-77r" customClass="TransationsViewController" sceneMemberID="viewController">
+                <viewController id="dbQ-jm-77r" customClass="TransactionViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UcC-UL-XBd"/>
                         <viewControllerLayoutGuide type="bottom" id="kHj-51-m5j"/>
@@ -1041,11 +1043,12 @@
                         <outlet property="descriptionField" destination="4ZQ-2e-y1X" id="mnu-rB-5Rb"/>
                         <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="homeSegue" id="Y4t-ML-H0u"/>
+                        <segue destination="zYX-RO-1kh" kind="show" identifier="goToAccountSegue" id="N7a-zz-xjQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7X3-xn-eXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2104.5" y="1824.75"/>
+            <point key="canvasLocation" x="2122.5" y="1934.25"/>
         </scene>
     </scenes>
     <resources>
@@ -1061,7 +1064,9 @@
         <image name="title" width="507" height="178"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Vc3-08-BUJ"/>
+        <segue reference="N7a-zz-xjQ"/>
+        <segue reference="bFx-8d-8ZJ"/>
         <segue reference="Y4t-ML-H0u"/>
-        <segue reference="4u1-I4-h7v"/>
     </inferredMetricsTieBreakers>
 </document>

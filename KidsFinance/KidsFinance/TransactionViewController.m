@@ -7,13 +7,13 @@
 //
 
 #import "AppDelegate.h"
-#import "TransationsViewController.h"
+#import "TransactionViewController.h"
 #import "Transactions.h"
 #import "DAO.h"
 #import "Utils.h"
 #import "Constants.h"
 
-@interface TransationsViewController ()
+@interface TransactionViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 @property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 
@@ -23,7 +23,7 @@
 @property (nonatomic) UITapGestureRecognizer *tapRecognizer;
 @end
 
-@implementation TransationsViewController
+@implementation TransactionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -58,7 +58,11 @@
 }
 
 - (IBAction)cancelTransaction:(id)sender {
-    [self performSegueWithIdentifier:@"homeSegue" sender:self];
+    if (self.isUpdate) {
+        [self performSegueWithIdentifier:GO_TO_ACCOUNT_SEGUE sender:self];
+    } else {
+        [self performSegueWithIdentifier:GO_TO_HOME_SEGUE sender:self];
+    }
 }
 
 - (BOOL)saveTransactionOnCoreData {
@@ -97,7 +101,15 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    [self performSegueWithIdentifier:@"homeSegue" sender:self];
+    if (self.isUpdate) {
+        //TODO - call AccountViewController method
+        //-(void)updateTransaction:(NSManagedObject *)transaction withDictionary:(NSDictionary *)dictionary {
+        
+        //[self updateTransaction: [self.values objectAtIndex:indexPath.row]];
+        
+    } else {
+        [self performSegueWithIdentifier:@"homeSegue" sender:self];
+    }
 }
 
 - (void)clearFields{

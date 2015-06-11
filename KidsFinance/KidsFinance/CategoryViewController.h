@@ -10,4 +10,6 @@
 
 @interface CategoryViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
+@property (nonatomic) BOOL isUpdate;
+
 @end

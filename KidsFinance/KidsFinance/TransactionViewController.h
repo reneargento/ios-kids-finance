@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TransationsViewController : UIViewController <UITextFieldDelegate>
+@interface TransactionViewController : UIViewController <UITextFieldDelegate>
 
 @property BOOL isAddMoney;
 @property long category;
+@property BOOL isUpdate;
+
 @end

@@ -8,7 +8,7 @@
 
 #import "CategoryViewController.h"
 #import "Enumerations.h"
-#import "TransationsViewController.h"
+#import "TransactionViewController.h"
 
 @interface CategoryViewController ()
 @property (nonatomic,strong) NSArray * categorySections;
@@ -43,10 +43,16 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier] isEqualToString:@"removeMoney"]){
 
-        TransationsViewController *transferViewController = segue.destinationViewController;
+        TransactionViewController *transactionViewController = segue.destinationViewController;
         
-        transferViewController.isAddMoney = NO;
-        transferViewController.category = [self getCategoryByTable];
+        transactionViewController.isAddMoney = NO;
+        transactionViewController.category = [self getCategoryByTable];
+        
+        if(self.isUpdate) {
+            transactionViewController.isUpdate = YES;
+        } else {
+            transactionViewController.isUpdate = NO;
+        }
     }
 }
 
@@ -70,9 +76,6 @@
     
     cell.textLabel.text = [self.categorySections objectAtIndex:indexPath.row];
     cell.imageView.image = [UIImage imageNamed:self.arrIcons[indexPath.row]];
-//    trying to change the text color
-//    cell.textLabel.font.
-//    textColor [[UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
     [cell setBackgroundColor:[UIColor clearColor]];
     
     
@@ -85,7 +88,6 @@
     //TODO
     self.selectedRow = indexPath.row;
    
-
     [self performSegueWithIdentifier:@"removeMoney" sender:self];
 }
 

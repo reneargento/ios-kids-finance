@@ -21,7 +21,7 @@
 		7358A0731ACAD73100A3F19F /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7358A0721ACAD73100A3F19F /* DAO.m */; };
 		739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074D91AC96DF700C3B246 /* ReportViewController.m */; };
 		739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074DC1AC973BB00C3B246 /* AboutViewController.m */; };
-		B8CF54141ACAB73F000040B0 /* TransationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54131ACAB73F000040B0 /* TransationsViewController.m */; };
+		B8CF54141ACAB73F000040B0 /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54131ACAB73F000040B0 /* TransactionViewController.m */; };
 		B8CF54171ACAC868000040B0 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54161ACAC868000040B0 /* CategoryViewController.m */; };
 		B8D600311ACD619D004C68C2 /* PoupancaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600301ACD619D004C68C2 /* PoupancaViewController.m */; };
 		B8D600341ACD775E004C68C2 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600331ACD775E004C68C2 /* AccountViewController.m */; };
@@ -73,8 +73,8 @@
 		739074D91AC96DF700C3B246 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		739074DB1AC973BB00C3B246 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		739074DC1AC973BB00C3B246 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		B8CF54121ACAB73F000040B0 /* TransationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransationsViewController.h; sourceTree = "<group>"; };
-		B8CF54131ACAB73F000040B0 /* TransationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransationsViewController.m; sourceTree = "<group>"; };
+		B8CF54121ACAB73F000040B0 /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
+		B8CF54131ACAB73F000040B0 /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
 		B8CF54151ACAC868000040B0 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		B8CF54161ACAC868000040B0 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		B8D6002F1ACD619D004C68C2 /* PoupancaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PoupancaViewController.h; sourceTree = "<group>"; };
@@ -202,8 +202,8 @@
 				731AFB2E1AC58410000D6EBC /* ConfigViewController.m */,
 				B8CF54151ACAC868000040B0 /* CategoryViewController.h */,
 				B8CF54161ACAC868000040B0 /* CategoryViewController.m */,
-				B8CF54121ACAB73F000040B0 /* TransationsViewController.h */,
-				B8CF54131ACAB73F000040B0 /* TransationsViewController.m */,
+				B8CF54121ACAB73F000040B0 /* TransactionViewController.h */,
+				B8CF54131ACAB73F000040B0 /* TransactionViewController.m */,
 				739074D81AC96DF700C3B246 /* ReportViewController.h */,
 				739074D91AC96DF700C3B246 /* ReportViewController.m */,
 				739074DB1AC973BB00C3B246 /* AboutViewController.h */,
@@ -357,7 +357,7 @@
 				730A87641B271E300019B923 /* TransactionCell.m in Sources */,
 				731689A01AC2EE7B008D9FC9 /* main.m in Sources */,
 				B8D600341ACD775E004C68C2 /* AccountViewController.m in Sources */,
-				B8CF54141ACAB73F000040B0 /* TransationsViewController.m in Sources */,
+				B8CF54141ACAB73F000040B0 /* TransactionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

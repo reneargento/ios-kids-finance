@@ -7,7 +7,8 @@
 //
 
 #import "MainViewController.h"
-#import "TransationsViewController.H"
+#import "TransactionViewController.h"
+#import "CategoryViewController.h"
 #import <UIKit/UIKit.h>
 #import "Enumerations.h"
 #import "Utils.h"
@@ -23,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad]; 
     // Do any additional setup after loading the view, typically from a nib.
+    
+    [self.navigationItem setHidesBackButton:YES];
     [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
 }
 
@@ -54,10 +57,14 @@
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
      if([[segue identifier] isEqualToString:@"addMoney"]){
-         TransationsViewController *transferViewController = segue.destinationViewController;
+         TransactionViewController *transferViewController = segue.destinationViewController;
 
          transferViewController.isAddMoney = YES;
+         transferViewController.isUpdate = NO;
          transferViewController.category = TransactionCategoryNone;
+     } else if([[segue identifier] isEqualToString:GO_TO_CATEGORIES_SEGUE]) {
+         CategoryViewController *categoryViewController = segue.destinationViewController;
+         categoryViewController.isUpdate = NO;
      }
  }
 

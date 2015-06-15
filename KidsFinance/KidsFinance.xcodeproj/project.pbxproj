@@ -28,6 +28,9 @@
 		B8D600361ACD8CAD004C68C2 /* Enumerations.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600351ACD8CAD004C68C2 /* Enumerations.m */; };
 		B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */; };
 		B8D6AB061ACC38EE00C66D3C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D6AB051ACC38EE00C66D3C /* Constants.m */; };
+		B8E885A31B2AF821004E2EA8 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E885A21B2AF821004E2EA8 /* Report.m */; };
+		B8EDF2521B29B20E006C839F /* PDFCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EDF2511B29B20E006C839F /* PDFCreator.m */; };
+		B8EDF2541B29B42B006C839F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EDF2531B29B42B006C839F /* CoreText.framework */; };
 		C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A899641AC97A8000D5AAD3 /* Transactions.m */; };
 		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
@@ -85,6 +88,11 @@
 		B8D6AB011ACC0E5300C66D3C /* KidsFinance 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 3.xcdatamodel"; sourceTree = "<group>"; };
 		B8D6AB021ACC0F0A00C66D3C /* KidsFinance 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 4.xcdatamodel"; sourceTree = "<group>"; };
 		B8D6AB051ACC38EE00C66D3C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		B8E885A11B2AF821004E2EA8 /* Report.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Report.h; sourceTree = "<group>"; };
+		B8E885A21B2AF821004E2EA8 /* Report.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Report.m; sourceTree = "<group>"; };
+		B8EDF2501B29B20E006C839F /* PDFCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFCreator.h; sourceTree = "<group>"; };
+		B8EDF2511B29B20E006C839F /* PDFCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFCreator.m; sourceTree = "<group>"; };
+		B8EDF2531B29B42B006C839F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		C9A899631AC97A8000D5AAD3 /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transactions.h; sourceTree = "<group>"; };
 		C9A899641AC97A8000D5AAD3 /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transactions.m; sourceTree = "<group>"; };
 		C9A899661AC97C4000D5AAD3 /* Enumerations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enumerations.h; sourceTree = "<group>"; };
@@ -96,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8EDF2541B29B42B006C839F /* CoreText.framework in Frameworks */,
 				C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,7 +122,7 @@
 		731689911AC2EE7B008D9FC9 = {
 			isa = PBXGroup;
 			children = (
-				C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */,
+				B8EDF2551B29B438006C839F /* Frameworks */,
 				7316899C1AC2EE7B008D9FC9 /* KidsFinance */,
 				731689B61AC2EE7C008D9FC9 /* KidsFinanceTests */,
 				7316899B1AC2EE7B008D9FC9 /* Products */,
@@ -235,8 +244,21 @@
 				B8D6AB051ACC38EE00C66D3C /* Constants.m */,
 				7342FCD01ACC286D0000A9BB /* JNKeychain.h */,
 				7342FCD11ACC286D0000A9BB /* JNKeychain.m */,
+				B8EDF2501B29B20E006C839F /* PDFCreator.h */,
+				B8EDF2511B29B20E006C839F /* PDFCreator.m */,
+				B8E885A11B2AF821004E2EA8 /* Report.h */,
+				B8E885A21B2AF821004E2EA8 /* Report.m */,
 			);
 			name = Util;
+			sourceTree = "<group>";
+		};
+		B8EDF2551B29B438006C839F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B8EDF2531B29B42B006C839F /* CoreText.framework */,
+				C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,6 +365,7 @@
 				B8D600361ACD8CAD004C68C2 /* Enumerations.m in Sources */,
 				739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */,
 				7342FCD21ACC286D0000A9BB /* JNKeychain.m in Sources */,
+				B8E885A31B2AF821004E2EA8 /* Report.m in Sources */,
 				B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */,
 				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
 				7342FCCD1ACC1B370000A9BB /* Utils.m in Sources */,
@@ -356,6 +379,7 @@
 				731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */,
 				730A87641B271E300019B923 /* TransactionCell.m in Sources */,
 				731689A01AC2EE7B008D9FC9 /* main.m in Sources */,
+				B8EDF2521B29B20E006C839F /* PDFCreator.m in Sources */,
 				B8D600341ACD775E004C68C2 /* AccountViewController.m in Sources */,
 				B8CF54141ACAB73F000040B0 /* TransactionViewController.m in Sources */,
 			);

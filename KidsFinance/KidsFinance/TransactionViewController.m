@@ -19,8 +19,9 @@
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateTransationPicker;
 @property AppDelegate * appDelegate;
-@property (strong, nonatomic) Transactions * transactionsCurrent;
 @property (nonatomic) UITapGestureRecognizer *tapRecognizer;
+
+@property double valueToAdd;
 @end
 
 @implementation TransactionViewController
@@ -29,6 +30,12 @@
     [super viewDidLoad];
     self.appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
+    
+    if(self.isUpdate) {
+        self.valueField.text = [self.transactionToUpdate.value stringValue];
+        self.descriptionField.text = self.transactionToUpdate.descriptionTransaction;
+        self.dateTransationPicker.date = self.transactionToUpdate.date;
+    }
 
     //add a tap gesture recognizer to capture all tap events
     //this will include tap events when a user clicks off of a textfield
@@ -48,7 +55,7 @@
     
     if ([self saveTransactionOnCoreData]) {
         wasTransactionSuccessful = YES;
-        [Utils updateCurrentMoneyOnKeyChain:[self.valueField.text doubleValue] withIsAddMoney:self.isAddMoney];
+        [Utils updateCurrentMoneyOnKeyChain:self.valueToAdd withIsAddMoney:self.isAddMoney];
     } else {
         wasTransactionSuccessful = NO;
     }
@@ -66,18 +73,36 @@
 }
 
 - (BOOL)saveTransactionOnCoreData {
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
-    self.transactionsCurrent = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+    BOOL result;
+    DAO *dao = [[DAO alloc] init];
     
-    [self.transactionsCurrent setDescriptionTransaction: self.descriptionField.text ];
-    [self.transactionsCurrent setValue: [NSNumber numberWithDouble:[self.valueField.text doubleValue]]];
-    [self.transactionsCurrent setDate:self.dateTransationPicker.date];
-    [self.transactionsCurrent setCategory: self.category];
-    NSLog(@"%d",self.isAddMoney);
-    [self.transactionsCurrent setIsEarning:self.isAddMoney];
+    if(self.isUpdate) {
+        NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
+        [dictionary setObject:self.valueField.text forKey:TRANSACTION_VALUE_KEY];
+        [dictionary setObject:self.descriptionField.text forKey:TRANSACTION_DESCRIPTION_KEY];
+        [dictionary setObject:self.dateTransationPicker.date forKey:TRANSACTION_DATE_KEY];
+        [dictionary setObject:@(self.category) forKey:TRANSACTION_CATEGORY_KEY];
+        
+        self.valueToAdd = [self.valueField.text doubleValue] - [self.transactionToUpdate.value doubleValue];
+        
+        result = [dao updateTransaction:self.transactionToUpdate withDictionary:dictionary];
+    } else {
+        NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
+        Transactions *transaction = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
+        
+        [transaction setDescriptionTransaction: self.descriptionField.text ];
+        [transaction setValue: [NSNumber numberWithDouble:[self.valueField.text doubleValue]]];
+        [transaction setDate: self.dateTransationPicker.date];
+        [transaction setCategory: self.category];
+        
+        [transaction setIsEarning:self.isAddMoney];
+        
+        self.valueToAdd = [self.valueField.text doubleValue];
+        
+        result = [dao saveTransaction:transaction];
+    }
     
-    DAO * daoOperation = [[DAO alloc] init];
-    return [daoOperation saveTransaction:self.transactionsCurrent];
+    return result;
 }
 
 - (void)showResultPopup:(BOOL) isSuccess{
@@ -102,11 +127,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (self.isUpdate) {
-        //TODO - call AccountViewController method
-        //-(void)updateTransaction:(NSManagedObject *)transaction withDictionary:(NSDictionary *)dictionary {
-        
-        //[self updateTransaction: [self.values objectAtIndex:indexPath.row]];
-        
+        [self performSegueWithIdentifier:GO_TO_ACCOUNT_SEGUE sender:self];
     } else {
         [self performSegueWithIdentifier:@"homeSegue" sender:self];
     }

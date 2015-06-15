@@ -22,5 +22,4 @@ enum {
 };
 typedef NSInteger TransactionCategory; // nome do enumaration
 
-
 @end

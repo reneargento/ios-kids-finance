@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Transactions.h"
 
 @interface CategoryViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
 
 @property (nonatomic) BOOL isUpdate;
+@property (nonatomic, weak) Transactions *transactionToUpdate;
 
 @end

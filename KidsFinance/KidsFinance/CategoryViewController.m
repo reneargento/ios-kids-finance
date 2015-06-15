@@ -50,12 +50,12 @@
         
         if(self.isUpdate) {
             transactionViewController.isUpdate = YES;
+            transactionViewController.transactionToUpdate = self.transactionToUpdate;
         } else {
             transactionViewController.isUpdate = NO;
         }
     }
 }
-
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     

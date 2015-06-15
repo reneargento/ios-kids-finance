@@ -29,6 +29,7 @@
 @property (nonatomic,strong) UIDatePicker * datePicker;
 @property (weak, nonatomic) IBOutlet UITableView *lancTable;
 @property bool isInitial;
+@property (weak, nonatomic) Transactions *currentTransaction;
 @end
 
 
@@ -46,7 +47,6 @@
     self.finalDateLabel.text =[self.dateFormatter stringFromDate:date2];
     self.daoOperation = [[DAO alloc] init];
     self.values = [self.daoOperation getData:nil withFinalDate:date2];
-
 
     self.dateAlert = [[UIAlertView alloc] initWithTitle:@"" message:@"Data:" delegate:self cancelButtonTitle:@"Cancelar" otherButtonTitles:@"Confirmar", nil];
     self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(10, self.dateAlert.bounds.size.height, 320, 216)];
@@ -111,7 +111,9 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
     UIAlertAction *updateAction = [UIAlertAction actionWithTitle:@"Atualizar" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action){
-        if(((Transactions *)self.values[indexPath.row]).isEarning) {
+        
+        self.currentTransaction = self.values[indexPath.row];
+        if(self.currentTransaction.isEarning) {
             [self performSegueWithIdentifier:GO_TO_TRANSACTION_SEGUE sender:self];
         } else {
             [self performSegueWithIdentifier:GO_TO_CATEGORIES_SEGUE sender:self];
@@ -198,11 +200,6 @@
     [self.dateAlert show];
 }
 
--(void)updateTransaction:(NSManagedObject *)transaction withDictionary:(NSDictionary *)dictionary {
-    DAO *dao = [[DAO alloc] init];
-    [dao updateTransaction:transaction withDictionary:dictionary];
-}
-
 -(void)deleteTransaction:(NSManagedObject *)transaction withIndex:(NSInteger)index {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Confirmar" message:@"Tem certeza que deseja deletar?" preferredStyle:UIAlertControllerStyleAlert];
     
@@ -235,9 +232,13 @@
     if([[segue identifier] isEqualToString:GO_TO_CATEGORIES_SEGUE]) {
         CategoryViewController *categoryViewController = segue.destinationViewController;
         categoryViewController.isUpdate = YES;
+        categoryViewController.transactionToUpdate = self.currentTransaction;
     } else if([[segue identifier] isEqualToString:GO_TO_TRANSACTION_SEGUE]) {
         TransactionViewController *transactionViewController = segue.destinationViewController;
         transactionViewController.isUpdate = YES;
+        transactionViewController.transactionToUpdate = self.currentTransaction;
+        transactionViewController.isAddMoney = YES;
+        transactionViewController.category = TransactionCategoryNone;
     }
 }
 

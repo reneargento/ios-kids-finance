@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Transactions.h"
 
 @interface TransactionViewController : UIViewController <UITextFieldDelegate>
 
 @property BOOL isAddMoney;
 @property long category;
 @property BOOL isUpdate;
+@property (nonatomic, weak) Transactions *transactionToUpdate;
 
 @end

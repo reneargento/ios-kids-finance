@@ -14,3 +14,8 @@ extern NSString *const GO_TO_HOME_SEGUE;
 extern NSString *const GO_TO_CATEGORIES_SEGUE;
 extern NSString *const GO_TO_TRANSACTION_SEGUE;
 extern NSString *const GO_TO_ACCOUNT_SEGUE;
+
+extern NSString *const TRANSACTION_VALUE_KEY;
+extern NSString *const TRANSACTION_DESCRIPTION_KEY;
+extern NSString *const TRANSACTION_DATE_KEY;
+extern NSString *const TRANSACTION_CATEGORY_KEY;

@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 #import "Enumerations.h"
 #import "DAO.h"
+#import "Constants.h"
 
 @interface DAO ()
 
@@ -79,9 +80,26 @@
     return values;
 }
 
--(BOOL)updateTransaction:(NSManagedObject *)transaction withDictionary:(NSDictionary *)dictionary {
+-(BOOL)updateTransaction:(Transactions *)transaction withDictionary:(NSDictionary *)dictionary {
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     
-    return YES;
+    [transaction setValue:[numberFormatter numberFromString:[dictionary valueForKey:TRANSACTION_VALUE_KEY]]];
+    [transaction setDescriptionTransaction:[dictionary valueForKey:TRANSACTION_DESCRIPTION_KEY]];
+    [transaction setDate:[dictionary valueForKey:TRANSACTION_DATE_KEY]];
+    [transaction setCategory:[[dictionary valueForKey:TRANSACTION_CATEGORY_KEY] longValue]];
+    
+    BOOL result;
+    NSError *error = nil;
+    
+    if ([self.managedObjectContext save:&error]) {
+        result = YES;
+    } else {
+        result = NO;
+    }
+    
+    NSLog(@"Update transaction: %d", result);
+    return result;
 }
 
 -(BOOL)deleteTransaction:(NSManagedObject *) transaction {
@@ -90,10 +108,10 @@
     
     [self.managedObjectContext deleteObject:transaction];
     
-    if (![self.managedObjectContext save:&error]) {
-        result = NO;
-    } else {
+    if ([self.managedObjectContext save:&error]) {
         result = YES;
+    } else {
+        result = NO;
     }
     
     NSLog(@"Delete transaction: %d", result);

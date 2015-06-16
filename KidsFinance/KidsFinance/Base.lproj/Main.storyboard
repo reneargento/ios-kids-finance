@@ -931,23 +931,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ZQ-2e-y1X">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="51" y="205" width="299" height="30"/>
-                                </variation>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descrição da movimentação" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hI1-EI-B38">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.94509803921568625" green="0.81568627450980391" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="176" width="400" height="21"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quando foi a movimentação?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Og-Rp-S6s">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -1015,8 +998,6 @@
                         <color key="tintColor" red="0.32156862745098042" green="0.69411764705882351" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="4ZQ-2e-y1X"/>
-                                <exclude reference="hI1-EI-B38"/>
                                 <exclude reference="8Og-Rp-S6s"/>
                                 <exclude reference="H0T-Vx-n5j"/>
                                 <exclude reference="Rq0-Vf-FbC"/>
@@ -1027,8 +1008,6 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="4ZQ-2e-y1X"/>
-                                <include reference="hI1-EI-B38"/>
                                 <include reference="8Og-Rp-S6s"/>
                                 <include reference="H0T-Vx-n5j"/>
                                 <include reference="Rq0-Vf-FbC"/>
@@ -1040,7 +1019,6 @@
                     </view>
                     <connections>
                         <outlet property="dateTransationPicker" destination="H0T-Vx-n5j" id="rMO-Hm-Is0"/>
-                        <outlet property="descriptionField" destination="4ZQ-2e-y1X" id="mnu-rB-5Rb"/>
                         <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="homeSegue" id="Y4t-ML-H0u"/>
                     </connections>

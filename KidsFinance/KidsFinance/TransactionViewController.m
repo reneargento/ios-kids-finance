@@ -16,7 +16,6 @@
 
 @interface TransactionViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
-@property (weak, nonatomic) IBOutlet UITextField *descriptionField;
 
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateTransationPicker;
 @property AppDelegate * appDelegate;
@@ -34,7 +33,6 @@
     
     if(self.isUpdate) {
         self.valueField.text = [self.transactionToUpdate.value stringValue];
-        self.descriptionField.text = self.transactionToUpdate.descriptionTransaction;
         self.dateTransationPicker.date = self.transactionToUpdate.date;
     }
 
@@ -80,7 +78,6 @@
     if(self.isUpdate) {
         NSMutableDictionary *dictionary = [[NSMutableDictionary alloc] init];
         [dictionary setObject:self.valueField.text forKey:TRANSACTION_VALUE_KEY];
-        [dictionary setObject:self.descriptionField.text forKey:TRANSACTION_DESCRIPTION_KEY];
         [dictionary setObject:self.dateTransationPicker.date forKey:TRANSACTION_DATE_KEY];
         [dictionary setObject:@(self.category) forKey:TRANSACTION_CATEGORY_KEY];
         
@@ -91,7 +88,6 @@
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Transactions" inManagedObjectContext:self.appDelegate.managedObjectContext];
         Transactions *transaction = [[Transactions alloc] initWithEntity:entity insertIntoManagedObjectContext:nil];
         
-        [transaction setDescriptionTransaction: self.descriptionField.text ];
         [transaction setValue: [NSNumber numberWithDouble:[self.valueField.text doubleValue]]];
         [transaction setDate: self.dateTransationPicker.date];
         [transaction setCategory: self.category];
@@ -136,7 +132,6 @@
 
 - (void)clearFields{
     self.valueField.text = @"";
-    self.descriptionField.text = @"";
 }
 
 

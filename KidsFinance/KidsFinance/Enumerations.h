@@ -9,8 +9,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Enumerations : NSObject // herda do NS Object por padrao
--(NSString *) getDescriptionEnumeration:(long) value;
+@interface Enumerations : NSObject
+-(NSString *) getCategoryEnumeration:(long) value;
 
 enum {
     TransactionCategoryEducation,
@@ -18,8 +18,8 @@ enum {
     TransactionCategoryFun,
     TransactionCategoryToys,
     TransactionCategoryOther,
-    TransactionCategoryNone // para o caso em que só teve entrada
+    TransactionCategoryNone
 };
-typedef NSInteger TransactionCategory; // nome do enumaration
+typedef NSInteger TransactionCategory;
 
 @end

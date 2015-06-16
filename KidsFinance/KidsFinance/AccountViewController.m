@@ -88,7 +88,7 @@
     
     //Category
     Enumerations * enumerations = [[Enumerations alloc] init];
-    NSString * category = [enumerations getDescriptionEnumeration:[[row valueForKey:@"category"] integerValue]];
+    NSString * category = [enumerations getCategoryEnumeration:[[row valueForKey:@"category"] integerValue]];
     if ([category isEqualToString:@"none"]) {
         cell.categoryLabel.text = @"";
     }else{
@@ -167,8 +167,8 @@
     if (buttonIndex == 1) {
         self.values = [[NSMutableArray alloc] initWithArray:@[]];
         [self.lancTable reloadData];
-         NSDate * dataSelected = [self.datePicker date];
-         NSLog(@"%@",[self.dateFormatter stringFromDate:dataSelected]);
+        NSDate * dataSelected = [self.datePicker date];
+
         if (self.isInitial) {
             self.initialDateLabel.text = [self.dateFormatter stringFromDate:dataSelected];
         }else{
@@ -181,15 +181,11 @@
         }else if([self.finalDateLabel.text isEqualToString:@""]){
             self.values = [self.daoOperation getData:[self.dateFormatter dateFromString:self.initialDateLabel.text] withFinalDate:nil];
         }else{
-            NSLog(@"%@",[self.dateFormatter dateFromString:self.initialDateLabel.text]);
             self.values = [self.daoOperation getData:[self.dateFormatter dateFromString:self.initialDateLabel.text] withFinalDate:[self.dateFormatter dateFromString:self.finalDateLabel.text]];
         }
         
         [self.lancTable reloadData];
     }
-    
-    NSLog(@"%lu",[self.values count]);
-    
 }
 
 - (IBAction)initialSetData:(id)sender {

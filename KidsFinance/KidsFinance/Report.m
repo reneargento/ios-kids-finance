@@ -102,7 +102,7 @@
     
     
     for (int i = 0; i<self.values.count; i++) {
-        category = [enumerations getDescriptionEnumeration:[[self.values[i] valueForKey:@"category"] integerValue]];
+        category = [enumerations getCategoryEnumeration:[[self.values[i] valueForKey:@"category"] integerValue]];
         if ([category isEqualToString:@"none"]) {
             category = @"";
         }

@@ -602,7 +602,7 @@
 				7358A06F1ACACCEB00A3F19F /* KidsFinance 2.xcdatamodel */,
 				7358A0701ACACCEB00A3F19F /* KidsFinance.xcdatamodel */,
 			);
-			currentVersion = B8D6AB011ACC0E5300C66D3C /* KidsFinance 3.xcdatamodel */;
+			currentVersion = B8D6AB021ACC0F0A00C66D3C /* KidsFinance 4.xcdatamodel */;
 			path = KidsFinance1.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -49,7 +49,6 @@
     NSString *savings = [Utils getValueFromKeychain:SAVINGS_KEY];
     if(savings != nil) {
         savingsLabel.text = @"R$ ";
-        NSLog(@"%@",savings);
         savingsLabel.text = [savingsLabel.text stringByAppendingString:savings];
     } else {
         savingsLabel.text = @"R$ 0,00";
@@ -73,8 +72,6 @@
     }
     
     NSString* currentMoneyFormatted = [Utils formatNumber:currentMoney];
-    
-    NSLog(@"Valor: %@",currentMoneyFormatted);
     
     [Utils saveValueInKeychain:CURRENT_MONEY_KEY withValue:currentMoneyFormatted];
 }

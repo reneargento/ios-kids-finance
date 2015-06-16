@@ -54,7 +54,6 @@
     NSFetchRequest * fetchRequest = [[NSFetchRequest alloc] init];
     [fetchRequest setEntity:entity];
     if (initialDate != nil && endDate != nil) {
-        NSLog(@"%@",initialDate);
         NSPredicate * predicate = [NSPredicate predicateWithFormat:@"date >= %@ && date <= %@", initialDate, endDate];
         [fetchRequest setPredicate:predicate];
     } else if (initialDate != nil && endDate == nil) {
@@ -71,11 +70,6 @@
     
     //Get all rows
     NSMutableArray * values = [[self.managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-
-    //Core data returns each row as managed objects so we can access rows values through key-value pair
-    for(NSManagedObject *row in values) {
-        NSLog(@"Value: %@  -  Category: %@ -  earning: %@\n", [row valueForKey:@"value"], [row valueForKey:@"category"], [row valueForKey:@"isEarning"]);
-    }
     
     return values;
 }
@@ -85,7 +79,6 @@
     numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
     
     [transaction setValue:[numberFormatter numberFromString:[dictionary valueForKey:TRANSACTION_VALUE_KEY]]];
-    [transaction setDescriptionTransaction:[dictionary valueForKey:TRANSACTION_DESCRIPTION_KEY]];
     [transaction setDate:[dictionary valueForKey:TRANSACTION_DATE_KEY]];
     [transaction setCategory:[[dictionary valueForKey:TRANSACTION_CATEGORY_KEY] longValue]];
     

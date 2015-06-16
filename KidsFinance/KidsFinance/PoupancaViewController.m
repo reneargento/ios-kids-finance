@@ -33,7 +33,6 @@
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"Teste");
     return [self.poupancaSections count];
 }
 

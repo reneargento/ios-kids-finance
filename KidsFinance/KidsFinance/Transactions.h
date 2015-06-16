@@ -13,7 +13,6 @@
 
 @interface Transactions : NSManagedObject
 
-@property (nonatomic,retain) NSString * descriptionTransaction;
 @property (nonatomic, retain) NSNumber * value;
 @property (nonatomic, retain) NSDate * date;
 @property (nonatomic) BOOL isEarning;

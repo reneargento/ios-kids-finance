@@ -11,9 +11,8 @@
 
 @implementation Enumerations
 
--(NSString *) getDescriptionEnumeration:(long) value
+-(NSString *) getCategoryEnumeration:(long) value
 {
-    NSLog(@"%lu",value);
     switch (value) {
         case 0:
             return @"Educação";
@@ -34,8 +33,6 @@
             return @"none";
             break;
     }
-  
-  
 }
 
 @end

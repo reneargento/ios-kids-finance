@@ -1043,7 +1043,6 @@
                         <outlet property="descriptionField" destination="4ZQ-2e-y1X" id="mnu-rB-5Rb"/>
                         <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="homeSegue" id="Y4t-ML-H0u"/>
-                        <segue destination="zYX-RO-1kh" kind="show" identifier="goToAccountSegue" id="N7a-zz-xjQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7X3-xn-eXx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1064,9 +1063,8 @@
         <image name="title" width="507" height="178"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Vc3-08-BUJ"/>
-        <segue reference="N7a-zz-xjQ"/>
-        <segue reference="bFx-8d-8ZJ"/>
         <segue reference="Y4t-ML-H0u"/>
+        <segue reference="bFx-8d-8ZJ"/>
+        <segue reference="Vc3-08-BUJ"/>
     </inferredMetricsTieBreakers>
 </document>

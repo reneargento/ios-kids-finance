@@ -12,6 +12,7 @@
 #import "DAO.h"
 #import "Utils.h"
 #import "Constants.h"
+#import "AccountViewController.h"
 
 @interface TransactionViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
@@ -66,7 +67,7 @@
 
 - (IBAction)cancelTransaction:(id)sender {
     if (self.isUpdate) {
-        [self performSegueWithIdentifier:GO_TO_ACCOUNT_SEGUE sender:self];
+        [self returnOnUpdate];
     } else {
         [self performSegueWithIdentifier:GO_TO_HOME_SEGUE sender:self];
     }
@@ -127,7 +128,7 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (self.isUpdate) {
-        [self performSegueWithIdentifier:GO_TO_ACCOUNT_SEGUE sender:self];
+        [self returnOnUpdate];
     } else {
         [self performSegueWithIdentifier:@"homeSegue" sender:self];
     }
@@ -145,7 +146,13 @@
     [[self view] endEditing:YES];
 }
 
-
-
+- (void) returnOnUpdate {
+    NSArray *navigationArray = self.navigationController.viewControllers;
+    for (UIViewController *view in navigationArray) {
+        if ([view isKindOfClass:[AccountViewController class]]) {
+            [self.navigationController popToViewController:view animated:YES];
+        }
+    }
+}
 
 @end

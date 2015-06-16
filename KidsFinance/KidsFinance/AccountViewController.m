@@ -54,10 +54,15 @@
     self.dateAlert.bounds = CGRectMake(0, 0, 320 + 20, self.dateAlert.bounds.size.height + 216 + 20);
     [self.dateAlert setValue:self.datePicker forKey:@"accessoryView"];
     
-    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
-    
     self.navigationItem.title = @"Conta";
     self.automaticallyAdjustsScrollViewInsets = NO; // make view controllers start below the status bar
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    //These methods need to be on viewWillAppear in case we are returning from an update
+    [self.lancTable reloadData];
+    
+    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
 }
 
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

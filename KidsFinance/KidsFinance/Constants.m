@@ -16,8 +16,8 @@ NSString *const TARGET_KEY = @"TARGET";
 NSString *const GO_TO_HOME_SEGUE = @"homeSegue";
 NSString *const GO_TO_CATEGORIES_SEGUE = @"goToCategoriesSegue";
 NSString *const GO_TO_TRANSACTION_SEGUE = @"goToTransactionSegue";
-
 NSString *const TRANSACTION_VALUE_KEY = @"transactionValueKey";
 NSString *const TRANSACTION_DESCRIPTION_KEY = @"transactionDescriptionKey";
 NSString *const TRANSACTION_DATE_KEY = @"transactionDateKey";
 NSString *const TRANSACTION_CATEGORY_KEY = @"transactionCategoryKey";
+NSString *const REPORT_DAYS_KEY = @"REPORT_DAYS";

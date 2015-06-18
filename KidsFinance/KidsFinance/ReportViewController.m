@@ -9,15 +9,18 @@
 #import "ReportViewController.h"
 #import "Report.h"
 #import "PDFCreator.h"
+#import "Utils.h"
 
 @interface ReportViewController ()
-    
+@property long selectedRow;
+@property NSMutableArray* frequencyPickerValues;
 @end
 
 @implementation ReportViewController
-{
-    NSMutableArray* frequencyPickerValues;
-}
+
+
+    
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,10 +47,10 @@
 
 ///Sets the value of the frequency pickers
 - (void) startFrequencyPickerValues {
-    frequencyPickerValues = [[NSMutableArray alloc]init];
+    self.frequencyPickerValues = [[NSMutableArray alloc]init];
     
     for (int i = 7; i <= 60; i++) {
-        [frequencyPickerValues addObject:[NSString stringWithFormat:@"%d", i]];
+        [self.frequencyPickerValues addObject:[NSString stringWithFormat:@"%d", i]];
     }
 }
 
@@ -58,37 +61,65 @@
 }
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-    return [frequencyPickerValues count];
+    return [self.frequencyPickerValues count];
 }
 
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    //self.selectedRow = row;
+    self.selectedRow = row;
     
-    return [frequencyPickerValues objectAtIndex:row];
+    return [self.frequencyPickerValues objectAtIndex:row];
 }
 
 - (IBAction)reportButton:(id)sender {
     
-    Report* report = [[Report alloc] init];
+//    Report* report = [[Report alloc] init];
+//    [report generateReport:nil withDateEnd:nil];
+
+    UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
     
-    [report generateReport:nil withDateEnd:nil];
+
     
-    [report showPDFFile:self.view];
+    long day = 24*3600;
+    
+    long interval = day * [self.frequencyPickerValues[self.selectedRow] integerValue];
+    interval = 60;
+    
+    NSDate* sourceDate = [NSDate date];
+    
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+    NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset + interval;
+    
+    NSDate * dateAlarm = [[NSDate alloc] initWithTimeInterval:intHor sinceDate:sourceDate];
     
     
-//    PDFCreator *pdf = [[PDFCreator alloc] init];
-//    
-//    [pdf setupPDFDocumentNamed:@"Report" Width:850 Height:1100];
-//    
-//    [pdf beginPDFPage];
-//    
-//    [pdf addText:@"RELATÓRIO DE 22/02/2015 Ã 23/03/2015"
-//          withFrame:CGRectMake(20, 20, 400, 200) fontSize:12.0f];
-//    
-//    [pdf finishPDF];
-//    
-//    [self showPDFFile];
+    NSLog(@"%@", dateAlarm);
+    
+    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+    localNotif.alertBody = @"Email Enviado com sucesso";
+    localNotif.alertAction = @"open";
+    localNotif.fireDate =[NSDate dateWithTimeIntervalSinceNow: intHor];
+    localNotif.soundName = UILocalNotificationDefaultSoundName;
+    localNotif.category = @"REPORT_CATEGORY";
+    
+//    localNotif.timeZone = [NSTimeZone systemTimeZone];
+    localNotif.repeatInterval = NSCalendarUnitMinute;
+    
+    [Utils saveValueInKeychain:REPORT_DAYS_KEY withValue: self.frequencyPickerValues[self.selectedRow] ];
+
+    
+    
+    
+    
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
+    //[report showPDFFile:self.view];
+    
+
 }
 
 

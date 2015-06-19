@@ -10,7 +10,7 @@
 #import "TransactionViewController.h"
 #import "CategoryViewController.h"
 #import <UIKit/UIKit.h>
-#import "Enumerations.h"
+#import "CategoryEnumeration.h"
 #import "Utils.h"
 #import "Constants.h"
 #import "AppDelegate.h"

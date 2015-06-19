@@ -7,7 +7,7 @@
 //
 
 #import "CategoryViewController.h"
-#import "Enumerations.h"
+#import "CategoryEnumeration.h"
 #import "TransactionViewController.h"
 
 @interface CategoryViewController ()

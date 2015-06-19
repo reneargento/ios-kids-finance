@@ -20,4 +20,3 @@ NSString *const TRANSACTION_VALUE_KEY = @"transactionValueKey";
 NSString *const TRANSACTION_DESCRIPTION_KEY = @"transactionDescriptionKey";
 NSString *const TRANSACTION_DATE_KEY = @"transactionDateKey";
 NSString *const TRANSACTION_CATEGORY_KEY = @"transactionCategoryKey";
-NSString *const REPORT_DAYS_KEY = @"REPORT_DAYS";

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
-#import "Enumerations.h"
+#import "CategoryEnumeration.h"
 #import "DAO.h"
 #import "Constants.h"
 

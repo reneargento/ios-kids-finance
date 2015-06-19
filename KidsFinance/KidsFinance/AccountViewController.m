@@ -10,7 +10,7 @@
 #import "CategoryViewController.h"
 #import "TransactionViewController.h"
 #import "DAO.h"
-#import "Enumerations.h"
+#import "CategoryEnumeration.h"
 #import "Utils.h"
 #import "TransactionCell.h"
 #import "Constants.h"
@@ -87,7 +87,7 @@
     cell.dateLabel.text = [NSString stringWithFormat:@" %@",[self.dateFormatter stringFromDate:[row valueForKey:@"date"]]];
     
     //Category
-    Enumerations * enumerations = [[Enumerations alloc] init];
+    CategoryEnumeration * enumerations = [[CategoryEnumeration alloc] init];
     NSString * category = [enumerations getCategoryEnumeration:[[row valueForKey:@"category"] integerValue]];
     if ([category isEqualToString:@"none"]) {
         cell.categoryLabel.text = @"";

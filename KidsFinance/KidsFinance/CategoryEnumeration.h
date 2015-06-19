@@ -9,7 +9,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Enumerations : NSObject
+@interface CategoryEnumeration : NSObject
 -(NSString *) getCategoryEnumeration:(long) value;
 
 enum {

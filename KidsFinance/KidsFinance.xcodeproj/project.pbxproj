@@ -21,11 +21,12 @@
 		7358A0731ACAD73100A3F19F /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 7358A0721ACAD73100A3F19F /* DAO.m */; };
 		739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074D91AC96DF700C3B246 /* ReportViewController.m */; };
 		739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739074DC1AC973BB00C3B246 /* AboutViewController.m */; };
+		73CD775D1B32FFB600B4C2B0 /* FrequencyEnumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = 73CD775C1B32FFB600B4C2B0 /* FrequencyEnumeration.m */; };
 		B8CF54141ACAB73F000040B0 /* TransactionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54131ACAB73F000040B0 /* TransactionViewController.m */; };
 		B8CF54171ACAC868000040B0 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8CF54161ACAC868000040B0 /* CategoryViewController.m */; };
 		B8D600311ACD619D004C68C2 /* PoupancaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600301ACD619D004C68C2 /* PoupancaViewController.m */; };
 		B8D600341ACD775E004C68C2 /* AccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600331ACD775E004C68C2 /* AccountViewController.m */; };
-		B8D600361ACD8CAD004C68C2 /* Enumerations.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600351ACD8CAD004C68C2 /* Enumerations.m */; };
+		B8D600361ACD8CAD004C68C2 /* CategoryEnumeration.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D600351ACD8CAD004C68C2 /* CategoryEnumeration.m */; };
 		B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7358A06E1ACACCEB00A3F19F /* KidsFinance1.xcdatamodeld */; };
 		B8D6AB061ACC38EE00C66D3C /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D6AB051ACC38EE00C66D3C /* Constants.m */; };
 		B8E885A31B2AF821004E2EA8 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E885A21B2AF821004E2EA8 /* Report.m */; };
@@ -76,6 +77,8 @@
 		739074D91AC96DF700C3B246 /* ReportViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReportViewController.m; sourceTree = "<group>"; };
 		739074DB1AC973BB00C3B246 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		739074DC1AC973BB00C3B246 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		73CD775B1B32FFB600B4C2B0 /* FrequencyEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyEnumeration.h; sourceTree = "<group>"; };
+		73CD775C1B32FFB600B4C2B0 /* FrequencyEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyEnumeration.m; sourceTree = "<group>"; };
 		B8CF54121ACAB73F000040B0 /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
 		B8CF54131ACAB73F000040B0 /* TransactionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransactionViewController.m; sourceTree = "<group>"; };
 		B8CF54151ACAC868000040B0 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
@@ -84,7 +87,7 @@
 		B8D600301ACD619D004C68C2 /* PoupancaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PoupancaViewController.m; sourceTree = "<group>"; };
 		B8D600321ACD775E004C68C2 /* AccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountViewController.h; sourceTree = "<group>"; };
 		B8D600331ACD775E004C68C2 /* AccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountViewController.m; sourceTree = "<group>"; };
-		B8D600351ACD8CAD004C68C2 /* Enumerations.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Enumerations.m; sourceTree = "<group>"; };
+		B8D600351ACD8CAD004C68C2 /* CategoryEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryEnumeration.m; sourceTree = "<group>"; };
 		B8D6AB011ACC0E5300C66D3C /* KidsFinance 3.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 3.xcdatamodel"; sourceTree = "<group>"; };
 		B8D6AB021ACC0F0A00C66D3C /* KidsFinance 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "KidsFinance 4.xcdatamodel"; sourceTree = "<group>"; };
 		B8D6AB051ACC38EE00C66D3C /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
@@ -95,7 +98,7 @@
 		B8EDF2531B29B42B006C839F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		C9A899631AC97A8000D5AAD3 /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transactions.h; sourceTree = "<group>"; };
 		C9A899641AC97A8000D5AAD3 /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transactions.m; sourceTree = "<group>"; };
-		C9A899661AC97C4000D5AAD3 /* Enumerations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Enumerations.h; sourceTree = "<group>"; };
+		C9A899661AC97C4000D5AAD3 /* CategoryEnumeration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryEnumeration.h; sourceTree = "<group>"; };
 		C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -196,8 +199,10 @@
 		7342FCC91ACC10D80000A9BB /* Enumeration */ = {
 			isa = PBXGroup;
 			children = (
-				C9A899661AC97C4000D5AAD3 /* Enumerations.h */,
-				B8D600351ACD8CAD004C68C2 /* Enumerations.m */,
+				C9A899661AC97C4000D5AAD3 /* CategoryEnumeration.h */,
+				B8D600351ACD8CAD004C68C2 /* CategoryEnumeration.m */,
+				73CD775B1B32FFB600B4C2B0 /* FrequencyEnumeration.h */,
+				73CD775C1B32FFB600B4C2B0 /* FrequencyEnumeration.m */,
 			);
 			name = Enumeration;
 			sourceTree = "<group>";
@@ -362,12 +367,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8D600361ACD8CAD004C68C2 /* Enumerations.m in Sources */,
+				B8D600361ACD8CAD004C68C2 /* CategoryEnumeration.m in Sources */,
 				739074DD1AC973BB00C3B246 /* AboutViewController.m in Sources */,
 				7342FCD21ACC286D0000A9BB /* JNKeychain.m in Sources */,
 				B8E885A31B2AF821004E2EA8 /* Report.m in Sources */,
 				B8D6AB041ACC11E900C66D3C /* KidsFinance1.xcdatamodeld in Sources */,
 				739074DA1AC96DF700C3B246 /* ReportViewController.m in Sources */,
+				73CD775D1B32FFB600B4C2B0 /* FrequencyEnumeration.m in Sources */,
 				7342FCCD1ACC1B370000A9BB /* Utils.m in Sources */,
 				B8D6AB061ACC38EE00C66D3C /* Constants.m in Sources */,
 				7358A0731ACAD73100A3F19F /* DAO.m in Sources */,

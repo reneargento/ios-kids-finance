@@ -94,7 +94,7 @@
 -(void) createExtract
 {
 
-    Enumerations * enumerations = [[Enumerations alloc] init];
+    CategoryEnumeration * enumerations = [[CategoryEnumeration alloc] init];
     NSString * category = @"";
     
     float balance = 0.0;

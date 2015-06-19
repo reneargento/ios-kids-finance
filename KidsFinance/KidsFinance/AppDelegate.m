@@ -7,10 +7,8 @@
 //
 
 #import "AppDelegate.h"
-#import "Enumerations.h"
+#import "CategoryEnumeration.h"
 #import "Transactions.h"
-#import "Utils.h"
-#import "Constants.h"
 
 @interface AppDelegate ()
 
@@ -57,7 +55,6 @@
                                           otherButtonTitles:nil];
     [alert show];
 }
-
 
 //**
 #pragma mark - Core Data stack

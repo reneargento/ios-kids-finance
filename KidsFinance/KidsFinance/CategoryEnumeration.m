@@ -7,32 +7,36 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Enumerations.h"
+#import "CategoryEnumeration.h"
 
-@implementation Enumerations
+@implementation CategoryEnumeration
 
 -(NSString *) getCategoryEnumeration:(long) value
 {
+    NSString *category;
+    
     switch (value) {
         case 0:
-            return @"Educação";
+            category = @"Educação";
             break;
         case 1:
-            return @"Comida";
+            category = @"Comida";
             break;
         case 2:
-            return @"Diversão";
+            category = @"Diversão";
             break;
         case 3:
-            return @"Brinquedos";
+            category = @"Brinquedos";
             break;
         case 4:
-            return @"Outros";
+            category = @"Outros";
             break;
         default:
-            return @"none";
+            category = @"none";
             break;
     }
+    
+    return category;
 }
 
 @end

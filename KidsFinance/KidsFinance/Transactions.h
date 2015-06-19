@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
-#import "Enumerations.h"
+#import "CategoryEnumeration.h"
 
 
 @interface Transactions : NSManagedObject

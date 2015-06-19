@@ -17,6 +17,7 @@
 @interface TransactionViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *valueField;
 
+@property (weak, nonatomic) IBOutlet UIPickerView *valuePicker;
 @property (weak, nonatomic) IBOutlet UIDatePicker *dateTransationPicker;
 @property AppDelegate * appDelegate;
 @property (nonatomic) UITapGestureRecognizer *tapRecognizer;
@@ -60,7 +61,6 @@
     }
     
     [self showResultPopup:wasTransactionSuccessful];
-    [self clearFields];
 }
 
 - (IBAction)cancelTransaction:(id)sender {
@@ -129,11 +129,6 @@
         [self performSegueWithIdentifier:@"homeSegue" sender:self];
     }
 }
-
-- (void)clearFields{
-    self.valueField.text = @"";
-}
-
 
 - (void)onBackgroundTap:(id)sender{
     //when the tap gesture recognizer gets an event, it calls endEditing on the view controller's view

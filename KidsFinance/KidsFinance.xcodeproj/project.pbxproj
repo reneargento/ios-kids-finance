@@ -32,6 +32,7 @@
 		B8E885A31B2AF821004E2EA8 /* Report.m in Sources */ = {isa = PBXBuildFile; fileRef = B8E885A21B2AF821004E2EA8 /* Report.m */; };
 		B8EDF2521B29B20E006C839F /* PDFCreator.m in Sources */ = {isa = PBXBuildFile; fileRef = B8EDF2511B29B20E006C839F /* PDFCreator.m */; };
 		B8EDF2541B29B42B006C839F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8EDF2531B29B42B006C839F /* CoreText.framework */; };
+		C96A04411B3446E90032C6A2 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C96A04401B3446E90032C6A2 /* CameraViewController.m */; };
 		C9A899651AC97A8000D5AAD3 /* Transactions.m in Sources */ = {isa = PBXBuildFile; fileRef = C9A899641AC97A8000D5AAD3 /* Transactions.m */; };
 		C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
@@ -96,6 +97,8 @@
 		B8EDF2501B29B20E006C839F /* PDFCreator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFCreator.h; sourceTree = "<group>"; };
 		B8EDF2511B29B20E006C839F /* PDFCreator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFCreator.m; sourceTree = "<group>"; };
 		B8EDF2531B29B42B006C839F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		C96A043F1B3446E90032C6A2 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		C96A04401B3446E90032C6A2 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		C9A899631AC97A8000D5AAD3 /* Transactions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Transactions.h; sourceTree = "<group>"; };
 		C9A899641AC97A8000D5AAD3 /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transactions.m; sourceTree = "<group>"; };
 		C9A899661AC97C4000D5AAD3 /* CategoryEnumeration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryEnumeration.h; sourceTree = "<group>"; };
@@ -212,6 +215,8 @@
 			children = (
 				731689A41AC2EE7B008D9FC9 /* MainViewController.h */,
 				731689A51AC2EE7C008D9FC9 /* MainViewController.m */,
+				C96A043F1B3446E90032C6A2 /* CameraViewController.h */,
+				C96A04401B3446E90032C6A2 /* CameraViewController.m */,
 				731AFB2D1AC58410000D6EBC /* ConfigViewController.h */,
 				731AFB2E1AC58410000D6EBC /* ConfigViewController.m */,
 				B8CF54151ACAC868000040B0 /* CategoryViewController.h */,
@@ -384,6 +389,7 @@
 				731689A31AC2EE7B008D9FC9 /* AppDelegate.m in Sources */,
 				731AFB2F1AC58410000D6EBC /* ConfigViewController.m in Sources */,
 				730A87641B271E300019B923 /* TransactionCell.m in Sources */,
+				C96A04411B3446E90032C6A2 /* CameraViewController.m in Sources */,
 				731689A01AC2EE7B008D9FC9 /* main.m in Sources */,
 				B8EDF2521B29B20E006C839F /* PDFCreator.m in Sources */,
 				B8D600341ACD775E004C68C2 /* AccountViewController.m in Sources */,

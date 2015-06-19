@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -224,6 +225,102 @@
             </objects>
             <point key="canvasLocation" x="-156" y="1934.25"/>
         </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="1VR-5f-Sb0">
+            <objects>
+                <viewController id="KaB-6r-6OV" userLabel="Camera View Controller" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BnQ-5w-zKI"/>
+                        <viewControllerLayoutGuide type="bottom" id="4Ac-v4-J0H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nrM-3J-spR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_gift" translatesAutoresizingMaskIntoConstraints="NO" id="7iO-Yt-YMP" userLabel="background">
+                                <rect key="frame" x="-3" y="0.0" width="605" height="600"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYY-Lu-069">
+                                <rect key="frame" x="434" y="139" width="50" height="50"/>
+                                <state key="normal" image="Stack of Photos Filled-100">
+                                    <color key="titleColor" red="0.98823529409999999" green="0.63529411759999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="314" y="200" width="50" height="50"/>
+                                </variation>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title_spend" translatesAutoresizingMaskIntoConstraints="NO" id="3No-2T-hgR">
+                                <rect key="frame" x="16" y="28" width="568" height="139"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="64" width="368" height="128"/>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. O que você quer?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppf-fA-gwS">
+                                <rect key="frame" x="115" y="153" width="188" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94509803920000002" green="0.015686274510000001" blue="0.043137254899999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="214" width="188" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2. Quanto custa?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CDJ-oW-MRA">
+                                <rect key="frame" x="116" y="206" width="160" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.84313725490000002" green="0.0" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="275" width="160" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="OU" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cf-7K-JFs">
+                                <rect key="frame" x="383" y="153" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.63529411759999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="264" y="219" width="42" height="21"/>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b59-XZ-4y1">
+                                <rect key="frame" x="115" y="357" width="368" height="223"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="357" width="368" height="223"/>
+                                </variation>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojn-3R-PoP">
+                                <rect key="frame" x="325" y="139" width="50" height="50"/>
+                                <state key="normal" image="Compact Camera Filled-100">
+                                    <color key="titleColor" red="0.98823529409999999" green="0.63529411759999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="196" y="200" width="50" height="50"/>
+                                </variation>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aOI-2R-r8R">
+                                <rect key="frame" x="325" y="206" width="168" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="196" y="275" width="168" height="30"/>
+                                </variation>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="3No-2T-hgR" secondAttribute="centerX" id="0Kr-ye-ZL2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3No-2T-hgR" secondAttribute="trailing" id="1uN-8R-7qE"/>
+                            <constraint firstItem="3No-2T-hgR" firstAttribute="leading" secondItem="nrM-3J-spR" secondAttribute="leadingMargin" id="Eth-x7-CUC"/>
+                            <constraint firstItem="3No-2T-hgR" firstAttribute="top" secondItem="BnQ-5w-zKI" secondAttribute="bottom" constant="8" id="asi-os-3t6"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mXC-pa-dMD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="904.5" y="229"/>
+        </scene>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -236,361 +333,233 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgnew_2" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-Pf-wYm">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="tintColor" red="0.89070600300000002" green="0.71644821030000005" blue="0.076863294339999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_clean" translatesAutoresizingMaskIntoConstraints="NO" id="Hb8-ku-c5S">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_sameFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3O-3G-Orm" userLabel="logo">
+                                <rect key="frame" x="16" y="46" width="568" height="229"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="v3O-3G-Orm" secondAttribute="height" multiplier="92:37" id="W1H-d0-MjU"/>
+                                </constraints>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="W1H-d0-MjU"/>
+                                    </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF6-V3-Lgf">
-                                <rect key="frame" x="202" y="23" width="42" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="bie-Vk-0b6">
+                                <rect key="frame" x="80" y="193" width="440" height="185"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="JqF-eC-eVT"/>
-                                    <constraint firstAttribute="height" constant="21" id="vjo-UL-6Yx"/>
+                                    <constraint firstAttribute="width" secondItem="bie-Vk-0b6" secondAttribute="height" multiplier="240:101" id="992-UF-Sy6"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.94509803921568625" green="0.81568627450980391" blue="0.094117647058823528" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="992-UF-Sy6"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 10,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E3-kL-krK">
+                                <rect key="frame" x="230" y="265" width="138" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" red="0.98039215690000003" green="0.63529411759999999" blue="0.21960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="JqF-eC-eVT"/>
-                                        <exclude reference="vjo-UL-6Yx"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="339" y="241" width="103" height="21"/>
-                                    <mask key="constraints">
-                                        <include reference="JqF-eC-eVT"/>
-                                        <include reference="vjo-UL-6Yx"/>
-                                    </mask>
-                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="8" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OSp-aA-6gY">
-                                <rect key="frame" x="202" y="66" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="103" id="hbi-UD-FYa"/>
-                                    <constraint firstAttribute="height" constant="21" id="kum-Ao-K0e"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <color key="textColor" red="0.94509803920000002" green="0.81568627449999997" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="hbi-UD-FYa"/>
-                                        <exclude reference="kum-Ao-K0e"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="339" y="290" width="103" height="21"/>
-                                    <mask key="constraints">
-                                        <include reference="hbi-UD-FYa"/>
-                                        <include reference="kum-Ao-K0e"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmM-0j-2Cv">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="CtA-Nr-5oH"/>
-                                    <constraint firstAttribute="width" constant="70" id="oJi-rw-w1c"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Card In Use Filled-50-1">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr1-5q-Vtl">
+                                <rect key="frame" x="61" y="433" width="104" height="80"/>
+                                <state key="normal" image="earnButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="CtA-Nr-5oH"/>
-                                        <exclude reference="oJi-rw-w1c"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="103" y="510" width="70" height="70"/>
-                                    <mask key="constraints">
-                                        <include reference="CtA-Nr-5oH"/>
-                                        <include reference="oJi-rw-w1c"/>
-                                    </mask>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="80" y="435" width="87" height="53"/>
                                 </variation>
                                 <connections>
-                                    <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eOW-F8-TAi"/>
-                                    <segue destination="y8w-h0-1H0" kind="show" id="JwZ-1S-zWM"/>
+                                    <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oeD-y8-wga"/>
+                                    <segue destination="dbQ-jm-77r" kind="show" id="xSz-HS-jET"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruX-t7-a3t" userLabel="ganhei">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="jum-Fu-4Aw"/>
-                                    <constraint firstAttribute="height" constant="70" id="qKr-Jl-XAA"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Money Bag Filled-50">
-                                    <color key="titleColor" red="0.14932528410000001" green="0.0" blue="0.14927957210000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVb-lb-ACI">
+                                <rect key="frame" x="61" y="164" width="46" height="30"/>
+                                <state key="normal" title="ganhei">
+                                    <color key="titleColor" red="0.48627450979999998" green="1" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="jum-Fu-4Aw"/>
-                                        <exclude reference="qKr-Jl-XAA"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="510" width="70" height="70"/>
-                                    <mask key="constraints">
-                                        <include reference="jum-Fu-4Aw"/>
-                                        <include reference="qKr-Jl-XAA"/>
-                                    </mask>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="496" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KTZ-nC-UXE"/>
-                                    <segue destination="dbQ-jm-77r" kind="show" identifier="addMoney" id="4u1-I4-h7v"/>
+                                    <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhE-tI-ImN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yla-HN-E1Q">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="mfm-KI-DYY"/>
-                                    <constraint firstAttribute="width" constant="60" id="yJq-IP-8pU"/>
-                                </constraints>
-                                <state key="normal" image="Report Card Filled-50">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aju-al-QSS">
+                                <rect key="frame" x="250" y="54" width="42" height="30"/>
+                                <state key="normal" title="gastei">
+                                    <color key="titleColor" red="0.98431372549999996" green="0.058823529409999999" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="mfm-KI-DYY"/>
-                                        <exclude reference="yJq-IP-8pU"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="524" y="510" width="60" height="60"/>
-                                    <mask key="constraints">
-                                        <include reference="mfm-KI-DYY"/>
-                                        <include reference="yJq-IP-8pU"/>
-                                    </mask>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="255" y="496" width="42" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="AccountViewController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ob8-5P-a5z"/>
-                                    <segue destination="zYX-RO-1kh" kind="show" id="NFE-SK-Dbc"/>
+                                    <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEc-GY-8BI"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="saldo" translatesAutoresizingMaskIntoConstraints="NO" id="qJ9-46-Ts7">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="140" id="KH7-xB-lAc"/>
-                                    <constraint firstAttribute="height" constant="70" id="yBq-fI-7be"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="KH7-xB-lAc"/>
-                                        <exclude reference="yBq-fI-7be"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="188" y="217" width="140" height="70"/>
-                                    <mask key="constraints">
-                                        <include reference="KH7-xB-lAc"/>
-                                        <include reference="yBq-fI-7be"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poupanca" translatesAutoresizingMaskIntoConstraints="NO" id="dNp-iY-Q8O">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="185" id="P07-DZ-nCo"/>
-                                    <constraint firstAttribute="height" constant="70" id="yx0-SU-mqs"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="P07-DZ-nCo"/>
-                                        <exclude reference="yx0-SU-mqs"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="146" y="265" width="185" height="70"/>
-                                    <mask key="constraints">
-                                        <include reference="P07-DZ-nCo"/>
-                                        <include reference="yx0-SU-mqs"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="ImC-Ch-LV9">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Vlb-Tm-wds"/>
-                                    <constraint firstAttribute="width" constant="240" id="b2Y-kI-QOJ"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Vlb-Tm-wds"/>
-                                        <exclude reference="b2Y-kI-QOJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="180" y="54" width="240" height="128"/>
-                                    <mask key="constraints">
-                                        <include reference="Vlb-Tm-wds"/>
-                                        <include reference="b2Y-kI-QOJ"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pig" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-9y-XdF">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="MNs-LK-VMv"/>
-                                    <constraint firstAttribute="height" constant="128" id="NXU-MO-fiR"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="MNs-LK-VMv"/>
-                                        <exclude reference="NXU-MO-fiR"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="195" y="337" width="240" height="128"/>
-                                    <mask key="constraints">
-                                        <include reference="MNs-LK-VMv"/>
-                                        <include reference="NXU-MO-fiR"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNW-u6-weF">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="JHO-hK-H4W"/>
-                                    <constraint firstAttribute="height" constant="60" id="wo5-HP-8iL"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="Settings3 Filled-50">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfW-hA-uCW">
+                                <rect key="frame" x="28" y="293" width="30" height="30"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.43529411759999997" green="1" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="JHO-hK-H4W"/>
-                                        <exclude reference="wo5-HP-8iL"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="439" y="510" width="60" height="60"/>
-                                    <mask key="constraints">
-                                        <include reference="JHO-hK-H4W"/>
-                                        <include reference="wo5-HP-8iL"/>
-                                    </mask>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="100" y="515" width="46" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="configurationsButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dvf-PU-8n7"/>
-                                    <segue destination="mV5-4m-uDn" kind="show" identifier="openConfig" id="CdI-Lf-BzO"/>
+                                    <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wX0-Ns-30v"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXw-ab-jDP">
+                                <rect key="frame" x="69" y="197" width="30" height="30"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" red="0.98431372549999996" green="0.058823529409999999" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="256" y="515" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUt-vk-frJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiZ-eD-8NB">
+                                <rect key="frame" x="164" y="202" width="40" height="30"/>
+                                <state key="normal" title="quero">
+                                    <color key="titleColor" red="0.77647058820000003" green="0.54117647059999996" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="247" y="362" width="64" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="giftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ldp-bl-8SY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieA-lJ-xmU">
+                                <rect key="frame" x="130" y="164" width="30" height="30"/>
+                                <state key="normal" title="...">
+                                    <color key="titleColor" red="0.77647058820000003" green="0.54117647059999996" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="256" y="378" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="giftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vih-jY-a9N"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-qZ-LUc" userLabel="CONFIG">
+                                <rect key="frame" x="271" y="28" width="58" height="30"/>
+                                <state key="normal" title="CONFIG">
+                                    <color key="titleColor" red="0.0" green="0.086274509803921567" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mV5-4m-uDn" kind="show" id="QCx-UC-IZY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S58-LU-CDO">
+                                <rect key="frame" x="270" y="46" width="61" height="30"/>
+                                <state key="normal" title="REPORT">
+                                    <color key="titleColor" red="0.0" green="0.086274509803921567" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zYX-RO-1kh" kind="show" id="L5P-f0-O4o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rif-u1-2nI">
+                                <rect key="frame" x="244" y="433" width="102" height="80"/>
+                                <state key="normal" image="spendButton">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="233" y="435" width="87" height="53"/>
+                                </variation>
+                                <connections>
+                                    <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2MP-QN-Chh"/>
+                                    <segue destination="y8w-h0-1H0" kind="show" id="747-Tn-o8I"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-mb-3tR" userLabel="gift">
+                                <rect key="frame" x="372" y="372" width="80" height="80"/>
+                                <state key="normal" image="gift_Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="234" y="298" width="90" height="72"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="KaB-6r-6OV" kind="show" id="su3-gW-3uI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92549026012420654" green="0.79607850313186646" blue="0.25882354378700256" alpha="1" colorSpace="deviceRGB"/>
                         <constraints>
-                            <constraint firstItem="Yla-HN-E1Q" firstAttribute="leading" secondItem="bNW-u6-weF" secondAttribute="trailing" constant="25" id="28y-lC-JgC"/>
-                            <constraint firstItem="OSp-aA-6gY" firstAttribute="leading" secondItem="dNp-iY-Q8O" secondAttribute="trailing" constant="8" id="4qh-Ce-njH"/>
-                            <constraint firstAttribute="centerX" secondItem="1u5-9y-XdF" secondAttribute="centerX" constant="-15" id="778-RJ-23W"/>
-                            <constraint firstItem="yF6-V3-Lgf" firstAttribute="centerY" secondItem="qJ9-46-Ts7" secondAttribute="centerY" constant="-0.5" id="7Wq-zp-TXP"/>
-                            <constraint firstItem="ruX-t7-a3t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="98T-IO-GmE"/>
-                            <constraint firstItem="Yla-HN-E1Q" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Ahe-UI-GVr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="S2Z-Pf-wYm" secondAttribute="trailing" id="DIU-Wo-hFY">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
+                            <constraint firstAttribute="centerX" secondItem="S58-LU-CDO" secondAttribute="centerX" id="0bt-zs-GnN"/>
+                            <constraint firstItem="YW1-qZ-LUc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="1CQ-73-htI"/>
+                            <constraint firstAttribute="centerX" secondItem="v3O-3G-Orm" secondAttribute="centerX" id="3NK-pr-4vP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fiK-mb-3tR" secondAttribute="bottom" constant="148" id="DgW-zJ-sAn"/>
+                            <constraint firstItem="S58-LU-CDO" firstAttribute="top" secondItem="YW1-qZ-LUc" secondAttribute="bottom" constant="-12" id="E9z-UI-LGR"/>
+                            <constraint firstItem="v3O-3G-Orm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="F7L-Oy-S0k"/>
+                            <constraint firstItem="bie-Vk-0b6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="PEa-4T-9NK"/>
+                            <constraint firstAttribute="centerX" secondItem="Hb8-ku-c5S" secondAttribute="centerX" id="SGJ-UC-tk5"/>
+                            <constraint firstAttribute="centerY" secondItem="bie-Vk-0b6" secondAttribute="centerY" constant="14.5" id="Seg-1t-P5w"/>
+                            <constraint firstItem="Hb8-ku-c5S" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="Sta-pn-LhX"/>
+                            <constraint firstAttribute="centerX" secondItem="bie-Vk-0b6" secondAttribute="centerX" id="Yhu-N0-aza"/>
+                            <constraint firstAttribute="trailing" secondItem="fiK-mb-3tR" secondAttribute="trailing" constant="148" id="ajC-XC-0uZ"/>
+                            <constraint firstItem="bie-Vk-0b6" firstAttribute="centerX" secondItem="7E3-kL-krK" secondAttribute="centerX" constant="1.5" id="cMA-8p-ehd">
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="dNp-iY-Q8O" firstAttribute="top" secondItem="qJ9-46-Ts7" secondAttribute="bottom" constant="-22" id="EDx-H8-coX"/>
-                            <constraint firstItem="dNp-iY-Q8O" firstAttribute="centerY" secondItem="OSp-aA-6gY" secondAttribute="centerY" constant="-0.5" id="F03-1C-Tur"/>
-                            <constraint firstItem="ImC-Ch-LV9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="34" id="M8I-f3-cIV"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Yla-HN-E1Q" secondAttribute="bottom" constant="20" id="MdN-m2-yRa">
-                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            <constraint firstItem="Hb8-ku-c5S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eUd-ao-bp4">
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="S2Z-Pf-wYm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="NGl-00-S8t">
-                                <variation key="heightClass=regular-widthClass=compact" constant="-16"/>
+                            <constraint firstItem="fiK-mb-3tR" firstAttribute="leading" secondItem="Rif-u1-2nI" secondAttribute="trailing" constant="26" id="fQX-1z-uVg"/>
+                            <constraint firstAttribute="trailing" secondItem="Hb8-ku-c5S" secondAttribute="trailing" id="g2l-kg-dXv">
+                                <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ruX-t7-a3t" secondAttribute="bottom" constant="20" id="Pbm-k8-q0T"/>
-                            <constraint firstAttribute="centerY" secondItem="1u5-9y-XdF" secondAttribute="centerY" constant="-101" id="VqY-Fz-Fhx"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="S2Z-Pf-wYm" secondAttribute="bottom" id="Vwh-Bw-O0h"/>
-                            <constraint firstItem="yF6-V3-Lgf" firstAttribute="leading" secondItem="qJ9-46-Ts7" secondAttribute="trailing" constant="11" id="Wg9-8U-q0M"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HmM-0j-2Cv" secondAttribute="bottom" constant="20" id="ZO0-HR-P8r"/>
-                            <constraint firstAttribute="centerX" secondItem="ImC-Ch-LV9" secondAttribute="centerX" id="aZH-zb-JOF"/>
-                            <constraint firstItem="qJ9-46-Ts7" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="197" id="bVb-fU-C2f"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ImC-Ch-LV9" secondAttribute="bottom" constant="618" id="cmw-Rg-4Sf"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bNW-u6-weF" secondAttribute="bottom" constant="30" id="do2-gK-2Ow"/>
-                            <constraint firstAttribute="centerX" secondItem="qJ9-46-Ts7" secondAttribute="centerX" constant="42" id="eqG-YR-x9R"/>
-                            <constraint firstItem="HmM-0j-2Cv" firstAttribute="leading" secondItem="ruX-t7-a3t" secondAttribute="trailing" constant="17" id="hcc-ky-Rov"/>
-                            <constraint firstItem="S2Z-Pf-wYm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ihD-ih-Dlv"/>
-                            <constraint firstAttribute="centerX" secondItem="dNp-iY-Q8O" secondAttribute="centerX" constant="61.5" id="jAL-lb-XLO"/>
+                            <constraint firstItem="v3O-3G-Orm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="26" id="h8P-Kr-Zin"/>
+                            <constraint firstAttribute="centerX" secondItem="YW1-qZ-LUc" secondAttribute="centerX" id="jvu-4Q-hmJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bie-Vk-0b6" secondAttribute="trailing" constant="64" id="kda-nx-Iab"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hb8-ku-c5S" secondAttribute="bottom" id="nPj-J5-jSs"/>
+                            <constraint firstItem="bie-Vk-0b6" firstAttribute="centerY" secondItem="7E3-kL-krK" secondAttribute="centerY" constant="-0.5" id="oS3-ZZ-31j">
+                                <variation key="widthClass=compact" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="v3O-3G-Orm" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="rpy-Da-wP9"/>
+                            <constraint firstItem="fiK-mb-3tR" firstAttribute="top" secondItem="v3O-3G-Orm" secondAttribute="bottom" constant="97" id="zm5-3n-sBE"/>
                         </constraints>
                         <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="S2Z-Pf-wYm"/>
-                                <exclude reference="HmM-0j-2Cv"/>
-                                <exclude reference="ruX-t7-a3t"/>
-                                <exclude reference="Yla-HN-E1Q"/>
-                                <exclude reference="qJ9-46-Ts7"/>
-                                <exclude reference="dNp-iY-Q8O"/>
-                                <exclude reference="ImC-Ch-LV9"/>
-                                <exclude reference="1u5-9y-XdF"/>
-                                <exclude reference="bNW-u6-weF"/>
-                            </mask>
                             <mask key="constraints">
-                                <exclude reference="hcc-ky-Rov"/>
-                                <exclude reference="28y-lC-JgC"/>
-                                <exclude reference="Ahe-UI-GVr"/>
-                                <exclude reference="98T-IO-GmE"/>
-                                <exclude reference="778-RJ-23W"/>
-                                <exclude reference="VqY-Fz-Fhx"/>
-                                <exclude reference="M8I-f3-cIV"/>
-                                <exclude reference="aZH-zb-JOF"/>
-                                <exclude reference="DIU-Wo-hFY"/>
-                                <exclude reference="NGl-00-S8t"/>
-                                <exclude reference="ihD-ih-Dlv"/>
-                                <exclude reference="EDx-H8-coX"/>
-                                <exclude reference="F03-1C-Tur"/>
-                                <exclude reference="jAL-lb-XLO"/>
-                                <exclude reference="bVb-fU-C2f"/>
-                                <exclude reference="eqG-YR-x9R"/>
-                                <exclude reference="7Wq-zp-TXP"/>
-                                <exclude reference="Wg9-8U-q0M"/>
-                                <exclude reference="4qh-Ce-njH"/>
-                                <exclude reference="MdN-m2-yRa"/>
-                                <exclude reference="Pbm-k8-q0T"/>
-                                <exclude reference="Vwh-Bw-O0h"/>
-                                <exclude reference="ZO0-HR-P8r"/>
-                                <exclude reference="cmw-Rg-4Sf"/>
-                                <exclude reference="do2-gK-2Ow"/>
+                                <exclude reference="ajC-XC-0uZ"/>
+                                <exclude reference="fQX-1z-uVg"/>
+                                <exclude reference="zm5-3n-sBE"/>
+                                <exclude reference="DgW-zJ-sAn"/>
                             </mask>
                         </variation>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="subviews">
-                                <include reference="S2Z-Pf-wYm"/>
-                                <include reference="HmM-0j-2Cv"/>
-                                <include reference="ruX-t7-a3t"/>
-                                <include reference="Yla-HN-E1Q"/>
-                                <include reference="qJ9-46-Ts7"/>
-                                <include reference="dNp-iY-Q8O"/>
-                                <include reference="ImC-Ch-LV9"/>
-                                <include reference="1u5-9y-XdF"/>
-                                <include reference="bNW-u6-weF"/>
-                            </mask>
+                        <variation key="widthClass=compact">
                             <mask key="constraints">
-                                <include reference="hcc-ky-Rov"/>
-                                <include reference="28y-lC-JgC"/>
-                                <include reference="Ahe-UI-GVr"/>
-                                <include reference="98T-IO-GmE"/>
-                                <include reference="778-RJ-23W"/>
-                                <include reference="VqY-Fz-Fhx"/>
-                                <include reference="M8I-f3-cIV"/>
-                                <include reference="aZH-zb-JOF"/>
-                                <include reference="DIU-Wo-hFY"/>
-                                <include reference="NGl-00-S8t"/>
-                                <include reference="ihD-ih-Dlv"/>
-                                <include reference="EDx-H8-coX"/>
-                                <include reference="F03-1C-Tur"/>
-                                <include reference="jAL-lb-XLO"/>
-                                <include reference="bVb-fU-C2f"/>
-                                <include reference="eqG-YR-x9R"/>
-                                <include reference="7Wq-zp-TXP"/>
-                                <include reference="Wg9-8U-q0M"/>
-                                <include reference="4qh-Ce-njH"/>
-                                <include reference="MdN-m2-yRa"/>
-                                <include reference="Pbm-k8-q0T"/>
-                                <include reference="Vwh-Bw-O0h"/>
-                                <include reference="ZO0-HR-P8r"/>
-                                <include reference="cmw-Rg-4Sf"/>
-                                <include reference="do2-gK-2Ow"/>
+                                <include reference="SGJ-UC-tk5"/>
+                                <include reference="Sta-pn-LhX"/>
+                                <include reference="eUd-ao-bp4"/>
+                                <include reference="g2l-kg-dXv"/>
+                                <include reference="3NK-pr-4vP"/>
+                                <include reference="F7L-Oy-S0k"/>
+                                <include reference="h8P-Kr-Zin"/>
+                                <include reference="rpy-Da-wP9"/>
+                                <include reference="PEa-4T-9NK"/>
+                                <include reference="Seg-1t-P5w"/>
+                                <include reference="Yhu-N0-aza"/>
+                                <include reference="cMA-8p-ehd"/>
+                                <include reference="kda-nx-Iab"/>
+                                <include reference="oS3-ZZ-31j"/>
+                                <include reference="nPj-J5-jSs"/>
                             </mask>
                         </variation>
                     </view>
@@ -598,13 +567,12 @@
                         <barButtonItem key="backBarButtonItem" title="Home" id="NjI-65-SSe"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="currentMoneyLabel" destination="yF6-V3-Lgf" id="wX3-rY-axU"/>
-                        <outlet property="savingsLabel" destination="OSp-aA-6gY" id="OL9-o1-EAd"/>
+                        <outlet property="currentMoneyLabel" destination="7E3-kL-krK" id="qlH-gj-Jn9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="904.5" y="931.5"/>
+            <point key="canvasLocation" x="920" y="973"/>
         </scene>
         <!--Config View Controller-->
         <scene sceneID="yJY-3z-uOo">
@@ -628,11 +596,26 @@
                                     <outlet property="delegate" destination="mV5-4m-uDn" id="n6f-EK-pCt"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Quq-WU-9xP">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="177" y="285" width="46" height="30"/>
+                                </variation>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Axh-mb-qhg"/>
+                                <exclude reference="Quq-WU-9xP"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Quq-WU-9xP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -819,9 +802,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="16" y="20" width="568" height="21"/>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1027,20 +1007,21 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Card In Use Filled-50-1" width="50" height="50"/>
-        <image name="Money Bag Filled-50" width="50" height="50"/>
-        <image name="Report Card Filled-50" width="50" height="50"/>
+        <image name="Compact Camera Filled-100" width="100" height="100"/>
         <image name="Send File" width="50" height="50"/>
-        <image name="Settings3 Filled-50" width="50" height="50"/>
-        <image name="bgnew_2" width="750" height="1246"/>
-        <image name="pig" width="200" height="266"/>
-        <image name="poupanca" width="500" height="143"/>
-        <image name="saldo" width="250" height="162"/>
-        <image name="title" width="507" height="178"/>
+        <image name="Stack of Photos Filled-100" width="100" height="100"/>
+        <image name="background_clean" width="750" height="1334"/>
+        <image name="background_gift" width="750" height="1334"/>
+        <image name="earnButton" width="205" height="160"/>
+        <image name="gift_Button" width="267" height="307"/>
+        <image name="logo_sameFill" width="684" height="350"/>
+        <image name="rectangle" width="537" height="304"/>
+        <image name="spendButton" width="205" height="160"/>
+        <image name="title_spend" width="750" height="139"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Y4t-ML-H0u"/>
-        <segue reference="bFx-8d-8ZJ"/>
-        <segue reference="Vc3-08-BUJ"/>
+        <segue reference="xSz-HS-jET"/>
+        <segue reference="747-Tn-o8I"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -12,12 +12,14 @@
 @interface ViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UILabel *currentMoneyLabel;
-@property (weak, nonatomic) IBOutlet UILabel *savingsLabel;
+// @property (weak, nonatomic) IBOutlet UILabel *savingsLabel;
 
 
 - (IBAction)addMoneyButton:(id)sender;
 - (IBAction)subtractMoneyButton:(id)sender;
 - (IBAction)configurationsButton:(id)sender;
+
+
 
 @end
 

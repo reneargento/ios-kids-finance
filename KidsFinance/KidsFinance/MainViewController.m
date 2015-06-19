@@ -26,11 +26,14 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     [self.navigationItem setHidesBackButton:YES];
-    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
+    // [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
+    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:nil];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
+    // [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:self.savingsLabel];
+    [Utils loadValuesFromKeychain:self.currentMoneyLabel withSavingsLabel:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -51,6 +54,8 @@
 - (IBAction)AccountViewController:(id)sender {
     
 }
+
+
 
  #pragma mark - Navigation
  

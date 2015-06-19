@@ -937,7 +937,7 @@
                                 <color key="textColor" red="0.94509803920000002" green="0.81568627449999997" blue="0.094117647060000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="258" width="400" height="21"/>
+                                    <rect key="frame" x="0.0" y="320" width="400" height="21"/>
                                 </variation>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="H0T-Vx-n5j">
@@ -946,7 +946,7 @@
                                     <!--2015-03-31 11:35:54 +0000-->
                                 </date>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="307" width="400" height="162"/>
+                                    <rect key="frame" x="0.0" y="369" width="400" height="162"/>
                                 </variation>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq0-Vf-FbC">
@@ -957,7 +957,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="556" width="170" height="30"/>
+                                    <rect key="frame" x="16" y="618" width="170" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="cancelTransaction:" destination="dbQ-jm-77r" eventType="touchUpInside" id="NV0-9O-SSG"/>
@@ -970,20 +970,12 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="194" y="556" width="167" height="30"/>
+                                    <rect key="frame" x="194" y="618" width="167" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="confirmTransationClicked:" destination="dbQ-jm-77r" eventType="touchUpInside" id="u40-ba-THK"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yRB-OQ-coa">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
-                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="51" y="119" width="299" height="30"/>
-                                </variation>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quanto dinheiro?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ASq-nq-DUF">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -993,6 +985,12 @@
                                     <rect key="frame" x="0.0" y="90" width="400" height="21"/>
                                 </variation>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iwZ-vf-aSC">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="2" y="117" width="400" height="162"/>
+                                </variation>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" red="0.32156862745098042" green="0.69411764705882351" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" red="0.32156862745098042" green="0.69411764705882351" blue="0.75686274509803919" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1002,8 +1000,8 @@
                                 <exclude reference="H0T-Vx-n5j"/>
                                 <exclude reference="Rq0-Vf-FbC"/>
                                 <exclude reference="IhX-md-W9q"/>
-                                <exclude reference="yRB-OQ-coa"/>
                                 <exclude reference="ASq-nq-DUF"/>
+                                <exclude reference="iwZ-vf-aSC"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -1012,14 +1010,14 @@
                                 <include reference="H0T-Vx-n5j"/>
                                 <include reference="Rq0-Vf-FbC"/>
                                 <include reference="IhX-md-W9q"/>
-                                <include reference="yRB-OQ-coa"/>
                                 <include reference="ASq-nq-DUF"/>
+                                <include reference="iwZ-vf-aSC"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="dateTransationPicker" destination="H0T-Vx-n5j" id="rMO-Hm-Is0"/>
-                        <outlet property="valueField" destination="yRB-OQ-coa" id="8P8-4D-km3"/>
+                        <outlet property="valuePicker" destination="iwZ-vf-aSC" id="Fvy-HT-9SI"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="homeSegue" id="Y4t-ML-H0u"/>
                     </connections>
                 </viewController>

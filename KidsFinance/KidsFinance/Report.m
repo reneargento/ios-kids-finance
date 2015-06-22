@@ -9,6 +9,8 @@
 #import "Report.h"
 
 #import <UIKit/UIKit.h>
+#import <MailCore/MailCore.h>
+
 
 @interface Report ()
 @property (nonatomic,strong) NSDate* dateInit;
@@ -68,8 +70,9 @@
 
 -(void) reportCreateHeader
 {
+    NSLog(@"%@",[self returnTextRange]);
    
-    [self.pdfDocument addText:[self returnTextRange] withFrame:CGRectMake(20, 20, 400, 200) fontSize:12.0f];
+    [self.pdfDocument addText:[self returnTextRange] withFrame:CGRectMake(20, 20, 600, 400) fontSize:12.0f];
     [self.pdfDocument addText:[[NSString alloc] initWithFormat:@"Saldo Atual: %@", [Utils getValueFromKeychain:CURRENT_MONEY_KEY]] withFrame:CGRectMake(20, 40, 400, 200) fontSize:12.0f];
     
 }
@@ -79,6 +82,7 @@
 
 -(NSString*) returnTextRange
 {
+    NSLog(@"vai se fuder");
     if (self.dateInit != nil && self.dateEnd != nil) {
         return [[NSString alloc] initWithFormat:@"Relatório de transação entre %@ e %@.",self.dateInit,self.dateEnd];
     }else if(self.dateInit != nil){
@@ -151,6 +155,109 @@
     }
     
 }
+
+
+
+
+-(void) sentEmail:(NSDate*) dateInit andDateEnd:(NSDate *) dateEnd
+{
+    NSLog(@"asudaiusdhasiudhuad");
+    NSString * userName = @"r.letro@hotmail.com";
+    NSString * toAdress = @"rafaelbletro@gmail.com";
+    NSString * subject = @"Relatório Din Din";
+    
+    Report * report = [[Report alloc] init];
+    
+    [report generateReport:dateInit withDateEnd:dateEnd];
+    MCOSMTPSession *smtpSession = [[MCOSMTPSession alloc] init];
+//    smtpSession.checkCertificateEnabled = NO;
+    smtpSession.hostname = @"smtp-mail.outlook.com";
+    smtpSession.port = 587;
+    smtpSession.username = userName;
+    smtpSession.password = @"rafsla_2011";
+    smtpSession.connectionType = MCOConnectionTypeStartTLS;
+    
+    
+    
+    MCOMessageBuilder * builder = [[MCOMessageBuilder alloc] init];
+    [[builder header] setFrom:[MCOAddress addressWithDisplayName:nil mailbox:userName]];
+    NSMutableArray *to = [[NSMutableArray alloc] init];
+    
+    MCOAddress *newAddress = [MCOAddress addressWithMailbox:toAdress];
+    [to addObject:newAddress];
+    [[builder header] setTo:to];
+    
+    
+     NSString * path = [Utils retrunPathReport];
+    
+    
+    [[builder header] setSubject:subject];
+    [builder setHTMLBody: [[NSString alloc] initWithFormat:@"<h3> Relatório DinDin </h3> <p>Segue anexo o relatório referente ao período configurado.</br> A equipe do DinDin Agradece.  </p>"]];
+    MCOAttachment *attachment = [MCOAttachment attachmentWithContentsOfFile:path];
+    [builder addAttachment:attachment];
+    NSData * rfc822Data = [builder data];
+    
+    
+   
+   
+    
+        
+    
+
+    
+    
+    MCOSMTPSendOperation *sendOperation = [smtpSession sendOperationWithData:rfc822Data];
+    [sendOperation start:^(NSError *error) {
+        if(error) {
+            NSLog(@"%@ Error sending email:%@", userName, error);
+        } else {
+            NSLog(@"%@ Successfully sent email!", userName);
+        }
+    }];
+    
+    
+    
+    
+    
+//    SKPSMTPMessage *forgotPassword = [[SKPSMTPMessage alloc] init];
+//    [forgotPassword setFromEmail:@"r.letro@hotmail.com"];  // Change to your email address
+//    [forgotPassword setToEmail:@"rafaelbletro@gmail.com"]; // Load this, or have user enter this
+//    [forgotPassword setRelayHost:@"smtp-mail.outlook.com"];
+//    [forgotPassword setRequiresAuth:YES]; // GMail requires this
+//    [forgotPassword setLogin:@"r.letro@hotmail.com"]; // Same as the "setFromEmail:" email
+//    [forgotPassword setPass:@"rafsla_2011"]; // Password for the Gmail account that you are sending from
+//    [forgotPassword setSubject:@"Forgot Password: My App"]; // Change this to change the subject of the email
+//    [forgotPassword setWantsSecure:YES]; // Gmail Requires this
+//    forgotPassword.delegate = self;
+//    NSMutableArray* parts = [[NSMutableArray alloc] init];
+//    NSString * path = [Utils retrunPathReport];
+//    NSData *pdf = [NSData dataWithContentsOfFile:path];
+//    
+//    NSString *newpassword = @"helloworld";
+//    NSString *message = [NSString stringWithFormat:@"Your password has been successfully reset. Your new password: %@", newpassword];
+//    NSDictionary *plainPart = [NSDictionary dictionaryWithObjectsAndKeys:@"text/plain", kSKPSMTPPartContentTypeKey, message, kSKPSMTPPartMessageKey, @"8bit" , kSKPSMTPPartContentTransferEncodingKey, nil];
+//    
+//    NSLog(@"%@",pdf);
+//    
+//    NSString* strFormat = [NSString stringWithFormat:@"application/pdf;\r\n\tx-unix-mode=0644;\r\n\tname=\"%@\"", @"report.pdf"];
+//    
+//    NSString* strFormat2 = [NSString stringWithFormat:@"attachment;\r\n\tfilename=\"%@\"", @"report.pdf"];
+//    
+//    NSDictionary *vcfPart = [NSDictionary dictionaryWithObjectsAndKeys: strFormat,kSKPSMTPPartContentTypeKey, strFormat2,kSKPSMTPPartContentDispositionKey, [pdf base64EncodedStringWithOptions:0],kSKPSMTPPartMessageKey,@"base64",kSKPSMTPPartContentTransferEncodingKey,nil];
+//    
+//    
+//    
+//    [parts addObject:plainPart];
+//    [parts addObject:vcfPart];
+//    forgotPassword.parts = parts;
+//    
+//    [forgotPassword setParts:parts];
+//    [forgotPassword send];
+    
+    
+}
+
+
 
 
 @end

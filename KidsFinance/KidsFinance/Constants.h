@@ -17,3 +17,6 @@ extern NSString *const TRANSACTION_VALUE_KEY;
 extern NSString *const TRANSACTION_DESCRIPTION_KEY;
 extern NSString *const TRANSACTION_DATE_KEY;
 extern NSString *const TRANSACTION_CATEGORY_KEY;
+extern NSString *const FREQUENCY_REPORT;
+extern NSString *const NAME_REPORT;
+extern NSString *const EMAIL_REPORT;

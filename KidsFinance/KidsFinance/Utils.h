@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Utils: NSObject
+
+@interface Utils: NSObject 
 
 +(void)saveValueInKeychain: (NSString*)key withValue:(NSString*)value;
 +(NSString*)getValueFromKeychain: (NSString*)key;
 +(NSString*)formatNumber:(double)number;
 +(void)loadValuesFromKeychain:(UILabel *)currentMoneyLabel withSavingsLabel:(UILabel *)savingsLabel;
 +(void)updateCurrentMoneyOnKeyChain:(double)value withIsAddMoney:(BOOL)isAddMoney;
++(NSString*)retrunPathReport;
+
 
 @end

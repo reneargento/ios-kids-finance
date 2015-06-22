@@ -10,6 +10,8 @@
 #import "Utils.h"
 #import "JNKeychain.h"
 #import "Constants.h"
+#import "Report.h"
+
 
 @interface Utils ()
 
@@ -75,6 +77,19 @@
     
     [Utils saveValueInKeychain:CURRENT_MONEY_KEY withValue:currentMoneyFormatted];
 }
+
++(NSString*)retrunPathReport{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:@"Report.PDF"];
+    return pdfPath;
+}
+
+
+
+
+
+
 
 @end
 

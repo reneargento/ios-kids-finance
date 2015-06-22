@@ -12,6 +12,8 @@
 #import "Utils.h"
 #import "FrequencyEnumeration.h"
 
+
+
 @interface ReportViewController ()
 @property long selectedRow;
 @property NSMutableArray* frequencyPickerValues;
@@ -75,8 +77,9 @@
 }
 
 - (IBAction)reportButton:(id)sender {
-
+   
     UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+    
     [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
     
     long day = 24*3600;
@@ -92,14 +95,14 @@
     NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
     NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
     
-    NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset + interval;
+    
     
     UILocalNotification *localNotif = [[UILocalNotification alloc] init];
     
     switch (frequencyType) {
         case FrequencyDaily:
             localNotif.repeatInterval = NSCalendarUnitDay;
-            interval = day / 24 / 60;
+            interval = day / 24 / 60 + (60);
             break;
         case FrequencyWeekly:
             localNotif.repeatInterval = NSCalendarUnitWeekOfMonth;
@@ -113,6 +116,12 @@
             break;
     }
     
+    NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset + interval;
+    
+    [Utils saveValueInKeychain:FREQUENCY_REPORT withValue: [[NSString alloc] initWithFormat:@"%lu",frequencyType]];
+    
+    NSLog(@"%@",[NSDate dateWithTimeIntervalSinceNow: intHor]);
+    
     localNotif.alertBody = @"Email Enviado com sucesso";
     localNotif.alertAction = @"open";
     localNotif.fireDate =[NSDate dateWithTimeIntervalSinceNow: intHor];
@@ -120,20 +129,13 @@
     localNotif.category = @"REPORT_CATEGORY";
     
     
-    
-    [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-    //[report showPDFFile:self.view];
-    
-
 }
 
 
 -(void)showPDFFile
 {
     
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *pdfPath = [documentsDirectory stringByAppendingPathComponent:@"Report.PDF"];
+    NSString *pdfPath = [Utils retrunPathReport];
     
     if([[NSFileManager defaultManager] fileExistsAtPath:pdfPath]) {
         
@@ -149,6 +151,9 @@
     }
     
 }
+
+
+
 
 
 

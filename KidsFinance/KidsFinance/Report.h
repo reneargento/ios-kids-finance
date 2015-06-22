@@ -12,7 +12,8 @@
 #import "Utils.h"
 #import "Constants.h"
 
-@interface Report : NSObject
+
+@interface Report : NSObject 
 
 
 @property (nonatomic,strong) DAO* daoOperation;
@@ -22,4 +23,7 @@
 
 -(void) generateReport: (NSDate*) dateInit withDateEnd: (NSDate*) dateEnd;
 -(void)showPDFFile: (UIView*) view;
+
+-(void) sentEmail:(NSDate*) dateInit andDateEnd:(NSDate *) dateEnd;
+
 @end

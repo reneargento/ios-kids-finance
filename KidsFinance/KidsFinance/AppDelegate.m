@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "CategoryEnumeration.h"
 #import "Transactions.h"
+#import "Utils.h"
+#import "Report.h"
+#import "Constants.h"
+#import "FrequencyEnumeration.h"
 
 @interface AppDelegate ()
 
@@ -48,12 +52,42 @@
 
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"123"
-                                                    message:@"asdasdasdsa"
-                                                   delegate:self
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
+    NSLog(@"asdasdadasd");
+    Report* report= [[Report alloc] init];
+    
+    long day = 24*3600;
+    
+    long frequencyType = [[Utils getValueFromKeychain:FREQUENCY_REPORT] integerValue];
+    long interval;
+    
+    switch (frequencyType) {
+        case FrequencyDaily:
+            interval = day;
+            break;
+        case FrequencyWeekly:
+            interval = day * 7;
+            break;
+        case FrequencyMonthly:
+            interval = day * 30;
+            break;
+        default:
+            break;
+    }
+    
+    NSDate* sourceDate = [NSDate date];
+    
+    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+    
+    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
+    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+    
+    NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset;
+    NSDate * dateEnd = [NSDate dateWithTimeIntervalSinceNow: intHor];
+    NSDate * dateIni = [NSDate dateWithTimeIntervalSinceNow: intHor - interval];
+    NSLog(@"%@ - %@",dateIni,dateEnd);
+    
+    [report sentEmail:dateIni andDateEnd:dateEnd];
 }
 
 //**

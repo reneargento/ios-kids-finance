@@ -16,6 +16,7 @@
 
 @interface ReportViewController ()
 @property long selectedRow;
+
 @property NSMutableArray* frequencyPickerValues;
 @end
 
@@ -37,6 +38,9 @@
     
     self.frequencyPicker.dataSource = self;
     self.frequencyPicker.delegate = self;
+    
+    self.emailTextField.text = [Utils getValueFromKeychain:EMAIL_REPORT];
+    self.nameTextField.text = [Utils getValueFromKeychain:NAME_REPORT];
     
     [self.view setBackgroundColor: [UIColor colorWithRed:82.0/255.0 green:177.0/255.0 blue:193.0/255.0 alpha:1.0]];
     
@@ -77,56 +81,71 @@
 }
 
 - (IBAction)reportButton:(id)sender {
-   
-    UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+    if (![self.emailTextField.text isEqualToString:@""]) {
+        [Utils saveValueInKeychain:EMAIL_REPORT withValue: self.emailTextField.text];
+        [Utils saveValueInKeychain:NAME_REPORT withValue: self.nameTextField.text];
+        UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        
+        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
+        
+        long day = 24*3600;
+        
+        long frequencyType = [FrequencyEnumeration getFrequencyEnumerationLong:self.frequencyPickerValues[self.selectedRow]] ;
+        long interval;
+        
+        NSDate* sourceDate = [NSDate date];
+        
+        NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+        NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+        
+        NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
+        NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+        
+        
+        
+        UILocalNotification *localNotif = [[UILocalNotification alloc] init];
+        
+        switch (frequencyType) {
+            case FrequencyDaily:
+                localNotif.repeatInterval = NSCalendarUnitDay;
+                interval = day / 24 / 60 + (60);
+                break;
+            case FrequencyWeekly:
+                localNotif.repeatInterval = NSCalendarUnitWeekOfMonth;
+                interval = day * 7;
+                break;
+            case FrequencyMonthly:
+                localNotif.repeatInterval = NSCalendarUnitMonth;
+                interval = day * 30;
+                break;
+            default:
+                break;
+        }
+        
+        NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset + interval;
+        
+        [Utils saveValueInKeychain:FREQUENCY_REPORT withValue: [[NSString alloc] initWithFormat:@"%lu",frequencyType]];
+        
+        NSLog(@"%@",[NSDate dateWithTimeIntervalSinceNow: intHor]);
+        
+        localNotif.alertBody = @"Email Enviado com sucesso";
+        localNotif.alertAction = @"open";
+        localNotif.fireDate =[NSDate dateWithTimeIntervalSinceNow: intHor];
+        localNotif.soundName = UILocalNotificationDefaultSoundName;
+        localNotif.category = @"REPORT_CATEGORY";
     
-    [[UIApplication sharedApplication] registerUserNotificationSettings:notificationSettings];
     
-    long day = 24*3600;
-    
-    long frequencyType = [FrequencyEnumeration getFrequencyEnumerationLong:self.frequencyPickerValues[self.selectedRow]] ;
-    long interval;
-    
-    NSDate* sourceDate = [NSDate date];
-    
-    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
-    
-    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
-    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
-    
-    
-    
-    UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-    
-    switch (frequencyType) {
-        case FrequencyDaily:
-            localNotif.repeatInterval = NSCalendarUnitDay;
-            interval = day / 24 / 60 + (60);
-            break;
-        case FrequencyWeekly:
-            localNotif.repeatInterval = NSCalendarUnitWeekOfMonth;
-            interval = day * 7;
-            break;
-        case FrequencyMonthly:
-            localNotif.repeatInterval = NSCalendarUnitMonth;
-            interval = day * 30;
-            break;
-        default:
-            break;
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Obrigatório."
+                                                        message:@"Email obrigatório para envio de relatório."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:@"Ok",nil];
+        [alert show];
     }
     
-    NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset + interval;
     
-    [Utils saveValueInKeychain:FREQUENCY_REPORT withValue: [[NSString alloc] initWithFormat:@"%lu",frequencyType]];
     
-    NSLog(@"%@",[NSDate dateWithTimeIntervalSinceNow: intHor]);
-    
-    localNotif.alertBody = @"Email Enviado com sucesso";
-    localNotif.alertAction = @"open";
-    localNotif.fireDate =[NSDate dateWithTimeIntervalSinceNow: intHor];
-    localNotif.soundName = UILocalNotificationDefaultSoundName;
-    localNotif.category = @"REPORT_CATEGORY";
     
     
 }

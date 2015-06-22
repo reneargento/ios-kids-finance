@@ -330,10 +330,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_clean" translatesAutoresizingMaskIntoConstraints="NO" id="Hb8-ku-c5S">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="background_clean" translatesAutoresizingMaskIntoConstraints="NO" id="Hb8-ku-c5S">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_sameFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3O-3G-Orm" userLabel="logo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo_sameFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3O-3G-Orm" userLabel="logo">
                                 <rect key="frame" x="16" y="46" width="568" height="229"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="v3O-3G-Orm" secondAttribute="height" multiplier="92:37" id="IU7-Fx-lpr"/>
@@ -348,8 +348,11 @@
                                         <include reference="IU7-Fx-lpr"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="46" width="493.5" height="198.5"/>
+                                </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="bie-Vk-0b6">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="rectangle" translatesAutoresizingMaskIntoConstraints="NO" id="bie-Vk-0b6">
                                 <rect key="frame" x="80" y="193" width="440" height="185"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bie-Vk-0b6" secondAttribute="height" multiplier="240:101" id="0hs-eA-2LO"/>
@@ -364,8 +367,11 @@
                                         <include reference="0hs-eA-2LO"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="262.5" y="285.5" width="0.5" height="0.0"/>
+                                </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 10,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E3-kL-krK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="R$ 10,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7E3-kL-krK">
                                 <rect key="frame" x="230" y="265" width="138" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="7E3-kL-krK" secondAttribute="height" multiplier="23:7" id="fww-MM-Oni"/>
@@ -382,6 +388,9 @@
                                     <mask key="constraints">
                                         <include reference="fww-MM-Oni"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="195" y="265" width="138" height="42"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fiK-mb-3tR" userLabel="gift">
@@ -402,11 +411,14 @@
                                         <include reference="mOM-Af-Hsj"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="234" y="348.5" width="215.5" height="172.5"/>
+                                </variation>
                                 <connections>
                                     <segue destination="KaB-6r-6OV" kind="show" id="su3-gW-3uI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiZ-eD-8NB" userLabel="giftLabel">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WiZ-eD-8NB" userLabel="giftLabel">
                                 <rect key="frame" x="164" y="202" width="40" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WiZ-eD-8NB" secondAttribute="height" multiplier="32:15" id="3HZ-xK-kwl"/>
@@ -425,25 +437,34 @@
                                         <include reference="3HZ-xK-kwl"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="310" y="513" width="64" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="giftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ldp-bl-8SY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieA-lJ-xmU">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ieA-lJ-xmU">
                                 <rect key="frame" x="130" y="164" width="30" height="30"/>
                                 <state key="normal" title="...">
                                     <color key="titleColor" red="0.77647058820000003" green="0.54117647059999996" blue="0.14901960780000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="327" y="529" width="30" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="giftButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vih-jY-a9N"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr1-5q-Vtl" userLabel="earnPig">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xr1-5q-Vtl" userLabel="earnPig">
                                 <rect key="frame" x="61" y="433" width="104" height="80"/>
                                 <state key="normal" image="earnButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="80" y="485.5" width="150" height="91"/>
+                                </variation>
                                 <connections>
                                     <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oeD-y8-wga"/>
                                     <segue destination="dbQ-jm-77r" kind="show" id="xSz-HS-jET"/>
@@ -454,32 +475,41 @@
                                 <state key="normal" image="spendButton">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="296" y="485.5" width="149.5" height="91"/>
+                                </variation>
                                 <connections>
                                     <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2MP-QN-Chh"/>
                                     <segue destination="y8w-h0-1H0" kind="show" id="747-Tn-o8I"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVb-lb-ACI" userLabel="earnLabel">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVb-lb-ACI" userLabel="earnLabel">
                                 <rect key="frame" x="61" y="164" width="46" height="30"/>
                                 <state key="normal" title="ganhei">
                                     <color key="titleColor" red="0.48627450979999998" green="1" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="131.5" y="584.5" width="46" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hhE-tI-ImN"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aju-al-QSS" userLabel="spendLabel">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aju-al-QSS" userLabel="spendLabel">
                                 <rect key="frame" x="250" y="54" width="42" height="30"/>
                                 <state key="normal" title="gastei">
                                     <color key="titleColor" red="0.98431372549999996" green="0.058823529409999999" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="349" y="584.5" width="42" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xEc-GY-8BI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfW-hA-uCW">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfW-hA-uCW">
                                 <rect key="frame" x="28" y="293" width="30" height="30"/>
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.43529411759999997" green="1" blue="0.12941176469999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -488,11 +518,14 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="100" y="515" width="46" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="139.5" y="603.5" width="30" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="addMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wX0-Ns-30v"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXw-ab-jDP">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXw-ab-jDP">
                                 <rect key="frame" x="69" y="197" width="30" height="30"/>
                                 <state key="normal" title="-">
                                     <color key="titleColor" red="0.98431372549999996" green="0.058823529409999999" blue="0.023529411760000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -501,26 +534,35 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="256" y="515" width="46" height="30"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="358" y="603.5" width="30" height="30"/>
+                                </variation>
                                 <connections>
                                     <action selector="subtractMoneyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fUt-vk-frJ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-qZ-LUc" userLabel="CONFIG">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YW1-qZ-LUc" userLabel="CONFIG">
                                 <rect key="frame" x="271" y="28" width="58" height="30"/>
                                 <state key="normal" title="CONFIG">
                                     <color key="titleColor" red="0.0" green="0.086274509803921567" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="234" y="28" width="58" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="mV5-4m-uDn" kind="show" id="QCx-UC-IZY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S58-LU-CDO">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S58-LU-CDO">
                                 <rect key="frame" x="270" y="46" width="61" height="30"/>
                                 <state key="normal" title="REPORT">
                                     <color key="titleColor" red="0.0" green="0.086274509803921567" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="233" y="46" width="61" height="30"/>
+                                </variation>
                                 <connections>
                                     <segue destination="zYX-RO-1kh" kind="show" id="L5P-f0-O4o"/>
                                 </connections>
@@ -592,38 +634,38 @@
                                 <exclude reference="iXb-3o-mbh"/>
                                 <exclude reference="k8l-wS-9Rg"/>
                                 <exclude reference="rfR-Q4-1eN"/>
+                                <exclude reference="1qz-YN-s5d"/>
+                                <exclude reference="bfb-Xo-keu"/>
+                                <exclude reference="6cb-00-uCh"/>
+                                <exclude reference="UK3-A6-iAt"/>
+                                <exclude reference="Ao6-9S-gRM"/>
+                                <exclude reference="oq2-UP-1jF"/>
+                                <exclude reference="pww-jT-UTo"/>
+                                <exclude reference="BSr-fD-lbi"/>
+                                <exclude reference="PjL-Vq-HST"/>
+                                <exclude reference="dH6-iS-tAr"/>
+                                <exclude reference="B9b-Yd-mcQ"/>
                                 <exclude reference="mxO-5q-Ecc"/>
                                 <exclude reference="vNM-5k-gLE"/>
                                 <exclude reference="T62-vZ-SQi"/>
                                 <exclude reference="UDL-8G-xrG"/>
-                                <exclude reference="Ao6-9S-gRM"/>
-                                <exclude reference="oq2-UP-1jF"/>
-                                <exclude reference="pww-jT-UTo"/>
+                                <exclude reference="Yk9-5B-zb6"/>
                                 <exclude reference="JMC-Cj-pdG"/>
                                 <exclude reference="Ysn-3d-ntO"/>
-                                <exclude reference="Pka-pH-Das"/>
-                                <exclude reference="Zp1-Of-dz6"/>
-                                <exclude reference="d4L-cC-to8"/>
-                                <exclude reference="gXk-ut-UQ4"/>
-                                <exclude reference="B9b-Yd-mcQ"/>
                                 <exclude reference="B4v-kJ-V7I"/>
                                 <exclude reference="VHE-ka-08c"/>
                                 <exclude reference="kzB-fj-aW2"/>
                                 <exclude reference="ypQ-bD-fzp"/>
-                                <exclude reference="BSr-fD-lbi"/>
-                                <exclude reference="PjL-Vq-HST"/>
                                 <exclude reference="AmA-aR-q0I"/>
                                 <exclude reference="ERL-6f-1RM"/>
                                 <exclude reference="Gl4-Ov-DgR"/>
                                 <exclude reference="RDo-Ld-KC4"/>
                                 <exclude reference="h5u-54-PlZ"/>
                                 <exclude reference="ruM-PM-b6y"/>
-                                <exclude reference="1qz-YN-s5d"/>
-                                <exclude reference="bfb-Xo-keu"/>
-                                <exclude reference="Yk9-5B-zb6"/>
-                                <exclude reference="dH6-iS-tAr"/>
-                                <exclude reference="6cb-00-uCh"/>
-                                <exclude reference="UK3-A6-iAt"/>
+                                <exclude reference="Pka-pH-Das"/>
+                                <exclude reference="Zp1-Of-dz6"/>
+                                <exclude reference="d4L-cC-to8"/>
+                                <exclude reference="gXk-ut-UQ4"/>
                                 <exclude reference="s5L-Go-VYe"/>
                             </mask>
                         </variation>
@@ -641,38 +683,38 @@
                                 <include reference="iXb-3o-mbh"/>
                                 <include reference="k8l-wS-9Rg"/>
                                 <include reference="rfR-Q4-1eN"/>
+                                <include reference="1qz-YN-s5d"/>
+                                <include reference="bfb-Xo-keu"/>
+                                <include reference="6cb-00-uCh"/>
+                                <include reference="UK3-A6-iAt"/>
+                                <include reference="Ao6-9S-gRM"/>
+                                <include reference="oq2-UP-1jF"/>
+                                <include reference="pww-jT-UTo"/>
+                                <include reference="BSr-fD-lbi"/>
+                                <include reference="PjL-Vq-HST"/>
+                                <include reference="dH6-iS-tAr"/>
+                                <include reference="B9b-Yd-mcQ"/>
                                 <include reference="mxO-5q-Ecc"/>
                                 <include reference="vNM-5k-gLE"/>
                                 <include reference="T62-vZ-SQi"/>
                                 <include reference="UDL-8G-xrG"/>
-                                <include reference="Ao6-9S-gRM"/>
-                                <include reference="oq2-UP-1jF"/>
-                                <include reference="pww-jT-UTo"/>
+                                <include reference="Yk9-5B-zb6"/>
                                 <include reference="JMC-Cj-pdG"/>
                                 <include reference="Ysn-3d-ntO"/>
-                                <include reference="Pka-pH-Das"/>
-                                <include reference="Zp1-Of-dz6"/>
-                                <include reference="d4L-cC-to8"/>
-                                <include reference="gXk-ut-UQ4"/>
-                                <include reference="B9b-Yd-mcQ"/>
                                 <include reference="B4v-kJ-V7I"/>
                                 <include reference="VHE-ka-08c"/>
                                 <include reference="kzB-fj-aW2"/>
                                 <include reference="ypQ-bD-fzp"/>
-                                <include reference="BSr-fD-lbi"/>
-                                <include reference="PjL-Vq-HST"/>
                                 <include reference="AmA-aR-q0I"/>
                                 <include reference="ERL-6f-1RM"/>
                                 <include reference="Gl4-Ov-DgR"/>
                                 <include reference="RDo-Ld-KC4"/>
                                 <include reference="h5u-54-PlZ"/>
                                 <include reference="ruM-PM-b6y"/>
-                                <include reference="1qz-YN-s5d"/>
-                                <include reference="bfb-Xo-keu"/>
-                                <include reference="Yk9-5B-zb6"/>
-                                <include reference="dH6-iS-tAr"/>
-                                <include reference="6cb-00-uCh"/>
-                                <include reference="UK3-A6-iAt"/>
+                                <include reference="Pka-pH-Das"/>
+                                <include reference="Zp1-Of-dz6"/>
+                                <include reference="d4L-cC-to8"/>
+                                <include reference="gXk-ut-UQ4"/>
                                 <include reference="s5L-Go-VYe"/>
                             </mask>
                         </variation>
@@ -916,6 +958,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="20" width="568" height="20.5"/>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

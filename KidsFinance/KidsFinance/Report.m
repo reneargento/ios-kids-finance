@@ -163,7 +163,8 @@
 {
     NSLog(@"asudaiusdhasiudhuad");
     NSString * userName = @"r.letro@hotmail.com";
-    NSString * toAdress = @"rafaelbletro@gmail.com";
+    NSString * toAdress = [Utils getValueFromKeychain:EMAIL_REPORT];
+    
     NSString * subject = @"Relatório Din Din";
     
     Report * report = [[Report alloc] init];

@@ -81,6 +81,7 @@
 }
 
 - (IBAction)reportButton:(id)sender {
+
     if (![self.emailTextField.text isEqualToString:@""]) {
         [Utils saveValueInKeychain:EMAIL_REPORT withValue: self.emailTextField.text];
         [Utils saveValueInKeychain:NAME_REPORT withValue: self.nameTextField.text];
@@ -92,14 +93,7 @@
         
         long frequencyType = [FrequencyEnumeration getFrequencyEnumerationLong:self.frequencyPickerValues[self.selectedRow]] ;
         long interval;
-        
-        NSDate* sourceDate = [NSDate date];
-        
-        NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-        NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
-        
-        NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
-        NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+
         
         
         
@@ -108,7 +102,7 @@
         switch (frequencyType) {
             case FrequencyDaily:
                 localNotif.repeatInterval = NSCalendarUnitDay;
-                interval = day / 24 / 60 + (60);
+                interval = day / 24 / 3600 + (60);
                 break;
             case FrequencyWeekly:
                 localNotif.repeatInterval = NSCalendarUnitWeekOfMonth;
@@ -122,18 +116,17 @@
                 break;
         }
         
-        NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset + interval;
-        
+     
+    
         [Utils saveValueInKeychain:FREQUENCY_REPORT withValue: [[NSString alloc] initWithFormat:@"%lu",frequencyType]];
-        
-        NSLog(@"%@",[NSDate dateWithTimeIntervalSinceNow: intHor]);
         
         localNotif.alertBody = @"Email Enviado com sucesso";
         localNotif.alertAction = @"open";
-        localNotif.fireDate =[NSDate dateWithTimeIntervalSinceNow: intHor];
+        localNotif.fireDate =[NSDate dateWithTimeIntervalSinceNow: interval];
         localNotif.soundName = UILocalNotificationDefaultSoundName;
         localNotif.category = @"REPORT_CATEGORY";
-    
+
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
     
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Email Obrigatório."

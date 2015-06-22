@@ -74,17 +74,17 @@
             break;
     }
     
-    NSDate* sourceDate = [NSDate date];
+    //NSDate* sourceDate = [NSDate date];
     
-    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
-    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
-    
-    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
-    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
-    
-    NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset;
-    NSDate * dateEnd = [NSDate dateWithTimeIntervalSinceNow: intHor];
-    NSDate * dateIni = [NSDate dateWithTimeIntervalSinceNow: intHor - interval];
+//    NSTimeZone* sourceTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT"];
+//    NSTimeZone* destinationTimeZone = [NSTimeZone systemTimeZone];
+//    
+//    NSInteger sourceGMTOffset = [sourceTimeZone secondsFromGMTForDate:sourceDate];
+//    NSInteger destinationGMTOffset = [destinationTimeZone secondsFromGMTForDate:sourceDate];
+//    
+//    NSTimeInterval intHor = destinationGMTOffset - sourceGMTOffset;
+    NSDate * dateEnd = [NSDate date];
+    NSDate * dateIni = [NSDate dateWithTimeIntervalSinceNow: -interval];
     NSLog(@"%@ - %@",dateIni,dateEnd);
     
     [report sentEmail:dateIni andDateEnd:dateEnd];

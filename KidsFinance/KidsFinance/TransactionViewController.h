@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Transactions.h"
 
-@interface TransactionViewController : UIViewController <UITextFieldDelegate>
+@interface TransactionViewController : UIViewController <UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property BOOL isAddMoney;
 @property long category;

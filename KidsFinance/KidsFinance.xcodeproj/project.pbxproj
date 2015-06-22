@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F351910B6EA6E87DA98C91E /* libPods-KidsFinance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2B0BE27B1A96D29BA3A620E /* libPods-KidsFinance.a */; };
 		730A87641B271E300019B923 /* TransactionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 730A87631B271E300019B923 /* TransactionCell.m */; };
 		731689A01AC2EE7B008D9FC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7316899F1AC2EE7B008D9FC9 /* main.m */; };
 		731689A31AC2EE7B008D9FC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 731689A21AC2EE7B008D9FC9 /* AppDelegate.m */; };
@@ -146,6 +147,9 @@
 		73CD775B1B32FFB600B4C2B0 /* FrequencyEnumeration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrequencyEnumeration.h; sourceTree = "<group>"; };
 		73CD775C1B32FFB600B4C2B0 /* FrequencyEnumeration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrequencyEnumeration.m; sourceTree = "<group>"; };
 		B8A8D0621B379F7A00F3E3B7 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "mailcore/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
+		92E3944AB4BCE4060D1563FF /* Pods-KidsFinance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFinance.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFinance/Pods-KidsFinance.debug.xcconfig"; sourceTree = "<group>"; };
+		B64D4D67BABDEED65FEEE4C5 /* Pods-KidsFinance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KidsFinance.release.xcconfig"; path = "Pods/Target Support Files/Pods-KidsFinance/Pods-KidsFinance.release.xcconfig"; sourceTree = "<group>"; };
+		B8B4A2441B3761EF00DC2479 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../../../../libs/mailcore/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		B8C171CE1B3756040090D031 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B8C171D01B375B140090D031 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B8CF54121ACAB73F000040B0 /* TransactionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransactionViewController.h; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		C9A899641AC97A8000D5AAD3 /* Transactions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Transactions.m; sourceTree = "<group>"; };
 		C9A899661AC97C4000D5AAD3 /* CategoryEnumeration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategoryEnumeration.h; sourceTree = "<group>"; };
 		C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		F2B0BE27B1A96D29BA3A620E /* libPods-KidsFinance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KidsFinance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +187,7 @@
 				B8B4A2611B37623000DC2479 /* Security.framework in Frameworks */,
 				B8B4A2601B37622900DC2479 /* CFNetwork.framework in Frameworks */,
 				C9D7BFCE1AC443E700468E92 /* libsqlite3.dylib in Frameworks */,
+				4F351910B6EA6E87DA98C91E /* libPods-KidsFinance.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +208,7 @@
 				7316899C1AC2EE7B008D9FC9 /* KidsFinance */,
 				731689B61AC2EE7C008D9FC9 /* KidsFinanceTests */,
 				7316899B1AC2EE7B008D9FC9 /* Products */,
+				C5A8989258BFA2B1AFB95E01 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -355,8 +362,18 @@
 				B8C171CE1B3756040090D031 /* CFNetwork.framework */,
 				B8EDF2531B29B42B006C839F /* CoreText.framework */,
 				C9D7BFCD1AC443E700468E92 /* libsqlite3.dylib */,
+				F2B0BE27B1A96D29BA3A620E /* libPods-KidsFinance.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C5A8989258BFA2B1AFB95E01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				92E3944AB4BCE4060D1563FF /* Pods-KidsFinance.debug.xcconfig */,
+				B64D4D67BABDEED65FEEE4C5 /* Pods-KidsFinance.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,9 +383,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 731689BD1AC2EE7C008D9FC9 /* Build configuration list for PBXNativeTarget "KidsFinance" */;
 			buildPhases = (
+				E340F0D9F2FA7DAA3300B218 /* Check Pods Manifest.lock */,
 				731689961AC2EE7B008D9FC9 /* Sources */,
 				731689971AC2EE7B008D9FC9 /* Frameworks */,
 				731689981AC2EE7B008D9FC9 /* Resources */,
+				42048EC1DCDC12F8FF91DE7C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -520,6 +539,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		42048EC1DCDC12F8FF91DE7C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-KidsFinance/Pods-KidsFinance-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E340F0D9F2FA7DAA3300B218 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		731689961AC2EE7B008D9FC9 /* Sources */ = {
@@ -674,6 +726,7 @@
 		};
 		731689BE1AC2EE7C008D9FC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92E3944AB4BCE4060D1563FF /* Pods-KidsFinance.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";
@@ -701,6 +754,7 @@
 		};
 		731689BF1AC2EE7C008D9FC9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B64D4D67BABDEED65FEEE4C5 /* Pods-KidsFinance.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LIBRARY = "libc++";

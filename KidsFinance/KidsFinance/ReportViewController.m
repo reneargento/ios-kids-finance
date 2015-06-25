@@ -83,6 +83,7 @@
 - (IBAction)reportButton:(id)sender {
 
     if (![self.emailTextField.text isEqualToString:@""]) {
+        [[UIApplication sharedApplication] cancelAllLocalNotifications];
         [Utils saveValueInKeychain:EMAIL_REPORT withValue: self.emailTextField.text];
         [Utils saveValueInKeychain:NAME_REPORT withValue: self.nameTextField.text];
         UIUserNotificationSettings* notificationSettings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
@@ -102,7 +103,7 @@
         switch (frequencyType) {
             case FrequencyDaily:
                 localNotif.repeatInterval = NSCalendarUnitDay;
-                interval = day / 24 / 3600 + (60);
+                interval = day;
                 break;
             case FrequencyWeekly:
                 localNotif.repeatInterval = NSCalendarUnitWeekOfMonth;

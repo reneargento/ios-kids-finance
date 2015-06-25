@@ -894,11 +894,11 @@
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfI-Um-JN2">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Configurar">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="177" y="410" width="46" height="30"/>
+                                    <rect key="frame" x="164" y="425" width="72" height="30"/>
                                 </variation>
                                 <connections>
                                     <action selector="reportButton:" destination="68H-MX-z4M" eventType="touchUpInside" id="aW4-ic-r7E"/>
